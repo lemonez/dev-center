@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rust Algorithm Development • Algorithmia Developer Center</title>
+    <meta name="description" content="Build your algorithm in Rust">
+    <meta name="keywords" content="algo-guide-lang">
+    
+      
+    <!-- Twitter Cards -->
+<meta name="twitter:title" content="Rust Algorithm Development">
+<meta name="twitter:description" content="Build your algorithm in Rust">
+<meta name="twitter:site" content="@algorithmia">
+<meta name="twitter:creator" content="@algorithmia">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo120x120.png">
+
+
+<!-- Open Graph -->
+
+<meta property="og:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo.png">
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rust Algorithm Development">
+<meta property="og:description" content="Build your algorithm in Rust">
+<meta property="og:url" content="http://developers.algorithmia.com/algorithm-development/client-guides/rust">
+<meta property="og:site_name" content="Algorithmia Developer Center">
+
+    <link rel="canonical" href="http://developers.algorithmia.com/algorithm-development/client-guides/rust">
+
+    <link href="http://developers.algorithmia.com/atom.xml" type="application/atom+xml" rel="alternate" title="Algorithmia Developer Center Atom Feed">
+    <link href="http://developers.algorithmia.com/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="stylesheet" href="http://developers.algorithmia.com/css/main.css">
+    <!-- HTML5 Shiv and Media Query Support for IE -->
+    <!--[if lt IE 9]>
+      <script src="http://developers.algorithmia.com/js/vendor/html5shiv.min.js"></script>
+      <script src="http://developers.algorithmia.com/js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-38617973-1', 'auto');
+     ga('send', 'pageview');
+
+    </script>
+  </head>
+
+  <body id="js-body">
+    <div id="wrapper">
+      <!--[if lt IE 9]><div class="upgrade notice-warning"><strong>Your browser is quite old!</strong> Why not <a href="http://whatbrowser.org/">upgrade to a newer one</a> to better enjoy this site?</div><![endif]-->
+
+      <header id="masthead">
+  <div class="inner-wrap">
+    <a href="http://developers.algorithmia.com/" class="site-title">
+      <img src="http://developers.algorithmia.com/images/logos/algorithmia-white-logo.png" class="nav-image" alt="Algorithmia Developer Center" itemprop="image">
+    </a>
+
+    <nav role="navigation" class="menu top-menu">
+      <ul class="menu-item">
+  
+    
+      
+      
+
+    
+      <li><a href="http://docs.algorithmia.com" target="_blank">
+        API Docs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/algorithm-development" >
+        Algorithm Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/application-development" >
+        Application Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/faqs/" >
+        FAQs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/search/">
+        <i class="fa fa-search"></i> 
+      </a></li>
+    
+  
+</ul>
+    </nav>
+  </div><!-- /.inner-wrap -->
+</header><!-- /.masthead -->
+      <nav role="navigation" id="js-menu" class="sliding-menu-content">
+  <h5>Algorithmia Developer Center</h5>
+  <ul class="menu-item">
+    <li>
+      
+        
+      
+
+      <a href="http://docs.algorithmia.com">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_API Docs.png" alt="teaser" class="teaser">
+        <div class="title">API Docs</div>
+        <p class="excerpt">Read up on the ins and outs of using the Algorithmia API.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/algorithm-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Sample_Apps.png" alt="teaser" class="teaser">
+        <div class="title">Algorithm Development</div>
+        <p class="excerpt">Find out how to host your models and build an algorithm on Algorithmia.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/application-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Clients.png" alt="teaser" class="teaser">
+        <div class="title">Application Development</div>
+        <p class="excerpt">Discover how to use algorithms in your application.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/faqs/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_FAQs.png" alt="teaser" class="teaser">
+        <div class="title">FAQs</div>
+        <p class="excerpt">Find quick answers to common questions.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/search/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Search.png" alt="teaser" class="teaser">
+        <div class="title">Search</div>
+        <p class="excerpt">Search the Developer Center for the information you need to get started</p>
+      </a>
+    </li>
+  </ul>
+</nav>
+<button type="button" id="js-menu-trigger" class="sliding-menu-button lines-button x2" role="button" aria-label="Toggle Navigation">
+  <span class="nav-lines"></span>
+</button>
+
+<div id="js-menu-screen" class="menu-screen"></div>
+
+      
+      <div id="page-wrapper">
+
+	<div id="main" role="main">
+		<article class="wrap" itemscope itemtype="http://schema.org/Article">
+
+			<div class="page-title">
+				<h1>Rust Algorithm Development</h1>
+				
+			</div>
+
+			<div class="inner-wrap">
+				<div id="content" class="page-content" itemprop="articleBody">
+					<p>Algorithmia supports development of algorithms in Rust.</p>
+
+<h4 id="handling-input-and-output">Handling Input and Output</h4>
+
+<p>Rust algorithms are expected to have a public type named <code>Algo</code> that implements the <a href="http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/trait.EntryPoint.html"><code>algorithmia::algo::EntryPoint</code></a> trait.
+In many cases, you may prefer to implement <a href="http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/trait.DecodedEntryPoint.html"><code>algorithmia::algo::DecodedEntryPoint</code></a> which provides an alternate implementation of <code>EntryPoint</code>.</p>
+
+<p>How you implement <code>EntryPoint</code> depends entirely on the input you want your algorithm to receive.</p>
+
+<ul>
+  <li>For text input, override <a href="http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/trait.EntryPoint.html#method.apply_str"><code>apply_str</code></a></li>
+  <li>For binary input, override <a href="http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/trait.EntryPoint.html#method.apply_bytes"><code>apply_bytes</code></a></li>
+  <li>For JSON input:
+    <ul>
+      <li>Override <a href="http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/trait.EntryPoint.html#method.apply_json"><code>apply_json</code></a> if you want to work with the <code>rustc_serialize</code> <a href="https://doc.rust-lang.org/rustc-serialize/rustc_serialize/json/enum.Json.html"><code>Json</code> enum</a> as input</li>
+      <li>Implement <code>DecodedEntryPoint</code> and override <a href="http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/trait.DecodedEntryPoint.html#tymethod.apply_decoded"><code>apply_decoded</code></a> if you want to automatically decode the input to a type that you define</li>
+    </ul>
+  </li>
+</ul>
+
+<p>In all cases, the output of your algorithm will be <code>Result</code>-wrapped <a href="http://algorithmiaio.github.io/algorithmia-rust/algorithmia/algo/enum.AlgoOutput.html"><code>algorithmia::algo::AlgoOutput</code></a> which can represent text, json, or binary output.
+There are several <code>From</code> conversions implemented to make it possible to simply <code>return Ok("Some text".into())</code></p>
+
+<p>There are several examples below to demonstrate the possibilities.</p>
+
+<h4 id="handle-text-input">Handle text input:</h4>
+
+<p>Text input is handled implementing <code>EntryPoint</code> to override <code>apply_str</code>.</p>
+
+<div class="highlight"><pre><code class="language-rust" data-lang="rust"><span class="cp">#[derive(Default)]</span>
+<span class="k">pub</span> <span class="k">struct</span> <span class="n">Algo</span><span class="p">;</span>
+
+<span class="k">impl</span> <span class="n">EntryPoint</span> <span class="k">for</span> <span class="n">Algo</span> <span class="p">{</span>
+    <span class="k">fn</span> <span class="n">apply_str</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span> <span class="n">input</span><span class="o">:</span> <span class="o">&amp;</span><span class="kt">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">Result</span><span class="o">&lt;</span><span class="n">AlgoOutput</span><span class="p">,</span> <span class="n">Box</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">error</span><span class="o">::</span><span class="n">Error</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">format</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Hello {}&quot;</span><span class="p">,</span> <span class="n">input</span><span class="p">);</span>
+        <span class="nb">Ok</span><span class="p">(</span><span class="n">AlgoOutput</span><span class="o">::</span><span class="n">Text</span><span class="p">(</span><span class="n">msg</span><span class="p">))</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<h4 id="handle-binary-input">Handle binary input:</h4>
+<p>Binary input is handled implementing <code>EntryPoint</code> to override <code>apply_bytes</code>.</p>
+
+<div class="highlight"><pre><code class="language-rust" data-lang="rust"><span class="cp">#[derive(Default)]</span>
+<span class="k">pub</span> <span class="k">struct</span> <span class="n">Algo</span><span class="p">;</span>
+
+<span class="k">impl</span> <span class="n">EntryPoint</span> <span class="k">for</span> <span class="n">Algo</span> <span class="p">{</span>
+    <span class="k">fn</span> <span class="n">apply_bytes</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span> <span class="n">input</span><span class="o">:</span> <span class="o">&amp;</span><span class="p">[</span><span class="kt">u8</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">Result</span><span class="o">&lt;</span><span class="n">AlgoOutput</span><span class="p">,</span> <span class="n">Box</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">error</span><span class="o">::</span><span class="n">Error</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
+       <span class="nb">Ok</span><span class="p">(</span><span class="n">AlgoOutput</span><span class="o">::</span><span class="n">Binary</span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="n">to_owned</span><span class="p">()))</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<h4 id="handle-json-input">Handle JSON input:</h4>
+<p>JSON input can be handled by implementing <code>EntryPoint</code> to override <code>apply_bytes</code>.
+This provides the algorithm with the <code>rustc_serialize</code> <code>Json</code> enum as input.
+(See also the alternative ways of handling auto-decoded JSON input.)</p>
+
+<div class="highlight"><pre><code class="language-rust" data-lang="rust"><span class="kn">use</span> <span class="n">rustc_serialize</span><span class="o">::</span><span class="n">json</span><span class="o">::</span><span class="n">Json</span><span class="p">;</span>
+
+<span class="cp">#[derive(Default)]</span>
+<span class="k">pub</span> <span class="k">struct</span> <span class="n">Algo</span><span class="p">;</span>
+
+<span class="k">impl</span> <span class="n">EntryPoint</span> <span class="k">for</span> <span class="n">Algo</span> <span class="p">{</span>
+    <span class="k">fn</span> <span class="n">apply_json</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span> <span class="n">input</span><span class="o">:</span> <span class="o">&amp;</span><span class="n">Json</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">Result</span><span class="o">&lt;</span><span class="n">AlgoOutput</span><span class="p">,</span> <span class="n">Box</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">error</span><span class="o">::</span><span class="n">Error</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
+      <span class="nb">Ok</span><span class="p">(</span><span class="n">AlgoOutput</span><span class="o">::</span><span class="n">Json</span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="n">to_owned</span><span class="p">()))</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<h4 id="auto-decode-json-input">Auto-decode JSON input:</h4>
+<p>JSON input can be automatically decoded to type of your choosing.
+To do this, implement <code>DecodedEntryPoint</code> to override <code>apply_decoded</code>.
+This also requires defining the trait’s associated type named <code>Input</code>
+to a type that you want input decoded into.</p>
+
+<div class="highlight"><pre><code class="language-rust" data-lang="rust"><span class="cp">#[derive(Default)]</span>
+<span class="k">pub</span> <span class="k">struct</span> <span class="n">Algo</span><span class="p">;</span>
+
+<span class="k">impl</span> <span class="n">DecodedEntryPoint</span> <span class="k">for</span> <span class="n">Algo</span> <span class="p">{</span>
+    <span class="k">type</span> <span class="n">Input</span> <span class="o">=</span> <span class="p">(</span><span class="n">String</span><span class="p">,</span> <span class="kt">u32</span><span class="p">);</span>  <span class="c1">// Handles JSON array input structured like: [String, Number]</span>
+    <span class="k">fn</span> <span class="n">apply_decoded</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span> <span class="n">input</span><span class="o">:</span> <span class="n">Self</span><span class="o">::</span><span class="n">Input</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">Result</span><span class="o">&lt;</span><span class="n">AlgoOutput</span><span class="p">,</span> <span class="n">Box</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">error</span><span class="o">::</span><span class="n">Error</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">format</span><span class="p">(</span><span class="s">&quot;Received string &#39;{}&#39; and number &#39;{}&quot;</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="mi">1</span><span class="p">);</span>
+        <span class="nb">Ok</span><span class="p">(</span><span class="n">AlgoOutput</span><span class="o">::</span><span class="n">Text</span><span class="p">(</span><span class="n">msg</span><span class="p">))</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>You can extend this idea to decode more complex, structured input JSON.
+This example defines a struct that derives <code>RustcDecodable</code> so that input
+is automatically decoded into a <code>TaskDefinition</code></p>
+
+<div class="highlight"><pre><code class="language-rust" data-lang="rust"><span class="cp">#[derive(Default)]</span>
+<span class="k">pub</span> <span class="k">struct</span> <span class="n">Algo</span><span class="p">;</span>
+
+<span class="cp">#[derive(RustcDecodable)]</span>
+<span class="k">pub</span> <span class="k">struct</span> <span class="n">TaskDefinition</span> <span class="p">{</span>
+  <span class="n">foo</span><span class="o">:</span> <span class="n">String</span><span class="p">,</span>
+  <span class="n">bar</span><span class="o">:</span> <span class="kt">u64</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">impl</span> <span class="n">DecodedEntryPoint</span> <span class="k">for</span> <span class="n">Algo</span> <span class="p">{</span>
+    <span class="k">type</span> <span class="n">Input</span> <span class="o">=</span> <span class="n">TaskDefinition</span><span class="p">;</span>
+    <span class="k">fn</span> <span class="n">apply_decoded</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span> <span class="n">input</span><span class="o">:</span> <span class="n">Self</span><span class="o">::</span><span class="n">Input</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">Result</span><span class="o">&lt;</span><span class="n">AlgoOutput</span><span class="p">,</span> <span class="n">Box</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">error</span><span class="o">::</span><span class="n">Error</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">format</span><span class="p">(</span><span class="s">&quot;Received string &#39;{}&#39; and number &#39;{}&quot;</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">foo</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">bar</span><span class="p">);</span>
+        <span class="nb">Ok</span><span class="p">(</span><span class="n">AlgoOutput</span><span class="o">::</span><span class="n">Text</span><span class="p">(</span><span class="n">msg</span><span class="p">))</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<h4 id="error-handling">Error Handling</h4>
+
+<p>All the <code>apply</code> method variants return a <code>Result&lt;AlgoOutput, Box&lt;std::error::Error&gt;&gt;</code>,
+which should make it possible to return almost any <code>Error</code> type, including by using the <code>try!</code> macro.
+For simple algorithms, it may suffice to simply return <code>Err("some error message".into())</code></p>
+
+<h4 id="managing-dependencies">Managing Dependencies</h4>
+
+<p>Algorithmia supports adding 3rd party dependencies via Cargo. Cargo dependencies typically come from <a href="https://crates.io/">Crates.io</a>
+but it is also possible to specify dependendies from a git URL.</p>
+
+<p>To configure depdendencies, click the ‘Dependencies’ button on the algorithm editor page which provides a way to edit the <code>Cargo.toml</code> file.
+See the <a href="http://doc.crates.io/manifest.html#the-dependencies-section">Cargo Manifest</a> for details on editting dependencies.</p>
+
+<aside class="notice">
+  Note: By default the <code>algorithmia</code> dependency will be updated on every build to pick up any backward-compatible fixes.
+  Updating other dependencies requires explicitly updating the version to cause a new <code>Cargo.lock</code> to be generated during
+  the build process.
+</aside>
+
+<aside class="notice">
+  Note: Editing the <code>[bin]</code> and <code>[lib]</code> section will likely break compilation, and may other build issues after future platform updates.
+  If you believe your scenario requires such changes, contact us as we'd love to learn more about your usage scenario to better support it.
+</aside>
+
+<h4 id="calling-other-algorithms-and-managing-data">Calling Other Algorithms and Managing Data</h4>
+
+<p>To call other algorithms or manage data from your algorithm, use the <a href="http://developers.algorithmia.com/client-guides/rust/">Algorithmia Rust Client</a> which is available by default to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the <a href="http://docs.algorithmia.com/">Data API docs</a> and learn about Algorithmia’s <a href="http://developers.algorithmia.com/algorithm-development/data-sources/hosted-data-guide/">Hosted Data Source</a>.</p>
+
+<p>When designing your algorithm, don’t forget that there are special data directories, <code>.session</code> and <code>.algo</code>, that are available only to algorithms to help you manage data over the course of the algorithm execution.</p>
+
+<h4 id="additional-resources">Additional Resources</h4>
+
+<ul>
+  <li><a href="http://developers.algorithmia.com/client-guides/rust/">Algorithmia Rust Client</a></li>
+  <li><a href="https://doc.rust-lang.org/std/">Rust standard library</a></li>
+  <li><a href="https://crates.io/">Crates.io</a></li>
+</ul>
+
+					<hr />
+
+					<footer class="page-footer">
+						<div class="inline-btn">
+	<a class="btn-social twitter" href="https://twitter.com/intent/tweet?text=Rust%20Algorithm%20Development&amp;url=http://developers.algorithmia.com/algorithm-development/client-guides/rust&amp;via=algorithmia" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Share on Twitter</a>
+	<a class="btn-social facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://developers.algorithmia.com/algorithm-development/client-guides/rust" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> Share on Facebook</a>
+	<a class="btn-social google-plus"  href="https://plus.google.com/share?url=http://developers.algorithmia.com/algorithm-development/client-guides/rust" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i> Share on Google+</a>
+</div><!-- /.share-this -->
+
+						<div class="page-meta">
+  <p>Updated
+
+    <time datetime="2016-05-17T09:50:46Z" itemprop="datePublished">May 17, 2016</time></p>
+  
+</div><!-- /.page-meta --><hr />
+						
+<!--<div class="author-image">
+	<img src="http://developers.algorithmia.com/images//authors/lizrush.jpeg" alt="Algorithmia Developers">
+</div> ./author-image -->
+
+<div class="author-content">
+  <h4 class="author-name" >Written by
+
+    <a href="http://developers.algorithmia.com/liz_rush" itemprop="author">Algorithmia Developers</a>
+
+  <p class="author-bio"></p>
+
+  <a href="http://twitter.com/algorithmia" class="btn-social twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="mailto:developers@algorithmia.com" class="btn-social youtube"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+</div><!-- ./author-content -->
+					</footer><!-- /.footer -->
+
+					<aside>
+						
+					</aside>
+
+				</div><!-- /.content -->
+			</div><!-- /.inner-wrap -->
+			<div class="sidebar"><h3>Related Posts:</h3>
+
+    <!-- Pulls from data/tags.yml to allow for data defined name attr -->
+  
+  <h4></h4>
+  <ul>
+  
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/scala">Scala Algorithm Development</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/ruby">Ruby Algorithm Development</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/r">R Algorithm Development</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/python">Python Algorithm Development</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/javascript">JavaScript Algorithm Development</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/java">Java Algorithm Development</a></h5>
+</li>
+    
+  </ul>
+
+</div>
+		</article><!-- ./wrap -->
+	</div><!-- /#main -->
+
+</div>
+      
+    </div> <!-- end wrapper -->
+
+    <footer role="contentinfo" id="site-footer">
+ <p class="copyright">
+    <img src="http://developers.algorithmia.com/images/favicon-white.png" alt="Algorithmia Developer Center" itemprop="image" width="16" height="16">
+    &#169; 2017 Algorithmia
+  </p>
+
+  <nav role="navigation" class="bottom-menu">
+    <ul class="menu-item">
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/about" target="_blank">About</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/terms" target="_blank">Terms</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/pricing" target="_blank">Pricing</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/privacy" target="_blank">Privacy</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/partners" target="_blank">Partners</a></li>
+    
+      
+        
+        
+      <li><a href="http://blog.algorithmia.com" target="_blank">Blog</a></li>
+    
+      
+        
+        
+      <li><a href="https://angel.co/algorithmia/jobs/" target="_blank">Jobs</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/contact" target="_blank">Contact</a></li>
+    
+    </ul>
+  </nav><!-- /.bottom-menu -->
+</footer>
+
+
+    <script src="http://developers.algorithmia.com/js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="http://developers.algorithmia.com/js/main.js"></script>
+    <script src="/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

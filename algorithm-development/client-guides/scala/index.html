@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Scala Algorithm Development • Algorithmia Developer Center</title>
+    <meta name="description" content="Build your algorithm in Scala">
+    <meta name="keywords" content="algo-guide-lang">
+    
+      
+    <!-- Twitter Cards -->
+<meta name="twitter:title" content="Scala Algorithm Development">
+<meta name="twitter:description" content="Build your algorithm in Scala">
+<meta name="twitter:site" content="@algorithmia">
+<meta name="twitter:creator" content="@algorithmia">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo120x120.png">
+
+
+<!-- Open Graph -->
+
+<meta property="og:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo.png">
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scala Algorithm Development">
+<meta property="og:description" content="Build your algorithm in Scala">
+<meta property="og:url" content="http://developers.algorithmia.com/algorithm-development/client-guides/scala">
+<meta property="og:site_name" content="Algorithmia Developer Center">
+
+    <link rel="canonical" href="http://developers.algorithmia.com/algorithm-development/client-guides/scala">
+
+    <link href="http://developers.algorithmia.com/atom.xml" type="application/atom+xml" rel="alternate" title="Algorithmia Developer Center Atom Feed">
+    <link href="http://developers.algorithmia.com/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="stylesheet" href="http://developers.algorithmia.com/css/main.css">
+    <!-- HTML5 Shiv and Media Query Support for IE -->
+    <!--[if lt IE 9]>
+      <script src="http://developers.algorithmia.com/js/vendor/html5shiv.min.js"></script>
+      <script src="http://developers.algorithmia.com/js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-38617973-1', 'auto');
+     ga('send', 'pageview');
+
+    </script>
+  </head>
+
+  <body id="js-body">
+    <div id="wrapper">
+      <!--[if lt IE 9]><div class="upgrade notice-warning"><strong>Your browser is quite old!</strong> Why not <a href="http://whatbrowser.org/">upgrade to a newer one</a> to better enjoy this site?</div><![endif]-->
+
+      <header id="masthead">
+  <div class="inner-wrap">
+    <a href="http://developers.algorithmia.com/" class="site-title">
+      <img src="http://developers.algorithmia.com/images/logos/algorithmia-white-logo.png" class="nav-image" alt="Algorithmia Developer Center" itemprop="image">
+    </a>
+
+    <nav role="navigation" class="menu top-menu">
+      <ul class="menu-item">
+  
+    
+      
+      
+
+    
+      <li><a href="http://docs.algorithmia.com" target="_blank">
+        API Docs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/algorithm-development" >
+        Algorithm Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/application-development" >
+        Application Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/faqs/" >
+        FAQs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/search/">
+        <i class="fa fa-search"></i> 
+      </a></li>
+    
+  
+</ul>
+    </nav>
+  </div><!-- /.inner-wrap -->
+</header><!-- /.masthead -->
+      <nav role="navigation" id="js-menu" class="sliding-menu-content">
+  <h5>Algorithmia Developer Center</h5>
+  <ul class="menu-item">
+    <li>
+      
+        
+      
+
+      <a href="http://docs.algorithmia.com">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_API Docs.png" alt="teaser" class="teaser">
+        <div class="title">API Docs</div>
+        <p class="excerpt">Read up on the ins and outs of using the Algorithmia API.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/algorithm-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Sample_Apps.png" alt="teaser" class="teaser">
+        <div class="title">Algorithm Development</div>
+        <p class="excerpt">Find out how to host your models and build an algorithm on Algorithmia.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/application-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Clients.png" alt="teaser" class="teaser">
+        <div class="title">Application Development</div>
+        <p class="excerpt">Discover how to use algorithms in your application.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/faqs/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_FAQs.png" alt="teaser" class="teaser">
+        <div class="title">FAQs</div>
+        <p class="excerpt">Find quick answers to common questions.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/search/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Search.png" alt="teaser" class="teaser">
+        <div class="title">Search</div>
+        <p class="excerpt">Search the Developer Center for the information you need to get started</p>
+      </a>
+    </li>
+  </ul>
+</nav>
+<button type="button" id="js-menu-trigger" class="sliding-menu-button lines-button x2" role="button" aria-label="Toggle Navigation">
+  <span class="nav-lines"></span>
+</button>
+
+<div id="js-menu-screen" class="menu-screen"></div>
+
+      
+      <div id="page-wrapper">
+
+	<div id="main" role="main">
+		<article class="wrap" itemscope itemtype="http://schema.org/Article">
+
+			<div class="page-title">
+				<h1>Scala Algorithm Development</h1>
+				
+			</div>
+
+			<div class="inner-wrap">
+				<div id="content" class="page-content" itemprop="articleBody">
+					<p>Algorithmia supports algorithm development in Scala.</p>
+
+<h4 id="available-apis">Available APIs</h4>
+
+<p>Algorithmia makes a number of libraries available to make algorithm development easier.
+The full <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/language/index.html">Java 8 language and standard library</a>
+is available for you to use in your algorithms. Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
+via the <a href="http://developers.algorithmia.com/application-development/client-guides/scala/">Algorithmia &amp; Scala</a>.</p>
+
+<h4 id="managing-dependencies">Managing Dependencies</h4>
+
+<p>Algorithmia supports adding 3rd party dependencies via Maven packages. Specifically, any packages from <a href="http://search.maven.org/">Maven Central</a> can be added to algorithms.
+On the algorithm editor page, click Options and select Manage Dependencies.</p>
+
+<p>Add dependencies by adding lines of the following form:</p>
+
+<p><code>libraryDependencies += GroupID % ArtifactID % Version</code></p>
+
+<p>For example, to add Apache Commons Math version 3.4.1:</p>
+
+<p><code>libraryDependencies += "org.apache.commons" % "commons-math3" % "3.4.1"</code></p>
+
+<h4 id="automatic-json-parsing">Automatic JSON parsing</h4>
+
+<div class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">package</span> <span class="nn">algorithmia.Example</span>
+
+<span class="k">import</span> <span class="nn">com.algorithmia._</span>
+<span class="k">import</span> <span class="nn">com.algorithmia.algo._</span>
+<span class="k">import</span> <span class="nn">com.algorithmia.data._</span>
+
+<span class="k">class</span> <span class="nc">Example</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">dict</span><span class="k">:</span> <span class="kt">Map</span><span class="o">[</span><span class="kt">String</span>,<span class="kt">String</span><span class="o">],</span> <span class="n">key</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="n">dict</span><span class="o">(</span><span class="n">key</span><span class="o">)</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></div>
+
+<p>By default, Algorithmia uses Google’s <a href="https://code.google.com/p/google-gson/">GSON</a> library for converting JSON to and from native Java objects. You can specify the input and output types of your algorithm simply by setting the parameters and return type of your <code>apply()</code> method.</p>
+
+<p class="notice-info">GSON is a pure java library and does not support many scala native types. For example, List[Int] does not automatically parse, but Array[Int] will. This is because Array in scala is actually a Java array. Similarly, java.util.Map will parse correctly, but scala.collection.Map will not.</p>
+
+<p>This example shows a function that takes two parameters, a Map from Strings to Strings (dict) and another String (key), and returns another String.</p>
+
+<p>Algorithmia can automatically parse many types of native Java objects to and from JSON: Integers, Lists, Arrays, Maps, and many others. In many cases it can also parse arbitrary user-defined Java Classes to and from JSON. See the <a href="https://sites.google.com/site/gson/gson-user-guide">Gson User Guide</a> for reference.</p>
+
+<aside class="notice">
+  Note: Binary data is passed using <code>byte[]</code>
+</aside>
+
+<h4 id="custom-json-parsing">Custom JSON parsing</h4>
+<p>If you want more control over parsing, then use a single apply method accepting a <code>String</code> and give it the <code>@AcceptsJson</code> annotation (from the <code>com.algorithmia.algo</code> package).</p>
+
+<div class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">package</span> <span class="nn">algorithmia.Example</span>
+
+<span class="k">import</span> <span class="nn">com.algorithmia._</span>
+<span class="k">import</span> <span class="nn">com.algorithmia.algo._</span>
+<span class="k">import</span> <span class="nn">com.algorithmia.data._</span>
+
+<span class="k">class</span> <span class="nc">Example</span> <span class="o">{</span>
+  <span class="nd">@AcceptsJson</span>
+  <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">jsonString</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="c1">// Do JSON parsing here</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></div>
+
+<aside class="class">
+If you have more than 1 apply method, or your apply method does not take a <code>String</code> as an argument then you will receive an error message at runtime.  Also note that passing in a String <code>"foo"</code> becomes serialized to JSON like <code>"\"foo\""</code>.
+</aside>
+
+<p>On the other hand, if GSON doesn’t serialize your output response to JSON correctly (or you want to do some custom serialization) you can add an <code>@ReturnsJson</code> to your apply method and return a serialized JSON String.</p>
+
+<div class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">package</span> <span class="nn">algorithmia.Example</span>
+
+<span class="k">import</span> <span class="nn">com.algorithmia._</span>
+<span class="k">import</span> <span class="nn">com.algorithmia.algo._</span>
+<span class="k">import</span> <span class="nn">com.algorithmia.data._</span>
+
+<span class="k">class</span> <span class="nc">Example</span> <span class="o">{</span>
+  <span class="nd">@ReturnsJson</span>
+  <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">foo</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">bar</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="c1">// Do some work</span>
+    <span class="c1">// Return a JSON string</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></div>
+
+<aside class="notice">
+If you use <code>@ReturnsJson</code> but don't return a valid JSON string, your algorithm will return a JSON parsing error.
+</aside>
+
+<h4 id="error-handling">Error Handling</h4>
+
+<div class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">throw</span> <span class="k">new</span> <span class="nc">AlgorithmException</span><span class="o">(</span><span class="s">&quot;Invalid graph structure&quot;</span><span class="o">)</span></code></pre></div>
+
+<p>Algorithms can throw any exception, and they will be returned as an error via the Algorithmia API. If you want to throw a generic exception message, use an <code>AlgorithmException</code>.</p>
+
+<h4 id="calling-other-algorithms-and-managing-data">Calling Other Algorithms and Managing Data</h4>
+
+<p>To call other algorithms or manage data from your algorithm, use the <a href="http://developers.algorithmia.com/application-development/client-guides/scala/">Algorithmia &amp; Scala</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the <a href="http://docs.algorithmia.com/">Data API docs</a> and learn about Algorithmia’s <a href="http://developers.algorithmia.com/algorithm-development/data-sources/hosted-data-guide/">Hosted Data Source</a>.</p>
+
+<p>When designing your algorithm, don’t forget that there are special data directories, <code>.session</code> and <code>.algo</code>, that are available only to algorithms to help you manage data over the course of the algorithm execution.</p>
+
+<aside class="warning">
+Some older algorithms use our deprecated Java client. If it has an import from the <code>algorithmia</code> package instead of the <code>com.algorithmia</code> package, that means it is using the deprecated client.
+</aside>
+
+<h4 id="additional-resources">Additional Resources</h4>
+
+<ul>
+  <li><a href="http://developers.algorithmia.com/clients/java/">Algorithmia Client Java Docs <i class="fa fa-external-link"></i></a></li>
+  <li><a href="http://docs.oracle.com/javase/8/docs/api/">Java 8 JDK API</a></li>
+</ul>
+
+					<hr />
+
+					<footer class="page-footer">
+						<div class="inline-btn">
+	<a class="btn-social twitter" href="https://twitter.com/intent/tweet?text=Scala%20Algorithm%20Development&amp;url=http://developers.algorithmia.com/algorithm-development/client-guides/scala&amp;via=algorithmia" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Share on Twitter</a>
+	<a class="btn-social facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://developers.algorithmia.com/algorithm-development/client-guides/scala" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> Share on Facebook</a>
+	<a class="btn-social google-plus"  href="https://plus.google.com/share?url=http://developers.algorithmia.com/algorithm-development/client-guides/scala" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i> Share on Google+</a>
+</div><!-- /.share-this -->
+
+						<div class="page-meta">
+  <p>Updated
+
+    <time datetime="2016-05-17T09:50:46Z" itemprop="datePublished">May 17, 2016</time></p>
+  
+</div><!-- /.page-meta --><hr />
+						
+<!--<div class="author-image">
+	<img src="http://developers.algorithmia.com/images//authors/lizrush.jpeg" alt="Algorithmia Developers">
+</div> ./author-image -->
+
+<div class="author-content">
+  <h4 class="author-name" >Written by
+
+    <a href="http://developers.algorithmia.com/liz_rush" itemprop="author">Algorithmia Developers</a>
+
+  <p class="author-bio"></p>
+
+  <a href="http://twitter.com/algorithmia" class="btn-social twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="mailto:developers@algorithmia.com" class="btn-social youtube"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+</div><!-- ./author-content -->
+					</footer><!-- /.footer -->
+
+					<aside>
+						
+					</aside>
+
+				</div><!-- /.content -->
+			</div><!-- /.inner-wrap -->
+			<div class="sidebar"><h3>Related Posts:</h3>
+
+    <!-- Pulls from data/tags.yml to allow for data defined name attr -->
+  
+  <h4></h4>
+  <ul>
+  
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/rust">Rust Algorithm Development</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/ruby">Ruby Algorithm Development</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/r">R Algorithm Development</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/python">Python Algorithm Development</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/javascript">JavaScript Algorithm Development</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/java">Java Algorithm Development</a></h5>
+</li>
+    
+  </ul>
+
+</div>
+		</article><!-- ./wrap -->
+	</div><!-- /#main -->
+
+</div>
+      
+    </div> <!-- end wrapper -->
+
+    <footer role="contentinfo" id="site-footer">
+ <p class="copyright">
+    <img src="http://developers.algorithmia.com/images/favicon-white.png" alt="Algorithmia Developer Center" itemprop="image" width="16" height="16">
+    &#169; 2017 Algorithmia
+  </p>
+
+  <nav role="navigation" class="bottom-menu">
+    <ul class="menu-item">
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/about" target="_blank">About</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/terms" target="_blank">Terms</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/pricing" target="_blank">Pricing</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/privacy" target="_blank">Privacy</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/partners" target="_blank">Partners</a></li>
+    
+      
+        
+        
+      <li><a href="http://blog.algorithmia.com" target="_blank">Blog</a></li>
+    
+      
+        
+        
+      <li><a href="https://angel.co/algorithmia/jobs/" target="_blank">Jobs</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/contact" target="_blank">Contact</a></li>
+    
+    </ul>
+  </nav><!-- /.bottom-menu -->
+</footer>
+
+
+    <script src="http://developers.algorithmia.com/js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="http://developers.algorithmia.com/js/main.js"></script>
+    <script src="/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

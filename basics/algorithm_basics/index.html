@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Algorithm Basics • Algorithmia Developer Center</title>
+    <meta name="description" content="All about pricing, permissions, and versioning on the platform.">
+    <meta name="keywords" content="alg-dev-getting-started, app-dev-getting-started">
+    
+      
+    <!-- Twitter Cards -->
+<meta name="twitter:title" content="Algorithm Basics">
+<meta name="twitter:description" content="All about pricing, permissions, and versioning on the platform.">
+<meta name="twitter:site" content="@algorithmia">
+<meta name="twitter:creator" content="@algorithmia">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo120x120.png">
+
+
+<!-- Open Graph -->
+
+<meta property="og:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo.png">
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Algorithm Basics">
+<meta property="og:description" content="All about pricing, permissions, and versioning on the platform.">
+<meta property="og:url" content="http://developers.algorithmia.com/basics/algorithm_basics/">
+<meta property="og:site_name" content="Algorithmia Developer Center">
+
+    <link rel="canonical" href="http://developers.algorithmia.com/basics/algorithm_basics/">
+
+    <link href="http://developers.algorithmia.com/atom.xml" type="application/atom+xml" rel="alternate" title="Algorithmia Developer Center Atom Feed">
+    <link href="http://developers.algorithmia.com/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="stylesheet" href="http://developers.algorithmia.com/css/main.css">
+    <!-- HTML5 Shiv and Media Query Support for IE -->
+    <!--[if lt IE 9]>
+      <script src="http://developers.algorithmia.com/js/vendor/html5shiv.min.js"></script>
+      <script src="http://developers.algorithmia.com/js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-38617973-1', 'auto');
+     ga('send', 'pageview');
+
+    </script>
+  </head>
+
+  <body id="js-body">
+    <div id="wrapper">
+      <!--[if lt IE 9]><div class="upgrade notice-warning"><strong>Your browser is quite old!</strong> Why not <a href="http://whatbrowser.org/">upgrade to a newer one</a> to better enjoy this site?</div><![endif]-->
+
+      <header id="masthead">
+  <div class="inner-wrap">
+    <a href="http://developers.algorithmia.com/" class="site-title">
+      <img src="http://developers.algorithmia.com/images/logos/algorithmia-white-logo.png" class="nav-image" alt="Algorithmia Developer Center" itemprop="image">
+    </a>
+
+    <nav role="navigation" class="menu top-menu">
+      <ul class="menu-item">
+  
+    
+      
+      
+
+    
+      <li><a href="http://docs.algorithmia.com" target="_blank">
+        API Docs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/algorithm-development" >
+        Algorithm Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/application-development" >
+        Application Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/faqs/" >
+        FAQs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/search/">
+        <i class="fa fa-search"></i> 
+      </a></li>
+    
+  
+</ul>
+    </nav>
+  </div><!-- /.inner-wrap -->
+</header><!-- /.masthead -->
+      <nav role="navigation" id="js-menu" class="sliding-menu-content">
+  <h5>Algorithmia Developer Center</h5>
+  <ul class="menu-item">
+    <li>
+      
+        
+      
+
+      <a href="http://docs.algorithmia.com">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_API Docs.png" alt="teaser" class="teaser">
+        <div class="title">API Docs</div>
+        <p class="excerpt">Read up on the ins and outs of using the Algorithmia API.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/algorithm-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Sample_Apps.png" alt="teaser" class="teaser">
+        <div class="title">Algorithm Development</div>
+        <p class="excerpt">Find out how to host your models and build an algorithm on Algorithmia.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/application-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Clients.png" alt="teaser" class="teaser">
+        <div class="title">Application Development</div>
+        <p class="excerpt">Discover how to use algorithms in your application.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/faqs/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_FAQs.png" alt="teaser" class="teaser">
+        <div class="title">FAQs</div>
+        <p class="excerpt">Find quick answers to common questions.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/search/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Search.png" alt="teaser" class="teaser">
+        <div class="title">Search</div>
+        <p class="excerpt">Search the Developer Center for the information you need to get started</p>
+      </a>
+    </li>
+  </ul>
+</nav>
+<button type="button" id="js-menu-trigger" class="sliding-menu-button lines-button x2" role="button" aria-label="Toggle Navigation">
+  <span class="nav-lines"></span>
+</button>
+
+<div id="js-menu-screen" class="menu-screen"></div>
+
+      
+      <div id="page-wrapper">
+
+	<div id="main" role="main">
+		<article class="wrap" itemscope itemtype="http://schema.org/Article">
+
+  <nav class="breadcrumbs">
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="http://developers.algorithmia.com" itemprop="url">
+        <span itemprop="title">Home</span>
+      </a> › 
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="http://developers.algorithmia.com/basics/" itemprop="url">
+        <span itemprop="title">Basics</span>
+      </a>
+    </span>
+  </nav><!-- /.breadcrumbs -->
+
+			<div class="page-title">
+				<h1>Algorithm Basics</h1>
+				
+			</div>
+
+			<div class="inner-wrap">
+				<div id="content" class="page-content" itemprop="articleBody">
+					<h2 id="pricing">Pricing</h2>
+<p>For an overview of algorithm pricing, see the <a href="https://algorithmia.com/pricing">pricing page</a>.</p>
+
+<p>Algorithm usage is calculated in Algorithmia Credits. The current exchange rate for purchasing new credits is 10,000 credits to $1 USD. This was chosen to translate into 1 credit = 1 second of compute time.</p>
+
+<h4 id="cost-of-running-an-algorithm">Cost of running an algorithm</h4>
+
+<p>All algorithms in the marketplace are charged a fee of 1 credit per second (1cr/sec) of execution time on a single dedicated node. The execution time is calculated from the start of the algorithm execution until the algorithm returns.</p>
+
+<p>In addition to the execution charge, algorithm developers may charge a royalty on each algorithm call. This cost-per-call royalty is associated with a specific version of the algorithm and will remain fixed indefinitely. This ability to apply royalties to an algorithm is to reflect the fact that the value of an algorithm is more than just the seconds of computation is uses and is up to each algorithm developer to set.</p>
+
+<p class="notice-info">When an algorithm developer releases a new minor or major version of the algorithm, they have the option to include a pricing change. Make sure to include the version in your algorithm call to ensure a consistent experience.</p>
+
+<h4 id="algorithms-that-call-other-algorithms">Algorithms that call other algorithms</h4>
+
+<p>Some algorithms build upon other algorithms to create a new service or tool. While this is a powerful way of leveraging the value of multiple algorithms and parallelizing work across the Algorithmia Cluster, such algorithms may incur additional usage costs.</p>
+
+<p>When calling into an algorithm that uses another algorithm internally, you may encounter an additional usage cost at the same 1cr/sec of execution time per core. Additionally, you may incur additional royalty costs if the associated algorithm also charges a royalty. If you are unsure, you can check if the algorithm you are using has the permission set to call into other algorithms as well as the usage history in your account profile. There you will be able to see all charges from algorithm calls.</p>
+
+<p class="notice-info">You can view your last 30-days of account usage on your account page.</p>
+
+<h2 id="permissions">Permissions</h2>
+
+<p>Permissions can be found on the algorithm description page. The algorithm’s author can indicate if the algorithm will require Internet access, call other algorithms, or if the users can view the source code. Some of these permissions will affect the amount of credits needed to run the algorithm. Be sure to check out the algorithm’s permissions section on the description page for more information.</p>
+
+<h4 id="internet-access">Internet Access</h4>
+
+<p>Many of the algorithms in the marketplace can be run without accessing the Internet. Some algorithms require retrieving or sending data outside of the Algorithmia platform during execution. If an algorithm’s permissions indicate that it requires Internet access, please be aware that there is the potential for your data to leave the Algorithmia platform.</p>
+
+<h4 id="calls-other-algorithms">Calls Other Algorithms</h4>
+
+<p>Some algorithms call other algorithms in order to combine algorithms and parallelize workloads. This permission is listed on the description page so that you can determine if the algorithm will incur additional usage and royalty costs.</p>
+
+<h4 id="gpu-execution-environment">GPU Execution Environment</h4>
+
+<p>Many algorithms can benefit from using a Graphics Processing Unit (GPU) to accelerate certain kinds of computation, such as image processing and deep learning. Algorithms can be marked as requiring “Advanced GPU” execution environment. When this flag is set, the algorithm will run on servers with GPU hardware. For algorithms with this flag set, we also install several existing drivers and frameworks to help algorithm developers take advantage of GPU computing. This includes nvidia drivers, CUDA support, and several of the most popular deep learning frameworks, including TensorFlow, Caffe, Theano, and Torch.</p>
+
+<h4 id="source-code-visibility">Source Code Visibility</h4>
+
+<p>Algorithm authors have the option of choosing to open source their algorithm. Open source algorithms have a button on the description to “View Source” and anyone can see the internal code of the algorithm. If an algorithm is closed source, this means that only the author has the ability to view the code. Note that open source algorithms still accrue fees for usage and may have a royalty fee.</p>
+
+<h2 id="versioning">Versioning</h2>
+
+<p>Each algorithm follows the same versioning scheme composed of a revision number, minor version number, and major version number. This allows algorithm developers the ability to update and improve their algorithms while maintaining a dependable version for consumers to call.</p>
+
+<h4 id="revisions---z">Revisions (-.-.z)</h4>
+
+<p>Revisions are for publishing backward-compatible bug fixes.</p>
+
+<p>Revisions carry the same price and visibility to ensure that existing consumers of an algorithm continue to have access to an algorithm and its bug fixes at a predictable price.</p>
+
+<h4 id="minor-versions--y-">Minor Versions (-.y.-)</h4>
+
+<p>Minor versions are for publishing new functionality in a backwards-compatible manner.</p>
+
+<p>Algorithm developers may elect to change the royalty cost for a new minor version of an algorithm.</p>
+
+<h4 id="major-versions-x--">Major Versions (x.-.-)</h4>
+
+<p>Major version changes is an upcoming feature which will provide a mechanism for publishing breaking changes to an algorithm. Currently, algorithm authors are unable to make a major version change.</p>
+
+<p class="notice-warning">When an algorithm has a minor or major version change, the author has the opportunity to update the cost and permissions. Remember to version your API calls to avoid unexpected changes.</p>
+
+					<hr />
+
+					<footer class="page-footer">
+						<div class="inline-btn">
+	<a class="btn-social twitter" href="https://twitter.com/intent/tweet?text=Algorithm%20Basics&amp;url=http://developers.algorithmia.com/basics/algorithm_basics/&amp;via=algorithmia" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Share on Twitter</a>
+	<a class="btn-social facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://developers.algorithmia.com/basics/algorithm_basics/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> Share on Facebook</a>
+	<a class="btn-social google-plus"  href="https://plus.google.com/share?url=http://developers.algorithmia.com/basics/algorithm_basics/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i> Share on Google+</a>
+</div><!-- /.share-this -->
+
+						<div class="page-meta">
+  <p>Updated
+
+    <time datetime="2016-01-25T01:19:38Z" itemprop="datePublished">January 25, 2016</time></p>
+  
+</div><!-- /.page-meta --><hr />
+						
+<!--<div class="author-image">
+	<img src="http://developers.algorithmia.com/images//authors/lizrush.jpeg" alt="Algorithmia Developers">
+</div> ./author-image -->
+
+<div class="author-content">
+  <h4 class="author-name" >Written by
+
+    <a href="http://developers.algorithmia.com/liz_rush" itemprop="author">Algorithmia Developers</a>
+
+  <p class="author-bio"></p>
+
+  <a href="http://twitter.com/algorithmia" class="btn-social twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="mailto:developers@algorithmia.com" class="btn-social youtube"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+</div><!-- ./author-content -->
+					</footer><!-- /.footer -->
+
+					<aside>
+						
+					</aside>
+
+				</div><!-- /.content -->
+			</div><!-- /.inner-wrap -->
+			<div class="sidebar"><h3>Related Posts:</h3>
+
+    <!-- Pulls from data/tags.yml to allow for data defined name attr -->
+  
+  <h4>Getting Started</h4>
+  <ul>
+  
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/basics/organization_profiles/">Teams and Organizations</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/basics/customizing-api-keys/">Customizing API Keys & Access</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/basics/your-profile/">Your Profile</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/basics/algorithm_profiles/">Understanding the Algorithm Profile</a></h5>
+</li>
+    
+  </ul>
+
+    <!-- Pulls from data/tags.yml to allow for data defined name attr -->
+  
+  <h4>Getting Started</h4>
+  <ul>
+  
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/basics/organization_profiles/">Teams and Organizations</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/basics/customizing-api-keys/">Customizing API Keys & Access</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/basics/your-profile/">Your Profile</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/basics/algorithm_profiles/">Understanding the Algorithm Profile</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/basics/getting-started/">Getting Started with Algorithmia</a></h5>
+</li>
+    
+  </ul>
+
+</div>
+		</article><!-- ./wrap -->
+	</div><!-- /#main -->
+
+</div>
+      
+    </div> <!-- end wrapper -->
+
+    <footer role="contentinfo" id="site-footer">
+ <p class="copyright">
+    <img src="http://developers.algorithmia.com/images/favicon-white.png" alt="Algorithmia Developer Center" itemprop="image" width="16" height="16">
+    &#169; 2017 Algorithmia
+  </p>
+
+  <nav role="navigation" class="bottom-menu">
+    <ul class="menu-item">
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/about" target="_blank">About</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/terms" target="_blank">Terms</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/pricing" target="_blank">Pricing</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/privacy" target="_blank">Privacy</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/partners" target="_blank">Partners</a></li>
+    
+      
+        
+        
+      <li><a href="http://blog.algorithmia.com" target="_blank">Blog</a></li>
+    
+      
+        
+        
+      <li><a href="https://angel.co/algorithmia/jobs/" target="_blank">Jobs</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/contact" target="_blank">Contact</a></li>
+    
+    </ul>
+  </nav><!-- /.bottom-menu -->
+</footer>
+
+
+    <script src="http://developers.algorithmia.com/js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="http://developers.algorithmia.com/js/main.js"></script>
+    <script src="/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

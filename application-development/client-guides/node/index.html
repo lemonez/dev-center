@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Node Client • Algorithmia Developer Center</title>
+    <meta name="description" content="Like building Node apps? Here's a Node Client that makes it easy.">
+    <meta name="keywords" content="clients">
+    
+    
+    <!-- Twitter Cards -->
+<meta name="twitter:title" content="The Node Client">
+<meta name="twitter:description" content="Like building Node apps? Here's a Node Client that makes it easy.">
+<meta name="twitter:site" content="@algorithmia">
+<meta name="twitter:creator" content="@algorithmia">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo120x120.png">
+
+
+<!-- Open Graph -->
+
+<meta property="og:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo.png">
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Node Client">
+<meta property="og:description" content="Like building Node apps? Here's a Node Client that makes it easy.">
+<meta property="og:url" content="http://developers.algorithmia.com/application-development/client-guides/node">
+<meta property="og:site_name" content="Algorithmia Developer Center">
+
+    <link rel="canonical" href="http://developers.algorithmia.com/application-development/client-guides/node">
+
+    <link href="http://developers.algorithmia.com/atom.xml" type="application/atom+xml" rel="alternate" title="Algorithmia Developer Center Atom Feed">
+    <link href="http://developers.algorithmia.com/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="stylesheet" href="http://developers.algorithmia.com/css/main.css">
+    <!-- HTML5 Shiv and Media Query Support for IE -->
+    <!--[if lt IE 9]>
+      <script src="http://developers.algorithmia.com/js/vendor/html5shiv.min.js"></script>
+      <script src="http://developers.algorithmia.com/js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-38617973-1', 'auto');
+     ga('send', 'pageview');
+
+    </script>
+  </head>
+
+  <body id="js-body">
+    <div id="wrapper">
+      <!--[if lt IE 9]><div class="upgrade notice-warning"><strong>Your browser is quite old!</strong> Why not <a href="http://whatbrowser.org/">upgrade to a newer one</a> to better enjoy this site?</div><![endif]-->
+
+      <header id="masthead">
+  <div class="inner-wrap">
+    <a href="http://developers.algorithmia.com/" class="site-title">
+      <img src="http://developers.algorithmia.com/images/logos/algorithmia-white-logo.png" class="nav-image" alt="Algorithmia Developer Center" itemprop="image">
+    </a>
+
+    <nav role="navigation" class="menu top-menu">
+      <ul class="menu-item">
+  
+    
+      
+      
+
+    
+      <li><a href="http://docs.algorithmia.com" target="_blank">
+        API Docs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/algorithm-development" >
+        Algorithm Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/application-development" >
+        Application Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/faqs/" >
+        FAQs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/search/">
+        <i class="fa fa-search"></i> 
+      </a></li>
+    
+  
+</ul>
+    </nav>
+  </div><!-- /.inner-wrap -->
+</header><!-- /.masthead -->
+      <nav role="navigation" id="js-menu" class="sliding-menu-content">
+  <h5>Algorithmia Developer Center</h5>
+  <ul class="menu-item">
+    <li>
+      
+        
+      
+
+      <a href="http://docs.algorithmia.com">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_API Docs.png" alt="teaser" class="teaser">
+        <div class="title">API Docs</div>
+        <p class="excerpt">Read up on the ins and outs of using the Algorithmia API.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/algorithm-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Sample_Apps.png" alt="teaser" class="teaser">
+        <div class="title">Algorithm Development</div>
+        <p class="excerpt">Find out how to host your models and build an algorithm on Algorithmia.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/application-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Clients.png" alt="teaser" class="teaser">
+        <div class="title">Application Development</div>
+        <p class="excerpt">Discover how to use algorithms in your application.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/faqs/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_FAQs.png" alt="teaser" class="teaser">
+        <div class="title">FAQs</div>
+        <p class="excerpt">Find quick answers to common questions.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/search/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Search.png" alt="teaser" class="teaser">
+        <div class="title">Search</div>
+        <p class="excerpt">Search the Developer Center for the information you need to get started</p>
+      </a>
+    </li>
+  </ul>
+</nav>
+<button type="button" id="js-menu-trigger" class="sliding-menu-button lines-button x2" role="button" aria-label="Toggle Navigation">
+  <span class="nav-lines"></span>
+</button>
+
+<div id="js-menu-screen" class="menu-screen"></div>
+
+      
+      <div id="page-wrapper">
+
+	<div id="main" role="main">
+		<article class="wrap" itemscope itemtype="http://schema.org/Article">
+
+  <nav class="breadcrumbs">
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="http://developers.algorithmia.com" itemprop="url">
+        <span itemprop="title">Home</span>
+      </a> › 
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="http://developers.algorithmia.com/clients/" itemprop="url">
+        <span itemprop="title">Clients</span>
+      </a>
+    </span>
+  </nav><!-- /.breadcrumbs -->
+
+			<div class="page-title">
+				<h1>The Node Client</h1>
+				
+				      <p class="github-note">
+						Available on <a href='https://github.com/algorithmiaio/algorithmia-nodejs.git']}' target='_blank' rel='nofollow'>GitHub</a>.
+					  </p>
+				
+			</div>
+
+			<div class="inner-wrap">
+				<div id="content" class="page-content" itemprop="articleBody">
+					<p>This guide provides a walk-through of how to use the official Algorithmia node.js client to call algorithms and manage your data
+through the Algorithmia platform.</p>
+
+<h2 id="getting-started">Getting started</h2>
+
+<p>The official Algorithmia nodejs client is available on NPM.
+Install it for your project by adding <code>algorithmia</code> to your package.json:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">npm install --save algorithmia</code></pre></div>
+
+<p>Then instantiate an Algorithmia client using your API key:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">algorithmia</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;algorithmia&quot;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">algorithmia</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">ALGORITHMIA_API_KEY</span><span class="p">);</span></code></pre></div>
+
+<p>Now you are ready to call algorithms.</p>
+
+<h2 id="calling-algorithms">Calling algorithms</h2>
+
+<p>The following examples of calling algorithms are organized by type of input/output which vary between algorithms.</p>
+
+<p>Note: a single algorithm may have different input and output types, or accept multiple types of input, so consult the algorithm’s description for usage examples specific to that algorithm.</p>
+
+<h3 id="text-inputoutput">Text input/output</h3>
+
+<p>Call an algorithm with text input by passing a string into the <code>pipe</code> method.
+The returned promise will be called with the response with the Algorithm completes (or when an error occurs).
+If the algorithm output is text, then the <code>get()</code> method on the response will return a string.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">client</span><span class="p">.</span><span class="nx">algo</span><span class="p">(</span><span class="s2">&quot;algo://demo/Hello/0.1.1&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="s2">&quot;HAL 9000&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">get</span><span class="p">());</span>
+      <span class="p">});</span>
+<span class="c1">// -&gt; Hello HAL 9000</span></code></pre></div>
+
+<h3 id="json-inputoutput">JSON input/output</h3>
+
+<p>Call an algorithm with JSON input by passing in a native JavaScript type;
+most of the time this will be an <code>Object</code> or an <code>Array</code> (though <code>Boolean</code>, <code>Number</code>, and <code>Null</code> are possible).
+Similarly, if the algorithm response is JSON, the <code>get()</code> method will return the appropriate native JavaScript type.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">client</span><span class="p">.</span><span class="nx">algo</span><span class="p">(</span><span class="s2">&quot;algo://WebPredict/ListAnagrams/0.1.0&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">([</span><span class="s2">&quot;transformer&quot;</span><span class="p">,</span> <span class="s2">&quot;terraforms&quot;</span><span class="p">,</span> <span class="s2">&quot;retransform&quot;</span><span class="p">])</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">get</span><span class="p">());</span>
+        <span class="c1">// -&gt; [&quot;transformer&quot;,&quot;retransform&quot;]</span>
+      <span class="p">});</span></code></pre></div>
+
+<p>Alternatively, if you already have serialized JSON, you can call <code>pipeJson</code> with the raw JSON string.
+The following example makes the same API call as the previous example:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">client</span><span class="p">.</span><span class="nx">algo</span><span class="p">(</span><span class="s2">&quot;algo://WebPredict/ListAnagrams/0.1.0&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">pipeJson</span><span class="p">(</span><span class="s1">&#39;[&quot;transformer&quot;, &quot;terraforms&quot;, &quot;retransform&quot;]&#39;</span><span class="p">)</span></code></pre></div>
+
+<h3 id="binary-inputoutput">Binary input/output</h3>
+
+<p>Call an algorithm with binary input by passing a <code>Buffer</code> into the pipe method.
+Similarly, if the algorithm response is binary data, then the <code>get</code> method on the response will be a byte array.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">buffer</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">&quot;/path/to/bender.jpg&quot;</span><span class="p">);</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">algo</span><span class="p">(</span><span class="s2">&quot;opencv/SmartThumbnail&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">buffer</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">buffer</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+        <span class="c1">// -&gt; Buffer(...)</span>
+    <span class="p">});</span></code></pre></div>
+
+<p>Note: while it is possible to use <code>response.result</code> for text or JSON responses, in the case of a binary resonse,
+the <code>result</code> field will be base64-encoded. The <code>get()</code> method is recommended
+because it will return the correct type in all cases.</p>
+
+<h3 id="error-handling">Error handling</h3>
+
+<p>If an error occurs when calling an algorithm, the response will contain an error field that you can check:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">client</span><span class="p">.</span><span class="nx">algo</span><span class="p">(</span><span class="s1">&#39;util/whoopsWrongAlgo&#39;</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span><span class="s1">&#39;Hello, world!&#39;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error: &quot;</span> <span class="o">+</span> <span class="nx">response</span><span class="p">.</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+          <span class="p">}</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">get</span><span class="p">());</span>
+          <span class="p">}</span>
+      <span class="p">});</span></code></pre></div>
+
+<h3 id="request-options">Request options</h3>
+
+<p>The Algorithmia API exposes parameters to configure algorithm requests including support
+for changing the timeout of indicating that the API should include stdout in the response.
+Currently, the node.js client exposes these as query paremeters to the algorithm URI:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">client</span><span class="p">.</span><span class="nx">algo</span><span class="p">(</span><span class="s2">&quot;algo://demo/Hello/0.1.1?timeout=10&amp;stdout=true&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="s2">&quot;HAL 9000&quot;</span><span class="p">)</span></code></pre></div>
+
+<p>Note: <code>stdout=true</code> is only supported if you have access to the algorithm source.</p>
+
+<h2 id="working-with-data">Working with data</h2>
+
+<p>The Algorithmia client also provides a way to manage both Algorithmia hosted data and data from Dropbox or S3 accounts that you’ve connected to you Algorithmia account.</p>
+
+<h3 id="create-directories">Create directories</h3>
+
+<p>Create directories by instantiating a <code>Dir</code> object and calling <code>create()</code>:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">robots</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="s2">&quot;data://.my/robots&quot;</span><span class="p">);</span>
+<span class="nx">robots</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Failed to create dir: &quot;</span> <span class="o">+</span> <span class="nx">response</span><span class="p">.</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Created directory: &quot;</span> <span class="o">+</span> <span class="nx">robots</span><span class="p">.</span><span class="nx">data_path</span><span class="p">);</span>
+<span class="p">});</span></code></pre></div>
+
+<h3 id="upload-files-to-a-directory">Upload files to a directory</h3>
+
+<p>Upload files by calling the <code>putFile</code> method a <code>Dir</code> object or <code>put</code> on a <code>File</code> object:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">robots</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="s2">&quot;data://.my/robots&quot;</span><span class="p">);</span>
+<span class="nx">robots</span><span class="p">.</span><span class="nx">putFile</span><span class="p">(</span><span class="s2">&quot;/path/to/Optimus_Prime.png&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Failed to upload file: &quot;</span> <span class="o">+</span> <span class="nx">response</span><span class="p">.</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;File uploaded.&quot;</span><span class="p">);</span>
+<span class="p">);</span></code></pre></div>
+
+<p>You can also write to a <code>File</code> using the <code>put</code> method with either a <code>string</code> or <code>Buffer</code> as input:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">prime</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">file</span><span class="p">(</span><span class="s2">&quot;data://.my/robots/Optimus_Prime.txt&quot;</span><span class="p">);</span>
+<span class="nx">prime</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="s2">&quot;Leader of the Autobots&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Failed to upload file: &quot;</span> <span class="o">+</span> <span class="nx">response</span><span class="p">.</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;File uploaded.&quot;</span><span class="p">);</span>
+<span class="p">);</span></code></pre></div>
+
+<h3 id="download-content-from-files">Download content from files</h3>
+
+<p>Download files by calling <code>get</code> on a <code>File</code> object:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">robots</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="s2">&quot;data://.my/robots&quot;</span><span class="p">);</span>
+
+<span class="c1">// Get a text file&#39;s contents as a string</span>
+<span class="nx">robots</span><span class="p">.</span><span class="nx">file</span><span class="p">(</span><span class="s2">&quot;T-800.txt&quot;</span><span class="p">).</span><span class="nx">get</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">/// Get a binary file&#39;s contents as a Buffer</span>
+<span class="nx">robots</span><span class="p">.</span><span class="nx">file</span><span class="p">(</span><span class="s2">&quot;T-800.jpg&quot;</span><span class="p">).</span><span class="nx">get</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Received &quot;</span> <span class="o">+</span> <span class="nx">data</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="s2">&quot; bytes.&quot;</span><span class="p">);</span>
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">writeFileSync</span><span class="p">(</span><span class="s2">&quot;/tmp/T-800.jpg&quot;</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span></code></pre></div>
+
+<h3 id="delete-files-and-directories">Delete files and directories</h3>
+
+<p>Delete files by calling <code>delete</code> on their respective <code>File</code> or <code>Dir</code> object.
+When deleting directories, you may optionally specify a <code>force</code> argument
+that indicates whether or not a directory should be deleted if it contains files or other directories (default = <code>false</code>).</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">c3po</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">file</span><span class="p">(</span><span class="s2">&quot;data://.my/robots/C-3PO.txt&quot;</span><span class="p">);</span>
+<span class="nx">c3po</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Failed to delete file: &quot;</span> <span class="o">+</span> <span class="nx">response</span><span class="p">.</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Deleted file: &quot;</span> <span class="o">+</span> <span class="nx">c3po</span><span class="p">.</span><span class="nx">data_path</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// Force delete a directory</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="s2">&quot;data://.my/robots&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+        <span class="cm">/* ommitting callback implementation */</span>
+    <span class="p">});</span></code></pre></div>
+
+<h3 id="list-directory-contents">List directory contents</h3>
+
+<p>Iterate over the contents of a directory using the iterated returned by calling <code>forEachDir</code> or <code>forEachFile</code> on a <code>Dir</code> object:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// List top level directories</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="s2">&quot;data://.my&quot;</span><span class="p">).</span><span class="nx">forEachDir</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">dir</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error: &quot;</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">err</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dir</span><span class="p">.</span><span class="nx">data_path</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Finished listing directory&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// List files in the Public folder of your connected Dropbox account</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="s2">&quot;dropbox://Public&quot;</span><span class="p">).</span><span class="nx">forEachFile</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">file</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error: &quot;</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">err</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">data_path</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Finished listing directory&quot;</span><span class="p">);</span>
+<span class="p">});</span></code></pre></div>
+
+					<hr />
+
+					<footer class="page-footer">
+						<div class="inline-btn">
+	<a class="btn-social twitter" href="https://twitter.com/intent/tweet?text=The%20Node%20Client&amp;url=http://developers.algorithmia.com/application-development/client-guides/node&amp;via=algorithmia" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Share on Twitter</a>
+	<a class="btn-social facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://developers.algorithmia.com/application-development/client-guides/node" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> Share on Facebook</a>
+	<a class="btn-social google-plus"  href="https://plus.google.com/share?url=http://developers.algorithmia.com/application-development/client-guides/node" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i> Share on Google+</a>
+</div><!-- /.share-this -->
+
+						<div class="page-meta">
+  <p>Updated
+
+    <time datetime="2016-07-19T00:00:00Z" itemprop="datePublished">July 19, 2016</time></p>
+  
+</div><!-- /.page-meta --><hr />
+						
+<!--<div class="author-image">
+	<img src="http://developers.algorithmia.com/images//authors/bio-photo.jpg" alt="Algorithmia">
+</div> ./author-image -->
+
+<div class="author-content">
+  <h4 class="author-name" >Written by
+
+    <a href="http://developers.algorithmia.com/" itemprop="author">Algorithmia</a>
+
+  <p class="author-bio"></p>
+
+  <a href="http://twitter.com/algorithmia" class="btn-social twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="mailto:mia@algorithmia.com" class="btn-social youtube"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+</div><!-- ./author-content -->
+					</footer><!-- /.footer -->
+
+					<aside>
+						
+					</aside>
+
+				</div><!-- /.content -->
+			</div><!-- /.inner-wrap -->
+			<div class="sidebar"><h3>Related Posts:</h3>
+
+    <!-- Pulls from data/tags.yml to allow for data defined name attr -->
+  
+  <h4>Clients</h4>
+  <ul>
+  
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/swift">The Swift Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/android">The Android Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/r">The R Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/rust">The Rust Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/go">The Go Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/curl">Working with cURL</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/aws-lambda">AWS Lambda</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/scala">Algorithmia & Scala</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/ruby">The Ruby Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/python">The Python Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/java">The Java Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/cli">The CLI Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/javascript">The Javascript Library</a></h5>
+</li>
+    
+  </ul>
+
+</div>
+		</article><!-- ./wrap -->
+	</div><!-- /#main -->
+
+</div>
+      
+    </div> <!-- end wrapper -->
+
+    <footer role="contentinfo" id="site-footer">
+ <p class="copyright">
+    <img src="http://developers.algorithmia.com/images/favicon-white.png" alt="Algorithmia Developer Center" itemprop="image" width="16" height="16">
+    &#169; 2017 Algorithmia
+  </p>
+
+  <nav role="navigation" class="bottom-menu">
+    <ul class="menu-item">
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/about" target="_blank">About</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/terms" target="_blank">Terms</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/pricing" target="_blank">Pricing</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/privacy" target="_blank">Privacy</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/partners" target="_blank">Partners</a></li>
+    
+      
+        
+        
+      <li><a href="http://blog.algorithmia.com" target="_blank">Blog</a></li>
+    
+      
+        
+        
+      <li><a href="https://angel.co/algorithmia/jobs/" target="_blank">Jobs</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/contact" target="_blank">Contact</a></li>
+    
+    </ul>
+  </nav><!-- /.bottom-menu -->
+</footer>
+
+
+    <script src="http://developers.algorithmia.com/js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="http://developers.algorithmia.com/js/main.js"></script>
+    <script src="/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

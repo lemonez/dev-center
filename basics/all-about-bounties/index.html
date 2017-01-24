@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>All About Bounties • Algorithmia Developer Center</title>
+    <meta name="description" content="An introduction to the bounty system.">
+    <meta name="keywords" content="bounties">
+    
+      
+    <!-- Twitter Cards -->
+<meta name="twitter:title" content="All About Bounties">
+<meta name="twitter:description" content="An introduction to the bounty system.">
+<meta name="twitter:site" content="@algorithmia">
+<meta name="twitter:creator" content="@algorithmia">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo120x120.png">
+
+
+<!-- Open Graph -->
+
+<meta property="og:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo.png">
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="All About Bounties">
+<meta property="og:description" content="An introduction to the bounty system.">
+<meta property="og:url" content="http://developers.algorithmia.com/basics/all-about-bounties/">
+<meta property="og:site_name" content="Algorithmia Developer Center">
+
+    <link rel="canonical" href="http://developers.algorithmia.com/basics/all-about-bounties/">
+
+    <link href="http://developers.algorithmia.com/atom.xml" type="application/atom+xml" rel="alternate" title="Algorithmia Developer Center Atom Feed">
+    <link href="http://developers.algorithmia.com/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="stylesheet" href="http://developers.algorithmia.com/css/main.css">
+    <!-- HTML5 Shiv and Media Query Support for IE -->
+    <!--[if lt IE 9]>
+      <script src="http://developers.algorithmia.com/js/vendor/html5shiv.min.js"></script>
+      <script src="http://developers.algorithmia.com/js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-38617973-1', 'auto');
+     ga('send', 'pageview');
+
+    </script>
+  </head>
+
+  <body id="js-body">
+    <div id="wrapper">
+      <!--[if lt IE 9]><div class="upgrade notice-warning"><strong>Your browser is quite old!</strong> Why not <a href="http://whatbrowser.org/">upgrade to a newer one</a> to better enjoy this site?</div><![endif]-->
+
+      <header id="masthead">
+  <div class="inner-wrap">
+    <a href="http://developers.algorithmia.com/" class="site-title">
+      <img src="http://developers.algorithmia.com/images/logos/algorithmia-white-logo.png" class="nav-image" alt="Algorithmia Developer Center" itemprop="image">
+    </a>
+
+    <nav role="navigation" class="menu top-menu">
+      <ul class="menu-item">
+  
+    
+      
+      
+
+    
+      <li><a href="http://docs.algorithmia.com" target="_blank">
+        API Docs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/algorithm-development" >
+        Algorithm Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/application-development" >
+        Application Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/faqs/" >
+        FAQs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/search/">
+        <i class="fa fa-search"></i> 
+      </a></li>
+    
+  
+</ul>
+    </nav>
+  </div><!-- /.inner-wrap -->
+</header><!-- /.masthead -->
+      <nav role="navigation" id="js-menu" class="sliding-menu-content">
+  <h5>Algorithmia Developer Center</h5>
+  <ul class="menu-item">
+    <li>
+      
+        
+      
+
+      <a href="http://docs.algorithmia.com">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_API Docs.png" alt="teaser" class="teaser">
+        <div class="title">API Docs</div>
+        <p class="excerpt">Read up on the ins and outs of using the Algorithmia API.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/algorithm-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Sample_Apps.png" alt="teaser" class="teaser">
+        <div class="title">Algorithm Development</div>
+        <p class="excerpt">Find out how to host your models and build an algorithm on Algorithmia.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/application-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Clients.png" alt="teaser" class="teaser">
+        <div class="title">Application Development</div>
+        <p class="excerpt">Discover how to use algorithms in your application.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/faqs/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_FAQs.png" alt="teaser" class="teaser">
+        <div class="title">FAQs</div>
+        <p class="excerpt">Find quick answers to common questions.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/search/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Search.png" alt="teaser" class="teaser">
+        <div class="title">Search</div>
+        <p class="excerpt">Search the Developer Center for the information you need to get started</p>
+      </a>
+    </li>
+  </ul>
+</nav>
+<button type="button" id="js-menu-trigger" class="sliding-menu-button lines-button x2" role="button" aria-label="Toggle Navigation">
+  <span class="nav-lines"></span>
+</button>
+
+<div id="js-menu-screen" class="menu-screen"></div>
+
+      
+      <div id="page-wrapper">
+
+	<div id="main" role="main">
+		<article class="wrap" itemscope itemtype="http://schema.org/Article">
+
+  <nav class="breadcrumbs">
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="http://developers.algorithmia.com" itemprop="url">
+        <span itemprop="title">Home</span>
+      </a> › 
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="http://developers.algorithmia.com/basics/" itemprop="url">
+        <span itemprop="title">Basics</span>
+      </a>
+    </span>
+  </nav><!-- /.breadcrumbs -->
+
+			<div class="page-title">
+				<h1>All About Bounties</h1>
+				
+			</div>
+
+			<div class="inner-wrap">
+				<div id="content" class="page-content" itemprop="articleBody">
+					<p>Bounties are part of the Algorithmia Marketplace and allow users to post their algorithmic needs for particular problems they may have. Bounties are a great way to get tailored solutions written by subject matter experts and algorithm developers.</p>
+
+<h2 id="what-is-a-bounty">What is a Bounty?</h2>
+
+<p>A bounty is a posting that advertises a problem that needs solving with an algorithm. Anyone can post a bounty or provide the solution!</p>
+
+<h2 id="what-kind-of-problems-are-appropriate-for-bounties">What kind of problems are appropriate for bounties?</h2>
+
+<p>Bounties are great for problems that have concrete inputs and outputs. A bounty is a great opportunity to get a subject matter expert to solve a specific problem that you have but don’t know how to solve yourself. This would include problems such as defined transformations on structured data, obscure but well-defined statistical metrics on real-valued data, or problems such as extracting keywords for each document from a set of documents.</p>
+
+<h2 id="what-kind-of-problems-are-not-a-good-match-for-the-bounty-system">What kind of problems are not a good match for the bounty system?</h2>
+
+<p>The bounty system is not a good fit for problems that are fuzzy in nature or not well defined. In order to get the best solution, the problem needs to be scoped to a clearly definable piece of work that can be solved by an algorithm.</p>
+
+<p>Examples of problems that are not a good fit for the Bounty system include:</p>
+
+<ul>
+  <li>Tasks that require substantial human intervention, such as 3D animation</li>
+  <li>Research level problems that even experts have yet to solve</li>
+  <li>Problems that would require infrastructure to complete, e.g., “a mobile app that does X”.</li>
+</ul>
+
+<p>The best bounties are things you don’t quite know how to solve, but you are reasonably confident that a subject expert probably knows.</p>
+
+<h2 id="how-to-write-a-good-bounty">How to Write a Good Bounty</h2>
+
+<p>Think of the bounty description as a design specification for the solution you need–the more complete and thorough, the better! Your bounty is more likely to be fulfilled if algorithm developers can easily understand your needs. If can also provide test cases or sample data, then algorithm developers will be better able to ensure that their submission meets your needs.</p>
+
+<p>There are a few levels to consider when writing a bounty and depending on your purpose the importance of each will vary.</p>
+
+<p><strong>1. Specify the problem</strong></p>
+
+<p>The problem can range from something as mundane as converting between file formats to something as abstract as a combinatorial optimization problem. Describe the problem briefly, include any relevant links to research, papers, similar examples or even Wikipedia if these resources can help clarify the problem.</p>
+
+<p>Be sure to provide example data. To make this easier, you can put files in the Data API and make them publicly readable. For more information on how to upload your sample data through the web browser, follow <a href="/faqs/how-do-i-get-my-data-into-algorithmia/">this step-by-step guide</a>. If you don’t have example data available, please provide a very clear examples of what you expect the data to be and how it will look as input.</p>
+
+<p><strong>2. Specify the interface</strong></p>
+
+<p>In order to make sure that the algorithm will fulfill your needs, be sure to specify what the input and output formats will be. Usually this will be something standard, like a list of strings, an array of integers, or an image file.</p>
+
+<p>In other cases, a custom class will be easier. If you suspect that you need a custom class, check out our <a href="https://algorithmia.com/docs/algorithm/java/">Java documentation</a> and be sure to provide a definition of the class int he bounty.</p>
+
+<p><strong>3. Specify the Algorithm</strong></p>
+
+<p>If you want a particular algorithm used to fulfill your bounty, be sure to specify this in the description. More often than not, you might not know which algorithm you want or it might not matter for the final solution.</p>
+
+<p>If your bounty is a particularly difficult problem, your odds of getting a successful solution will rise if you provide ideas of which algorithms you think the solution might include as well as links to resources that might help an algorithm developer.</p>
+
+<h2 id="pledging-to-a-bounty">Pledging to a Bounty</h2>
+
+<p>In order to incentivize algorithm developers to develop an algorithm that fulfills your bounty, you can pledge between $10 and $10,000 USD to the solution. Bounties offered with a monetary value are far more likely to interest algorithm developers.</p>
+
+<p>Pledging a bounty will start a 60-day countdown on your bounties page, and if your bounty is not fulfilled within those 60 days you will have the choice of either receiving a refund or renewing your bounty pledge. Algorithmia collects a 20% fee when you pledge a bounty. Bounties may be pledged in USD, Algorithmia credits, or both.</p>
+
+<p class="notice-info">When you pledge a monetary bounty, you will we see a charge for the amount pledged. We hold the money in escrow while the bounty is live. If no solution is found, you have the option to receive a full refund after 60 days or extend the bounty for more time.</p>
+
+<p>Find more details in the <a href="https://algorithmia.com/bounty_terms">Bounty Terms and Conditions</a>.</p>
+
+<h2 id="the-bounty-review-process">The Bounty Review Process</h2>
+
+<p>As the bounty author, you will review submitted solutions and accept or reject the proposed solutions depending on whether or not they addressed the requirements described in the bounty posting. When an algorithm is submitted as a solution, you will have 30 days to review, give feedback, and accept or reject the algorithm. For rejected solutions, you will have to explain why the proposed solution doesn’t meet the requirements.</p>
+
+<p>When you accept an algorithm as the solution to your bounty posting, the bounty page will change from “Active” to “Fulfilled” and the algorithm will be displayed at the bottom of your bounty page.</p>
+
+<h2 id="fulfilling-a-bounty">Fulfilling a Bounty</h2>
+
+<p>If you are an algorithm developer and see an interesting bounty that you want to solve, you can submit the solution to fulfill the bounty.</p>
+
+<p>To fulfill a bounty, make sure you have published the algorithm publicly. The algorithm can be either open or closed source. Next, navigate to the bounty page and click the “Fulfill Bounty” button. At this point, you will be shown a dialog box with the Algorithmia Bounty Terms &amp; Agreement. After you read the agreement, select your algorithm from the drop-down menu at the bottom and click the “I agree to terms and submit algorithm for review” button. The bounty poster will have 30 days to review the algorithm, give you feedback, and ultimately pay the bounty out if the algorithm is accepted.</p>
+
+					<hr />
+
+					<footer class="page-footer">
+						<div class="inline-btn">
+	<a class="btn-social twitter" href="https://twitter.com/intent/tweet?text=All%20About%20Bounties&amp;url=http://developers.algorithmia.com/basics/all-about-bounties/&amp;via=algorithmia" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Share on Twitter</a>
+	<a class="btn-social facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://developers.algorithmia.com/basics/all-about-bounties/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> Share on Facebook</a>
+	<a class="btn-social google-plus"  href="https://plus.google.com/share?url=http://developers.algorithmia.com/basics/all-about-bounties/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i> Share on Google+</a>
+</div><!-- /.share-this -->
+
+						<div class="page-meta">
+  <p>Updated
+
+    <time datetime="2016-03-10T01:19:38Z" itemprop="datePublished">March 10, 2016</time></p>
+  
+</div><!-- /.page-meta --><hr />
+						
+<!--<div class="author-image">
+	<img src="http://developers.algorithmia.com/images//authors/lizrush.jpeg" alt="Algorithmia Developers">
+</div> ./author-image -->
+
+<div class="author-content">
+  <h4 class="author-name" >Written by
+
+    <a href="http://developers.algorithmia.com/liz_rush" itemprop="author">Algorithmia Developers</a>
+
+  <p class="author-bio"></p>
+
+  <a href="http://twitter.com/algorithmia" class="btn-social twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="mailto:developers@algorithmia.com" class="btn-social youtube"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+</div><!-- ./author-content -->
+					</footer><!-- /.footer -->
+
+					<aside>
+						
+					</aside>
+
+				</div><!-- /.content -->
+			</div><!-- /.inner-wrap -->
+			<div class="sidebar"><h3>Related Posts:</h3>
+
+    <!-- Pulls from data/tags.yml to allow for data defined name attr -->
+  
+  <h4>Bounties</h4>
+  <ul>
+  
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/basics/how-to-write-a-good-bounty/">How to write a good bounty on Algorithmia</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/basics/how-to-fulfill-a-bounty/">How to Solve a bounty in Algorithmia</a></h5>
+</li>
+    
+  </ul>
+
+</div>
+		</article><!-- ./wrap -->
+	</div><!-- /#main -->
+
+</div>
+      
+    </div> <!-- end wrapper -->
+
+    <footer role="contentinfo" id="site-footer">
+ <p class="copyright">
+    <img src="http://developers.algorithmia.com/images/favicon-white.png" alt="Algorithmia Developer Center" itemprop="image" width="16" height="16">
+    &#169; 2017 Algorithmia
+  </p>
+
+  <nav role="navigation" class="bottom-menu">
+    <ul class="menu-item">
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/about" target="_blank">About</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/terms" target="_blank">Terms</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/pricing" target="_blank">Pricing</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/privacy" target="_blank">Privacy</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/partners" target="_blank">Partners</a></li>
+    
+      
+        
+        
+      <li><a href="http://blog.algorithmia.com" target="_blank">Blog</a></li>
+    
+      
+        
+        
+      <li><a href="https://angel.co/algorithmia/jobs/" target="_blank">Jobs</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/contact" target="_blank">Contact</a></li>
+    
+    </ul>
+  </nav><!-- /.bottom-menu -->
+</footer>
+
+
+    <script src="http://developers.algorithmia.com/js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="http://developers.algorithmia.com/js/main.js"></script>
+    <script src="/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

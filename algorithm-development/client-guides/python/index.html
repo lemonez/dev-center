@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Python Algorithm Development • Algorithmia Developer Center</title>
+    <meta name="description" content="Build your algorithm in Python">
+    <meta name="keywords" content="algo-guide-lang">
+    
+      
+    <!-- Twitter Cards -->
+<meta name="twitter:title" content="Python Algorithm Development">
+<meta name="twitter:description" content="Build your algorithm in Python">
+<meta name="twitter:site" content="@algorithmia">
+<meta name="twitter:creator" content="@algorithmia">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo120x120.png">
+
+
+<!-- Open Graph -->
+
+<meta property="og:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo.png">
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Algorithm Development">
+<meta property="og:description" content="Build your algorithm in Python">
+<meta property="og:url" content="http://developers.algorithmia.com/algorithm-development/client-guides/python">
+<meta property="og:site_name" content="Algorithmia Developer Center">
+
+    <link rel="canonical" href="http://developers.algorithmia.com/algorithm-development/client-guides/python">
+
+    <link href="http://developers.algorithmia.com/atom.xml" type="application/atom+xml" rel="alternate" title="Algorithmia Developer Center Atom Feed">
+    <link href="http://developers.algorithmia.com/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="stylesheet" href="http://developers.algorithmia.com/css/main.css">
+    <!-- HTML5 Shiv and Media Query Support for IE -->
+    <!--[if lt IE 9]>
+      <script src="http://developers.algorithmia.com/js/vendor/html5shiv.min.js"></script>
+      <script src="http://developers.algorithmia.com/js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-38617973-1', 'auto');
+     ga('send', 'pageview');
+
+    </script>
+  </head>
+
+  <body id="js-body">
+    <div id="wrapper">
+      <!--[if lt IE 9]><div class="upgrade notice-warning"><strong>Your browser is quite old!</strong> Why not <a href="http://whatbrowser.org/">upgrade to a newer one</a> to better enjoy this site?</div><![endif]-->
+
+      <header id="masthead">
+  <div class="inner-wrap">
+    <a href="http://developers.algorithmia.com/" class="site-title">
+      <img src="http://developers.algorithmia.com/images/logos/algorithmia-white-logo.png" class="nav-image" alt="Algorithmia Developer Center" itemprop="image">
+    </a>
+
+    <nav role="navigation" class="menu top-menu">
+      <ul class="menu-item">
+  
+    
+      
+      
+
+    
+      <li><a href="http://docs.algorithmia.com" target="_blank">
+        API Docs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/algorithm-development" >
+        Algorithm Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/application-development" >
+        Application Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/faqs/" >
+        FAQs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/search/">
+        <i class="fa fa-search"></i> 
+      </a></li>
+    
+  
+</ul>
+    </nav>
+  </div><!-- /.inner-wrap -->
+</header><!-- /.masthead -->
+      <nav role="navigation" id="js-menu" class="sliding-menu-content">
+  <h5>Algorithmia Developer Center</h5>
+  <ul class="menu-item">
+    <li>
+      
+        
+      
+
+      <a href="http://docs.algorithmia.com">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_API Docs.png" alt="teaser" class="teaser">
+        <div class="title">API Docs</div>
+        <p class="excerpt">Read up on the ins and outs of using the Algorithmia API.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/algorithm-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Sample_Apps.png" alt="teaser" class="teaser">
+        <div class="title">Algorithm Development</div>
+        <p class="excerpt">Find out how to host your models and build an algorithm on Algorithmia.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/application-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Clients.png" alt="teaser" class="teaser">
+        <div class="title">Application Development</div>
+        <p class="excerpt">Discover how to use algorithms in your application.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/faqs/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_FAQs.png" alt="teaser" class="teaser">
+        <div class="title">FAQs</div>
+        <p class="excerpt">Find quick answers to common questions.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/search/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Search.png" alt="teaser" class="teaser">
+        <div class="title">Search</div>
+        <p class="excerpt">Search the Developer Center for the information you need to get started</p>
+      </a>
+    </li>
+  </ul>
+</nav>
+<button type="button" id="js-menu-trigger" class="sliding-menu-button lines-button x2" role="button" aria-label="Toggle Navigation">
+  <span class="nav-lines"></span>
+</button>
+
+<div id="js-menu-screen" class="menu-screen"></div>
+
+      
+      <div id="page-wrapper">
+
+	<div id="main" role="main">
+		<article class="wrap" itemscope itemtype="http://schema.org/Article">
+
+			<div class="page-title">
+				<h1>Python Algorithm Development</h1>
+				
+			</div>
+
+			<div class="inner-wrap">
+				<div id="content" class="page-content" itemprop="articleBody">
+					<p>Welcome to algorithm development in Python.</p>
+
+<p>This guide will take you through the steps to getting started in algorithm development and cover the basics of managing dependencies, working with various types of inputs and outputs, calling other algorithms and managing data.</p>
+
+<p>By the end of the guide you will see how to develop a couple of simple algorithms and you’ll be ready to start contributing to the algorithm marketplace.</p>
+
+<p>Table of Contents</p>
+
+<ul>
+  <li><a href="#available-libraries">Available Libraries</a></li>
+  <li><a href="#create-algorithm">Create an Algorithm</a></li>
+  <li><a href="#managing-dependencies">Managing Dependencies</a></li>
+  <li><a href="#write-your-first-algorithm">Write your First Algorithm</a></li>
+  <li><a href="#io-algorithms">I/O for your Algorithms</a></li>
+  <li><a href="#error-handling">Error Handling</a></li>
+  <li><a href="#algorithm-checklist">Algorithm Checklist</a></li>
+  <li><a href="#publish-algorithm">Publish Algorithm</a></li>
+  <li><a href="#conclusion-resources">Conclusion and Resources</a></li>
+</ul>
+
+<h2 id="available-librariesa-idavailable-librariesa">Available Libraries<a id="available-libraries"></a></h2>
+
+<p>Algorithmia makes a number of libraries available to make algorithm development easier.</p>
+
+<p>The full <a href="https://docs.python.org/2/">Python 2 language and standard library</a> and <a href="https://docs.python.org/3/">Python 3 language and standard library</a>
+is available for you to use in your algorithms.</p>
+
+<p>Also, you can utilize common Python libraries such as Scikit-Learn, Tensorflow, Numpy and many others by adding them as a dependency in your algorithm.</p>
+
+<p>Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
+via the <a href="/application-development/client-guides/python/">Algorithmia Python Client</a>.</p>
+
+<h2 id="create-an-algorithma-idcreate-algorithma">Create an Algorithm<a id="create-algorithm"></a></h2>
+
+<p>Let’s start by creating an algorithm. First navigate to <a href="https://algorithmia.com">Algorithmia</a> and by hovering over “More” you’ll see a dropdown with a purple button that says “Add Algorithm”. Go ahead and click that button.</p>
+
+<p><img src="/images/post_images/algo_dev_lang/add_algorithm_nav.png" alt="Add algorithm navigation" class="screenshot" /></p>
+
+<p>When you click the “Add Algorithm” button, you’ll see a form for creating your algorithm that we’ll fill out step by step below:</p>
+
+<p><img src="/images/post_images/algo_dev_lang/create_algorithm_python.png" alt="Create an algorithm in Python" class="screenshot" /></p>
+
+<p><strong>Algorithmia Name:</strong> The first thing you’ll notice in the form is the field “Algorithm Name” which will be the name of your algorithm. You’ll want to name your algorithm something descriptive based on what the algorithm does.</p>
+
+<p>For example this guide shows how to create an algorithm that splits text up into words which is called tokenizing in natural language processing. So, this example algorithm is called “Tokenize Text”, but go ahead and name your algorithm according to what your code does.</p>
+
+<p><strong>Algorithm ID:</strong> The unique AlgoURL path users will use to call your algorithm.</p>
+
+<p><strong>Language:</strong> Next you’ll pick the language of your choice. This is the Python guide and this algorithm uses Python 3.</p>
+
+<p><strong>Source Code:</strong> Because we want to make this algorithm open source and available for everyone to view the source code, we’ll choose “Open Source”.</p>
+
+<p><strong>Special Permissions:</strong> Next is the “Special Permissions” section that allows your algorithm to have access to the internet and allows it to call other algorithms. In this example we’ll want access to the internet and since our final algorithm will call another algorithm we want to select “Can call other algorithms” as well.</p>
+
+<p>Also under Special Permissions, you can select “Standard execution environment” or “Advanced GPU”. Since our algorithm isn’t processing large amounts of data needed to run on a GPU environment, we’ll select “Standard execution environment”.</p>
+
+<p class="notice-info">Find out more about licensing, algorithm permissions and GPU’s in the <a href="http://developers.algorithmia.com/basics/algorithm_basics/">Algorithm Basics Section</a>.</p>
+
+<p>Now hit the “Create” button on the bottom lower right of the form and you should see the algorithm console for your newly created algorithm:</p>
+
+<p><img src="/images/post_images/algo_dev_lang/algorithm_console_python.png" alt="Algorithm console Python" class="screenshot" /></p>
+
+<h2 id="managing-dependenciesa-idmanaging-dependenciesa">Managing Dependencies<a id="managing-dependencies"></a></h2>
+
+<p>Now that you have created your algorithm, you can add dependencies.</p>
+
+<p>Algorithmia supports adding 3rd party dependencies via the <a href="https://pypi.python.org/pypi">Python Package Index (PyPI)</a> using a requirements.txt file.</p>
+
+<p>On the algorithm editor page there is a button on the top right that says “Dependencies”. Click that button and you’ll see a modal window:</p>
+
+<p><img src="/images/post_images/algo_dev_lang/dependencies_python.png" alt="Algorithm console Python" class="screenshot" /></p>
+
+<p>If you have any dependencies you can add them by typing in the package name to the <code>requirements.txt</code> file.</p>
+
+<p>This guide won’t depend on any external dependencies so you can close the dependencies window.</p>
+
+<p><strong>Note:</strong> If you did add any dependencies, you would still need to include an import statement to your algorithm file as you would do for any Python script.</p>
+
+<p>For example, to make use of numpy, you would include the line:</p>
+
+<p><code>numpy</code></p>
+
+<p>in the dependencies file and the line</p>
+
+<p><code>import numpy as np</code></p>
+
+<p>in the main file.</p>
+
+<h2 id="write-your-first-algorithma-idwrite-your-first-algorithma">Write your First Algorithm<a id="write-your-first-algorithm"></a></h2>
+
+<p>As you can see in your algorithm editor, there is a basic algorithm already written that takes a string as input and returns the string “Hello” followed by the user input.</p>
+
+<p>To run this algorithm first hit the “Compile” button on the top right hand corner of the algorithm editor and then at the bottom of the page in the console you’ll see a confirmation that it has compiled and the version number of that commit.</p>
+
+<p class="notice-info">If you are interested in learning more about versioning check out the <a href="http://developers.algorithmia.com/basics/algorithm_basics/">Algorithm Basics Section</a>.</p>
+
+<p>To test the algorithm type your name or another string in the console and hit enter on your keyboard:</p>
+
+<p><img src="/images/post_images/algo_dev_lang/run_default_algo.png" alt="Run basic algorithm in console Python" class="screenshot" /></p>
+
+<h2 id="io-for-your-algorithmsa-idio-algorithmsa">I/O for your Algorithms<a id="io-algorithms"></a></h2>
+
+<p>Now that you’ve compiled and ran a basic algorithm in the console, we’ll briefly go through some of the inputs and outputs you would expect to work with when creating an algorithm.</p>
+
+<p>This algorithm takes a Python dictionary where the user will be expected to pass in a JSON formatted object which is deserialized into a Python dictionary before your algorithm is called.</p>
+
+<p>It will output a JSON formatted object which the user will consume with an API call to the algorithm path which is found at the bottom of the algorithm description page and is based on your Algorithmia user name and the name of your algorithm.</p>
+
+<h3 id="working-with-basic-data-structures">Working with Basic Data Structures</h3>
+
+<p>This example shows how to find the minimum and maximum of a list of numbers that the user passes in when calling the algorithm:</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">Algorithmia</span>
+
+<span class="c"># Note that you don&#39;t pass in your API key when creating an algorithm</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Algorithmia</span><span class="o">.</span><span class="n">client</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">AlgorithmError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Define error handling class.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">n&quot;</span><span class="p">,</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Finds the minimum and maximum numbers in a list.&quot;&quot;&quot;</span>
+
+    <span class="c"># Check for numbers field and make sure it contains a list.</span>
+    <span class="k">if</span> <span class="s">&quot;numbers&quot;</span> <span class="ow">in</span> <span class="nb">input</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">[</span><span class="s">&quot;numbers&quot;</span><span class="p">],</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="c"># Get the value of the field &quot;numbers&quot;</span>
+        <span class="n">user_list</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;numbers&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">user_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">user_list</span><span class="p">)</span>
+            <span class="n">user_min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">user_list</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s">&quot;min_num&quot;</span><span class="p">:</span> <span class="n">user_min</span><span class="p">,</span> <span class="s">&quot;max_num&quot;</span><span class="p">:</span> <span class="n">user_max</span><span class="p">}</span>
+        <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;Please use numeric data types in your list: &quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c"># Raise helpful error message</span>
+        <span class="k">raise</span> <span class="n">AlgorithmError</span><span class="p">(</span>
+            <span class="s">&quot;Please provide a valid input that includes an array of numbers in the field &#39;numbers&#39;&quot;</span><span class="p">)</span></code></pre></div>
+
+<p>Go ahead and type or paste the code sample above in the Algorithmia code editor after removing the “Hello World” code.</p>
+
+<p>Now compile the new code sample and when that’s done test the code in the console by passing in the input and hitting enter on your keyboard:</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="p">{</span><span class="s">&quot;numbers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">]}</span></code></pre></div>
+
+<p>You should see the minimum and maximum of the numbers in the list returned in the console:</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="p">{</span><span class="s">&quot;max_num&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s">&quot;min_num&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span></code></pre></div>
+
+<h3 id="working-with-data-stored-on-algorithmia">Working with Data Stored on Algorithmia</h3>
+
+<p>This next algorithm shows how to create an algorithm working with a data file that a user has stored using Algorithmia’s <a href="/algorithm-development/data-sources/hosted-data-guide/">Hosted Data Source</a>.</p>
+
+<p class="notice-warning">While users who consume an algorithm have access to both Dropbox and Amazon S3 connectors, algorithm developers can only use the Algorithmia <a href="/algorithm-development/data-sources/hosted-data-guide/">Hosted Data Source</a> to host data for algorithm development.</p>
+
+<p>This example shows how to create an algorithm that takes a user’s file stored in a data collection on the Algorithmia platform and tokenizes the text:</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">Algorithmia</span>
+
+<span class="c"># Note that you don&#39;t pass in your API key when creating an algorithm</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Algorithmia</span><span class="o">.</span><span class="n">client</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">AlgorithmError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Define error handling class.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">n&quot;</span><span class="p">,</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Take a user file holding text content and return tokenized text.&quot;&quot;&quot;</span>
+
+    <span class="c"># Check if the file exists in the user specified data collection.</span>
+    <span class="k">if</span> <span class="s">&quot;user_file&quot;</span> <span class="ow">in</span> <span class="nb">input</span> <span class="ow">and</span> <span class="n">client</span><span class="o">.</span><span class="n">file</span><span class="p">(</span><span class="nb">input</span><span class="p">[</span><span class="s">&quot;user_file&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="n">user_file</span> <span class="o">=</span> <span class="nb">input</span><span class="p">[</span><span class="s">&quot;user_file&quot;</span><span class="p">]</span>
+        <span class="c"># Get the contents of the file as a string.</span>
+        <span class="n">corpus</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">file</span><span class="p">(</span><span class="n">user_file</span><span class="p">)</span><span class="o">.</span><span class="n">getString</span><span class="p">()</span>
+        <span class="c"># Split text into lists of sentences</span>
+        <span class="n">sentences</span> <span class="o">=</span> <span class="n">corpus</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">)</span>
+        <span class="c"># Tokenize each sentence</span>
+        <span class="n">tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sentences</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="c"># Return dictionary of original text and the tokenized text.</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s">&quot;corpus&quot;</span><span class="p">:</span> <span class="n">corpus</span><span class="p">,</span> <span class="s">&quot;tokens&quot;</span><span class="p">:</span> <span class="n">tokens</span><span class="p">}</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="c"># Raise helpful error message</span>
+      <span class="k">raise</span> <span class="n">AlgorithmError</span><span class="p">(</span><span class="s">&quot;Please provide a valid input&quot;</span><span class="p">)</span></code></pre></div>
+
+<p>After you paste the above code into the Algorithmia code editor you can compile and then test the example by passing in a file hosted in data collections.</p>
+
+<p>If you haven’t worked with data collections before you can find more information under the <a href="/algorithm-development/data-sources/hosted-data-guide/">Hosted Data Source</a> documentation.</p>
+
+<p>Following the example below replace the path to your data collection with your user name, data collection name, and data file name which you can find in <a href="https://algorithmia.com/data/hosted">My Collections</a>:</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="p">{</span><span class="s">&quot;user_file&quot;</span><span class="p">:</span> <span class="s">&quot;data://user_name/data_collection_dir/data_file.txt&quot;</span><span class="p">}</span></code></pre></div>
+
+<p>The code above with return both the original text and the tokenized list of each sentence.</p>
+
+<p>This guide uses a chapter from the public domain book <a href="https://en.wikisource.org/wiki/Burning_Daylight">Burning Daylight, by Jack London</a>, but for brevity we’ll only show the first sentence in “corpus” and “tokens”:</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="p">{</span><span class="s">&quot;corpus&quot;</span><span class="p">:</span> <span class="s">&quot;It was a quiet night in the Shovel.&quot;</span><span class="p">,</span> <span class="s">&quot;tokens&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="s">&#39;It&#39;</span><span class="p">,</span> <span class="s">&#39;was&#39;</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;quiet&#39;</span><span class="p">,</span> <span class="s">&#39;night&#39;</span><span class="p">,</span> <span class="s">&#39;in&#39;</span><span class="p">,</span> <span class="s">&#39;the&#39;</span><span class="p">,</span> <span class="s">&#39;Shovel&#39;</span><span class="p">]]}</span></code></pre></div>
+
+<p class="notice-info">When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow for a few different input types such as a file, a sequence or a URL.</p>
+
+<h3 id="calling-other-algorithms-and-managing-data">Calling Other Algorithms and Managing Data</h3>
+
+<p>To call other algorithms or manage data from your algorithm, use the <a href="/application-development/client-guides/python/">Algorithmia Python Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. For more detailed information on how to work with data see the <a href="http://docs.algorithmia.com/">Data API docs</a> and learn about Algorithmia’s <a href="/algorithm-development/data-sources/hosted-data-guide/">Hosted Data Source</a>.</p>
+
+<p>Here is an example of creating an algorithm that relies on data from another algorithm:</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">Algorithmia</span>
+
+<span class="c"># Note that you don&#39;t pass in your API key when creating an algorithm</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Algorithmia</span><span class="o">.</span><span class="n">client</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">AlgorithmError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Define error handling class.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">n&quot;</span><span class="p">,</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">scrape_web</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Call algorithm that returns main text content from a URL.&quot;&quot;&quot;</span>
+
+    <span class="n">algo</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">algo</span><span class="p">(</span><span class="s">&quot;util/Url2Text/0.1.4&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s">&quot;URL&quot;</span> <span class="ow">in</span> <span class="nb">input</span> <span class="ow">and</span> <span class="nb">input</span><span class="p">[</span><span class="s">&quot;URL&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&quot;http://&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">input</span><span class="p">[</span><span class="s">&quot;URL&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&quot;https://&quot;</span><span class="p">):</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="nb">input</span><span class="p">[</span><span class="s">&quot;URL&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">result</span>
+        <span class="k">return</span> <span class="n">response</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c"># Raise helpful error message</span>
+        <span class="k">raise</span> <span class="n">AlgorithmError</span><span class="p">(</span><span class="s">&quot;Please provide a valid URL&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Take user input of URL and return text as tokens.&quot;&quot;&quot;</span>
+
+    <span class="n">corpus</span> <span class="o">=</span> <span class="n">scrape_web</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+    <span class="c"># Split text into lists of sentences</span>
+    <span class="n">sentences</span> <span class="o">=</span> <span class="n">corpus</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">)</span>
+    <span class="c"># Tokenize each sentence</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sentences</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">tokens</span></code></pre></div>
+
+<p>Go ahead and try the above code sample in the Algorithmia code editor and then type the input into the console:</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="p">{</span><span class="s">&quot;URL&quot;</span><span class="p">:</span> <span class="s">&quot;http://github.com&quot;</span><span class="p">}</span></code></pre></div>
+
+<p>This should return a tokenized list of strings:</p>
+
+<p><img src="/images/post_images/algo_dev_lang/tokenize_url.png" alt="Run basic algorithm in console Python" class="screenshot" /></p>
+
+<p>As you can see from these guides fields that are passed into your algorithm by the user such as scalar values and sequences such as lists, dictionaries, tuples and bytearrays (binary byte sequence such as an image file) can be handled as you would any Python data structure within your algorithm.</p>
+
+<p>For an example that takes and processes image data check out the <a href="https://algorithmia.com/algorithms/deeplearning/Places365Classifier">Places 365 Classifier’s source code</a>.</p>
+
+<h2 id="error-handlinga-iderror-handlinga">Error Handling<a id="error-handling"></a></h2>
+
+<p>In the above code examples we showed how to create an AlgorithmError class which you should use for handling errors within your algorithm. This way the user can tell the difference between a standard Python library error and an error thrown by your algorithm:</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">AlgorithmError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Define error handling class.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">n&quot;</span><span class="p">,</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span></code></pre></div>
+
+<p>And then raise the error with a helpful error message:</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">raise</span> <span class="n">AlgorithmError</span><span class="p">(</span><span class="s">&quot;Please provide a valid URL&quot;</span><span class="p">)</span></code></pre></div>
+
+<p>If you are creating an algorithm that relies on calling another algorithm you may use Algorithmia error messages for catching errors thrown by that algorithm:</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">Algorithmia</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Algorithmia</span><span class="o">.</span><span class="n">client</span><span class="p">()</span>
+<span class="c"># An algorithm that takes a URL</span>
+<span class="n">algo</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">algo</span><span class="p">(</span><span class="s">&quot;util/Url2Text/0.1.4&quot;</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span><span class="o">.</span><span class="n">result</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">algo</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">message</span><span class="p">)</span></code></pre></div>
+
+<p>For more information on error handling see the <a href="http://docs.algorithmia.com/?python#error-handling">Algorithmia API Docs</a>.</p>
+
+<h2 id="algorithm-checklista-idalgorithm-checklista">Algorithm Checklist<a id="algorithm-checklist"></a></h2>
+
+<p>Before you are ready to publish your algorithm it’s important to go through this <a href="/basics/algorithm_checklist/">Algorithm Checklist</a>.</p>
+
+<p>It will go over important best practices such as how to create a good algorithm description, add links to external documentation and other important information.</p>
+
+<h2 id="publish-an-algorithma-idpublish-algorithma">Publish an Algorithm<a id="publish-algorithm"></a></h2>
+
+<p>Once you’ve developed your algorithm, you can publish it and make it available for others to use.</p>
+
+<p>On the upper right hand side of the algorithm page you’ll see a purple button “Publish” which will bring up a modal:</p>
+
+<p><img src="/images/post_images/algo_dev_lang/publish_algorithm.png" alt="Publish an algorithm" class="screenshot" /></p>
+
+<p>In this dialog, you can select whether your algorithm will be for public use or private use as well as the royalty. The algorithm can either be royalty-free or charge per-call. If you opt to have the algorithm charge a royalty, as the author, you will earn 70% of the royalty cost.</p>
+
+<p>Check out <a href="/basics/algorithm_basics/#pricing">Algorithm Pricing</a> for more information on how much algorithms will cost to run.</p>
+
+<p>If you are satisfied with your algorithm and settings, go ahead and hit publish. Congratulations, you’re an algorithm developer!</p>
+
+<h3 id="editing-an-algorithm">Editing an Algorithm</h3>
+
+<p>Your published algorithm can be edited from the browser, where you can edit the source code, save your work, compile, and submit the algorithm to be available through the API. You can also use <a href="/algorithm-development/git-support/">Git to push directly to Algorithmia</a> from your current workflow.</p>
+
+<h2 id="conclusion-and-resourcesa-idconclusion-resourcesa">Conclusion and Resources<a id="conclusion-resources"></a></h2>
+
+<p>In this guide we covered how to create an algorithm, work with different types of data and learned how to publish an algorithm.</p>
+
+<p>For more resources:</p>
+
+<ul>
+  <li><a href="http://developers.algorithmia.com/clients/python/">Algorithmia Client Python Docs</a></li>
+  <li><a href="/algorithm-development/data-sources/hosted-data-guide/">Hosted Data Source</a></li>
+  <li><a href="http://docs.algorithmia.com/?python">Algorithmia API Docs</a></li>
+  <li><a href="https://docs.python.org/2.7/">Python 2.7 Docs <i class="fa fa-external-link"></i></a></li>
+  <li><a href="https://docs.python.org/3/">Python 3 Docs <i class="fa fa-external-link"></i></a></li>
+</ul>
+
+					<hr />
+
+					<footer class="page-footer">
+						<div class="inline-btn">
+	<a class="btn-social twitter" href="https://twitter.com/intent/tweet?text=Python%20Algorithm%20Development&amp;url=http://developers.algorithmia.com/algorithm-development/client-guides/python&amp;via=algorithmia" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Share on Twitter</a>
+	<a class="btn-social facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://developers.algorithmia.com/algorithm-development/client-guides/python" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> Share on Facebook</a>
+	<a class="btn-social google-plus"  href="https://plus.google.com/share?url=http://developers.algorithmia.com/algorithm-development/client-guides/python" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i> Share on Google+</a>
+</div><!-- /.share-this -->
+
+						<div class="page-meta">
+  <p>Updated
+
+    <time datetime="2016-05-17T09:50:46Z" itemprop="datePublished">May 17, 2016</time></p>
+  
+</div><!-- /.page-meta --><hr />
+						
+<!--<div class="author-image">
+	<img src="http://developers.algorithmia.com/images/" alt="Stephanie Kim">
+</div> ./author-image -->
+
+<div class="author-content">
+  <h4 class="author-name" >Written by
+
+    <a href="http://developers.algorithmia.com/steph_kim" itemprop="author">Stephanie Kim</a>
+
+  <p class="author-bio">Developer Evangelist at Algorithmia, Data Enthusiast.</p>
+
+  <a href="http://twitter.com/algorithmia" class="btn-social twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="mailto:developers@algorithmia.com" class="btn-social youtube"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+</div><!-- ./author-content -->
+					</footer><!-- /.footer -->
+
+					<aside>
+						
+					</aside>
+
+				</div><!-- /.content -->
+			</div><!-- /.inner-wrap -->
+			<div class="sidebar"><h3>Related Posts:</h3>
+
+    <!-- Pulls from data/tags.yml to allow for data defined name attr -->
+  
+  <h4></h4>
+  <ul>
+  
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/scala">Scala Algorithm Development</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/rust">Rust Algorithm Development</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/ruby">Ruby Algorithm Development</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/r">R Algorithm Development</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/javascript">JavaScript Algorithm Development</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/java">Java Algorithm Development</a></h5>
+</li>
+    
+  </ul>
+
+</div>
+		</article><!-- ./wrap -->
+	</div><!-- /#main -->
+
+</div>
+      
+    </div> <!-- end wrapper -->
+
+    <footer role="contentinfo" id="site-footer">
+ <p class="copyright">
+    <img src="http://developers.algorithmia.com/images/favicon-white.png" alt="Algorithmia Developer Center" itemprop="image" width="16" height="16">
+    &#169; 2017 Algorithmia
+  </p>
+
+  <nav role="navigation" class="bottom-menu">
+    <ul class="menu-item">
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/about" target="_blank">About</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/terms" target="_blank">Terms</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/pricing" target="_blank">Pricing</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/privacy" target="_blank">Privacy</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/partners" target="_blank">Partners</a></li>
+    
+      
+        
+        
+      <li><a href="http://blog.algorithmia.com" target="_blank">Blog</a></li>
+    
+      
+        
+        
+      <li><a href="https://angel.co/algorithmia/jobs/" target="_blank">Jobs</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/contact" target="_blank">Contact</a></li>
+    
+    </ul>
+  </nav><!-- /.bottom-menu -->
+</footer>
+
+
+    <script src="http://developers.algorithmia.com/js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="http://developers.algorithmia.com/js/main.js"></script>
+    <script src="/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

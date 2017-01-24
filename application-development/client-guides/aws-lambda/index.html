@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AWS Lambda • Algorithmia Developer Center</title>
+    <meta name="description" content="Run Algorithmia code in response to events with AWS Lambda.">
+    <meta name="keywords" content="clients">
+    
+    
+    <!-- Twitter Cards -->
+<meta name="twitter:title" content="AWS Lambda">
+<meta name="twitter:description" content="Run Algorithmia code in response to events with AWS Lambda.">
+<meta name="twitter:site" content="@algorithmia">
+<meta name="twitter:creator" content="@algorithmia">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo120x120.png">
+
+
+<!-- Open Graph -->
+
+<meta property="og:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo.png">
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AWS Lambda">
+<meta property="og:description" content="Run Algorithmia code in response to events with AWS Lambda.">
+<meta property="og:url" content="http://developers.algorithmia.com/application-development/client-guides/aws-lambda">
+<meta property="og:site_name" content="Algorithmia Developer Center">
+
+    <link rel="canonical" href="http://developers.algorithmia.com/application-development/client-guides/aws-lambda">
+
+    <link href="http://developers.algorithmia.com/atom.xml" type="application/atom+xml" rel="alternate" title="Algorithmia Developer Center Atom Feed">
+    <link href="http://developers.algorithmia.com/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="stylesheet" href="http://developers.algorithmia.com/css/main.css">
+    <!-- HTML5 Shiv and Media Query Support for IE -->
+    <!--[if lt IE 9]>
+      <script src="http://developers.algorithmia.com/js/vendor/html5shiv.min.js"></script>
+      <script src="http://developers.algorithmia.com/js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-38617973-1', 'auto');
+     ga('send', 'pageview');
+
+    </script>
+  </head>
+
+  <body id="js-body">
+    <div id="wrapper">
+      <!--[if lt IE 9]><div class="upgrade notice-warning"><strong>Your browser is quite old!</strong> Why not <a href="http://whatbrowser.org/">upgrade to a newer one</a> to better enjoy this site?</div><![endif]-->
+
+      <header id="masthead">
+  <div class="inner-wrap">
+    <a href="http://developers.algorithmia.com/" class="site-title">
+      <img src="http://developers.algorithmia.com/images/logos/algorithmia-white-logo.png" class="nav-image" alt="Algorithmia Developer Center" itemprop="image">
+    </a>
+
+    <nav role="navigation" class="menu top-menu">
+      <ul class="menu-item">
+  
+    
+      
+      
+
+    
+      <li><a href="http://docs.algorithmia.com" target="_blank">
+        API Docs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/algorithm-development" >
+        Algorithm Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/application-development" >
+        Application Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/faqs/" >
+        FAQs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/search/">
+        <i class="fa fa-search"></i> 
+      </a></li>
+    
+  
+</ul>
+    </nav>
+  </div><!-- /.inner-wrap -->
+</header><!-- /.masthead -->
+      <nav role="navigation" id="js-menu" class="sliding-menu-content">
+  <h5>Algorithmia Developer Center</h5>
+  <ul class="menu-item">
+    <li>
+      
+        
+      
+
+      <a href="http://docs.algorithmia.com">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_API Docs.png" alt="teaser" class="teaser">
+        <div class="title">API Docs</div>
+        <p class="excerpt">Read up on the ins and outs of using the Algorithmia API.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/algorithm-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Sample_Apps.png" alt="teaser" class="teaser">
+        <div class="title">Algorithm Development</div>
+        <p class="excerpt">Find out how to host your models and build an algorithm on Algorithmia.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/application-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Clients.png" alt="teaser" class="teaser">
+        <div class="title">Application Development</div>
+        <p class="excerpt">Discover how to use algorithms in your application.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/faqs/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_FAQs.png" alt="teaser" class="teaser">
+        <div class="title">FAQs</div>
+        <p class="excerpt">Find quick answers to common questions.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/search/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Search.png" alt="teaser" class="teaser">
+        <div class="title">Search</div>
+        <p class="excerpt">Search the Developer Center for the information you need to get started</p>
+      </a>
+    </li>
+  </ul>
+</nav>
+<button type="button" id="js-menu-trigger" class="sliding-menu-button lines-button x2" role="button" aria-label="Toggle Navigation">
+  <span class="nav-lines"></span>
+</button>
+
+<div id="js-menu-screen" class="menu-screen"></div>
+
+      
+      <div id="page-wrapper">
+
+	<div id="main" role="main">
+		<article class="wrap" itemscope itemtype="http://schema.org/Article">
+
+  <nav class="breadcrumbs">
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="http://developers.algorithmia.com" itemprop="url">
+        <span itemprop="title">Home</span>
+      </a> › 
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="http://developers.algorithmia.com/clients/" itemprop="url">
+        <span itemprop="title">Clients</span>
+      </a>
+    </span>
+  </nav><!-- /.breadcrumbs -->
+
+			<div class="page-title">
+				<h1>AWS Lambda</h1>
+				
+			</div>
+
+			<div class="inner-wrap">
+				<div id="content" class="page-content" itemprop="articleBody">
+					<p>AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you,
+making it easy to build applications that respond quickly to new information.</p>
+
+<h3 id="algorithmia--lambda">Algorithmia + Lambda</h3>
+
+<p>Algorithmia provides a built-in AWS Lambda Node.js blueprint, making it easy to call the Algorithmia API in response to events from Amazon Kinesis, Amazon DynamoDB, Amazon S3, and other Amazon web services.</p>
+
+<p>For example, you could combine several algorithms from Algorithmia to:</p>
+
+<ul>
+  <li>Automatically generate smart thumbnails (using face detection to ensure every thumbnail is perfectly cropped)</li>
+  <li>Take advantage of Algorithmia’s speech-to-text algorithm to transcribe videos uploaded to S3 on the fly</li>
+  <li>You could even leverage a predictive model every time DynamoDB updates.</li>
+</ul>
+
+<p>Algorithmia and Lambda make it easy to rapidly build and deploy serverless solutions in minutes.</p>
+
+<h3 id="setup-your-lambda-function">Setup your Lambda function</h3>
+
+<h4 id="getting-started">Getting started</h4>
+
+<ul>
+  <li>Navigate to the <a href="https://console.aws.amazon.com/lambda/home">AWS Lambda console</a></li>
+  <li>Select <code>Create a Lambda function</code></li>
+  <li>Type <code>Algorithmia</code> into the filter</li>
+  <li>Select the Algorithmia blueprint</li>
+  <li>Setup Auth in your Lambda function using the below guide</li>
+  <li>Specify your algorithm and input data</li>
+</ul>
+
+<h3 id="authentication">Authentication</h3>
+
+<h4 id="basic-authentication">Basic authentication</h4>
+
+<p>Set <code>apiKey</code> to your Algorithmia API key.
+Also set <code>kmsEncryptedApiKey</code> to <code>null</code>.</p>
+
+<blockquote>
+  <p>Basic authentication:</p>
+</blockquote>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">apiKey</span> <span class="o">=</span> <span class="s2">&quot;YOUR_API_KEY&quot;</span><span class="p">;</span>
+<span class="nv">kmsEncryptedApiKey</span> <span class="o">=</span>  null<span class="p">;</span></code></pre></div>
+
+<h4 id="advanced-authentication-more-secure">Advanced authentication (more secure)</h4>
+
+<p>Follow these steps to encrypt your Algorithmia API Key for use in your function.</p>
+
+<h6 id="create-a-kms-key">1. Create a KMS key</h6>
+
+<p>Follow <a href="http://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">this AWS guide</a> to create your KMS key.</p>
+
+<h6 id="give-your-laws-lambda-function-execution-role-permission-for-the-kmsdecrypt-action">2. Give your lAWS Lambda function execution role permission for the <code>kms:Decrypt</code> action</h6>
+
+<blockquote>
+  <p>Example Role:</p>
+</blockquote>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
+    <span class="s2">&quot;Version&quot;</span>: <span class="s2">&quot;2012-10-17&quot;</span>,
+    <span class="s2">&quot;Statement&quot;</span>: <span class="o">[</span>
+    <span class="o">{</span>
+        <span class="s2">&quot;Sid&quot;</span>: <span class="s2">&quot;Stmt1443036478000&quot;</span>,
+        <span class="s2">&quot;Effect&quot;</span>: <span class="s2">&quot;Allow&quot;</span>,
+        <span class="s2">&quot;Action&quot;</span>: <span class="o">[</span>
+            <span class="s2">&quot;kms:Decrypt&quot;</span>
+        <span class="o">]</span>,
+        <span class="s2">&quot;Resource&quot;</span>: <span class="o">[</span>
+            <span class="s2">&quot;&lt;your KMS key ARN&gt;&quot;</span>
+        <span class="o">]</span>
+    <span class="o">}</span>
+    <span class="o">]</span>
+<span class="o">}</span></code></pre></div>
+
+<h6 id="encrypt-the-event-collector-token-using-the-aws-cli">3. Encrypt the event collector token using the AWS CLI</h6>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">aws kms encrypt --key-id <span class="nb">alias</span>/&lt;KMS key name&gt; --plaintext <span class="s2">&quot;&lt;ALGORITHMIA_API_KEY&gt;&quot;</span></code></pre></div>
+
+<h6 id="copy-the-base-64-encoded-encrypted-key-ciphertextblob-to-the-kmsencryptedapikey-variable">4. Copy the base-64 encoded, encrypted key (CiphertextBlob) to the <code>kmsEncryptedApiKey</code> variable</h6>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">kmsEncryptedApiKey</span> <span class="o">=</span> <span class="s2">&quot;&lt;kmsEncryptedApiKey&gt;&quot;</span><span class="p">;</span></code></pre></div>
+
+<h2 id="additional-information">Additional information</h2>
+
+<p>See the <a href="../node">NodeJS guide</a> for an introduction to using the Algorithmia NodeJS client to call algorithms and manage data.</p>
+
+<p>See also the <a href="http://blog.algorithmia.com/post/133832621114/get-started-building-intelligent-serverless-apps">AWS Lambda walk through on our blog</a>.</p>
+
+					<hr />
+
+					<footer class="page-footer">
+						<div class="inline-btn">
+	<a class="btn-social twitter" href="https://twitter.com/intent/tweet?text=AWS%20Lambda&amp;url=http://developers.algorithmia.com/application-development/client-guides/aws-lambda&amp;via=algorithmia" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Share on Twitter</a>
+	<a class="btn-social facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://developers.algorithmia.com/application-development/client-guides/aws-lambda" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> Share on Facebook</a>
+	<a class="btn-social google-plus"  href="https://plus.google.com/share?url=http://developers.algorithmia.com/application-development/client-guides/aws-lambda" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i> Share on Google+</a>
+</div><!-- /.share-this -->
+
+						<div class="page-meta">
+  <p>Updated
+
+    <time datetime="2016-07-12T00:00:00Z" itemprop="datePublished">July 12, 2016</time></p>
+  
+</div><!-- /.page-meta --><hr />
+						
+<!--<div class="author-image">
+	<img src="http://developers.algorithmia.com/images//authors/bio-photo.jpg" alt="Algorithmia">
+</div> ./author-image -->
+
+<div class="author-content">
+  <h4 class="author-name" >Written by
+
+    <a href="http://developers.algorithmia.com/" itemprop="author">Algorithmia</a>
+
+  <p class="author-bio"></p>
+
+  <a href="http://twitter.com/algorithmia" class="btn-social twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="mailto:mia@algorithmia.com" class="btn-social youtube"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+</div><!-- ./author-content -->
+					</footer><!-- /.footer -->
+
+					<aside>
+						
+					</aside>
+
+				</div><!-- /.content -->
+			</div><!-- /.inner-wrap -->
+			<div class="sidebar"><h3>Related Posts:</h3>
+
+    <!-- Pulls from data/tags.yml to allow for data defined name attr -->
+  
+  <h4>Clients</h4>
+  <ul>
+  
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/swift">The Swift Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/android">The Android Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/r">The R Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/node">The Node Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/rust">The Rust Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/go">The Go Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/curl">Working with cURL</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/scala">Algorithmia & Scala</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/ruby">The Ruby Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/python">The Python Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/java">The Java Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/cli">The CLI Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/javascript">The Javascript Library</a></h5>
+</li>
+    
+  </ul>
+
+</div>
+		</article><!-- ./wrap -->
+	</div><!-- /#main -->
+
+</div>
+      
+    </div> <!-- end wrapper -->
+
+    <footer role="contentinfo" id="site-footer">
+ <p class="copyright">
+    <img src="http://developers.algorithmia.com/images/favicon-white.png" alt="Algorithmia Developer Center" itemprop="image" width="16" height="16">
+    &#169; 2017 Algorithmia
+  </p>
+
+  <nav role="navigation" class="bottom-menu">
+    <ul class="menu-item">
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/about" target="_blank">About</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/terms" target="_blank">Terms</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/pricing" target="_blank">Pricing</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/privacy" target="_blank">Privacy</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/partners" target="_blank">Partners</a></li>
+    
+      
+        
+        
+      <li><a href="http://blog.algorithmia.com" target="_blank">Blog</a></li>
+    
+      
+        
+        
+      <li><a href="https://angel.co/algorithmia/jobs/" target="_blank">Jobs</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/contact" target="_blank">Contact</a></li>
+    
+    </ul>
+  </nav><!-- /.bottom-menu -->
+</footer>
+
+
+    <script src="http://developers.algorithmia.com/js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="http://developers.algorithmia.com/js/main.js"></script>
+    <script src="/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

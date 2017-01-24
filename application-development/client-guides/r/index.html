@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The R Client • Algorithmia Developer Center</title>
+    <meta name="description" content="Get going with the R client on Algorithmia.">
+    <meta name="keywords" content="clients">
+    
+      
+    <!-- Twitter Cards -->
+<meta name="twitter:title" content="The R Client">
+<meta name="twitter:description" content="Get going with the R client on Algorithmia.">
+<meta name="twitter:site" content="@algorithmia">
+<meta name="twitter:creator" content="@algorithmia">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo120x120.png">
+
+
+<!-- Open Graph -->
+
+<meta property="og:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo.png">
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The R Client">
+<meta property="og:description" content="Get going with the R client on Algorithmia.">
+<meta property="og:url" content="http://developers.algorithmia.com/application-development/client-guides/r">
+<meta property="og:site_name" content="Algorithmia Developer Center">
+
+    <link rel="canonical" href="http://developers.algorithmia.com/application-development/client-guides/r">
+
+    <link href="http://developers.algorithmia.com/atom.xml" type="application/atom+xml" rel="alternate" title="Algorithmia Developer Center Atom Feed">
+    <link href="http://developers.algorithmia.com/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="stylesheet" href="http://developers.algorithmia.com/css/main.css">
+    <!-- HTML5 Shiv and Media Query Support for IE -->
+    <!--[if lt IE 9]>
+      <script src="http://developers.algorithmia.com/js/vendor/html5shiv.min.js"></script>
+      <script src="http://developers.algorithmia.com/js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-38617973-1', 'auto');
+     ga('send', 'pageview');
+
+    </script>
+  </head>
+
+  <body id="js-body">
+    <div id="wrapper">
+      <!--[if lt IE 9]><div class="upgrade notice-warning"><strong>Your browser is quite old!</strong> Why not <a href="http://whatbrowser.org/">upgrade to a newer one</a> to better enjoy this site?</div><![endif]-->
+
+      <header id="masthead">
+  <div class="inner-wrap">
+    <a href="http://developers.algorithmia.com/" class="site-title">
+      <img src="http://developers.algorithmia.com/images/logos/algorithmia-white-logo.png" class="nav-image" alt="Algorithmia Developer Center" itemprop="image">
+    </a>
+
+    <nav role="navigation" class="menu top-menu">
+      <ul class="menu-item">
+  
+    
+      
+      
+
+    
+      <li><a href="http://docs.algorithmia.com" target="_blank">
+        API Docs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/algorithm-development" >
+        Algorithm Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/application-development" >
+        Application Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/faqs/" >
+        FAQs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/search/">
+        <i class="fa fa-search"></i> 
+      </a></li>
+    
+  
+</ul>
+    </nav>
+  </div><!-- /.inner-wrap -->
+</header><!-- /.masthead -->
+      <nav role="navigation" id="js-menu" class="sliding-menu-content">
+  <h5>Algorithmia Developer Center</h5>
+  <ul class="menu-item">
+    <li>
+      
+        
+      
+
+      <a href="http://docs.algorithmia.com">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_API Docs.png" alt="teaser" class="teaser">
+        <div class="title">API Docs</div>
+        <p class="excerpt">Read up on the ins and outs of using the Algorithmia API.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/algorithm-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Sample_Apps.png" alt="teaser" class="teaser">
+        <div class="title">Algorithm Development</div>
+        <p class="excerpt">Find out how to host your models and build an algorithm on Algorithmia.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/application-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Clients.png" alt="teaser" class="teaser">
+        <div class="title">Application Development</div>
+        <p class="excerpt">Discover how to use algorithms in your application.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/faqs/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_FAQs.png" alt="teaser" class="teaser">
+        <div class="title">FAQs</div>
+        <p class="excerpt">Find quick answers to common questions.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/search/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Search.png" alt="teaser" class="teaser">
+        <div class="title">Search</div>
+        <p class="excerpt">Search the Developer Center for the information you need to get started</p>
+      </a>
+    </li>
+  </ul>
+</nav>
+<button type="button" id="js-menu-trigger" class="sliding-menu-button lines-button x2" role="button" aria-label="Toggle Navigation">
+  <span class="nav-lines"></span>
+</button>
+
+<div id="js-menu-screen" class="menu-screen"></div>
+
+      
+      <div id="page-wrapper">
+
+	<div id="main" role="main">
+		<article class="wrap" itemscope itemtype="http://schema.org/Article">
+
+  <nav class="breadcrumbs">
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="http://developers.algorithmia.com" itemprop="url">
+        <span itemprop="title">Home</span>
+      </a> › 
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="http://developers.algorithmia.com/clients/" itemprop="url">
+        <span itemprop="title">Clients</span>
+      </a>
+    </span>
+  </nav><!-- /.breadcrumbs -->
+
+			<div class="page-title">
+				<h1>The R Client</h1>
+				
+				      <p class="github-note">
+						Available on <a href='https://github.com/algorithmiaio/algorithmia-r.git']}' target='_blank' rel='nofollow'>GitHub</a>.
+					  </p>
+				
+			</div>
+
+			<div class="inner-wrap">
+				<div id="content" class="page-content" itemprop="articleBody">
+					<p>This guide provides a walk-through of how to use the official Algorithmia R client to call algorithms and manage your data through the Algorithmia platform.</p>
+
+<h2 id="install-from-cran">Install from CRAN</h2>
+
+<p>The official Algorithmia R client is available on CRAN and includes links to vignettes and the reference manual at: <a href="https://cran.r-project.org/web/packages/algorithmia/index.html">Algorithmia on CRAN</a></p>
+
+<p>Open up the R shell and type:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">install.packages<span class="p">(</span><span class="s">&quot;algorithmia&quot;</span><span class="p">)</span></code></pre></div>
+
+<h2 id="authentication">Authentication</h2>
+
+<p>First, create an Algorithmia client and authenticate with your API key:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>algorithmia<span class="p">)</span>
+
+apiKey <span class="o">&lt;-</span> <span class="s">&#39;{Your API key here}&#39;</span>
+client <span class="o">&lt;-</span> getAlgorithmiaClient<span class="p">(</span>apiKey<span class="p">)</span></code></pre></div>
+
+<p>Now you’re ready to call algorithms.</p>
+
+<h2 id="calling-algorithms">Calling algorithms</h2>
+
+<p>The following examples of calling algorithms are organized by type of input/output which vary between algorithms.</p>
+
+<p><strong>Note:</strong> A single algorithm may have different input and output types, or accept multiple types of input, so consult the algorithm’s description for usage examples specific to that algorithm.</p>
+
+<h3 id="text-inputoutput">Text input/output</h3>
+
+<p>Call an algorithm with text input by simply passing a string into its pipe method. If the algorithm output is text, then the result field of the response will be a string.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">algo <span class="o">&lt;-</span> client<span class="o">$</span>algo<span class="p">(</span><span class="s">&#39;demo/Hello/0.1.1&#39;</span><span class="p">)</span>
+response <span class="o">&lt;-</span> algo<span class="o">$</span><span class="kp">pipe</span><span class="p">(</span><span class="s">&quot;World&quot;</span><span class="p">)</span><span class="o">$</span>result</code></pre></div>
+
+<p>This example code will return:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;Hello World&quot;</span></code></pre></div>
+
+<h3 id="json-inputoutput">JSON input/output</h3>
+
+<p>Call an algorithm with JSON input by simply passing in a type that can be serialized to JSON: most notably R lists and arrays. For algorithms that return JSON, the result field of the response will be the appropriate deserialized type.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">algo <span class="o">&lt;-</span> client<span class="o">$</span>algo<span class="p">(</span><span class="s">&#39;WebPredict/ListAnagrams/0.1.0&#39;</span><span class="p">)</span>
+input <span class="o">&lt;-</span> <span class="kt">list</span><span class="p">(</span><span class="s">&quot;transformer&quot;</span><span class="p">,</span> <span class="s">&quot;terraforms&quot;</span><span class="p">,</span> <span class="s">&quot;retransform&quot;</span><span class="p">)</span>
+response <span class="o">&lt;-</span> algo<span class="o">$</span><span class="kp">pipe</span><span class="p">(</span>input<span class="p">)</span><span class="o">$</span>result</code></pre></div>
+
+<p>This list input returns a list of anagrams:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="p">[[</span><span class="m">1</span><span class="p">]]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;transformer&quot;</span>
+
+<span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;retransform&quot;</span></code></pre></div>
+
+<h3 id="binary-inputoutput">Binary input/output</h3>
+
+<p>Call an algorithm with Binary input by passing a raw vector into the pipe method. Similarly, if the algorithm response is binary data, then the result field of the response will be a raw vector.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">input <span class="o">&lt;-</span> <span class="s">&#39;https://stopthehitch.files.wordpress.com/2013/06/arnold-schwarzenegger-1920x1080.jpg&#39;</span>
+algo <span class="o">&lt;-</span> client<span class="o">$</span>algo<span class="p">(</span><span class="s">&quot;opencv/SmartThumbnail/0.1&quot;</span><span class="p">)</span>
+response <span class="o">&lt;-</span> algo<span class="o">$</span><span class="kp">pipe</span><span class="p">(</span>input<span class="p">)</span><span class="o">$</span>result
+<span class="c1"># -&gt; [raw vector]</span></code></pre></div>
+
+<h2 id="request-options">Request options</h2>
+
+<p>The client exposes options that can configure algorithm requests. This includes support for changing the timeout or indicating that the API should include stdout in the response.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">algo <span class="o">&lt;-</span> client<span class="o">$</span>algo<span class="p">(</span><span class="s">&#39;util/echo&#39;</span><span class="p">)</span>
+algo<span class="o">$</span>setOptions<span class="p">(</span>timeout<span class="o">=</span><span class="m">60</span><span class="p">,</span> stdout<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+result <span class="o">&lt;-</span> algo<span class="o">$</span><span class="kp">pipe</span><span class="p">(</span><span class="s">&#39;HAL 9000&#39;</span><span class="p">)</span><span class="o">$</span>result</code></pre></div>
+
+<p><strong>Note:</strong> stdout=TRUE is only supported if you have access to the algorithm source.</p>
+
+<h2 id="working-with-data">Working with data</h2>
+
+<p>The Algorithmia client also provides a way to manage both Algorithmia hosted data and data from Dropbox or S3 accounts that you’ve connected to you Algorithmia account.</p>
+
+<h3 id="create-directories">Create directories</h3>
+
+<p>Create directories by instantiating a DataDirectory object and calling create():</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">client<span class="o">$</span><span class="kp">dir</span><span class="p">(</span><span class="s">&quot;data://.my/foo&quot;</span><span class="p">)</span><span class="o">$</span>create<span class="p">()</span></code></pre></div>
+
+<h3 id="upload-files-to-a-directory">Upload files to a directory</h3>
+
+<p>Upload files by calling put on a DataFile object, or by calling putFile on a DataDirectory object.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">foo <span class="o">&lt;-</span> client<span class="o">$</span><span class="kp">dir</span><span class="p">(</span><span class="s">&quot;data://.my/foo&quot;</span><span class="p">)</span>
+foo<span class="o">$</span>putFile<span class="p">(</span><span class="s">&quot;/path/to/myfile&quot;</span><span class="p">)</span>
+<span class="c1"># $put can take integer or string data</span>
+foo<span class="o">$</span><span class="kp">file</span><span class="p">(</span><span class="s">&quot;sample.txt&quot;</span><span class="p">)</span><span class="o">$</span>put<span class="p">(</span><span class="s">&quot;sample text contents&quot;</span><span class="p">)</span>
+foo<span class="o">$</span><span class="kp">file</span><span class="p">(</span><span class="s">&quot;binary_file&quot;</span><span class="p">)</span><span class="o">$</span>put<span class="p">(</span>some_binary_data<span class="p">)</span></code></pre></div>
+
+<p>Note: you can instantiate a DataFile by either client$file(path) or client$dir(path)$file(filename)</p>
+
+<h3 id="download-contents-of-file">Download contents of file</h3>
+
+<p>Download files by calling getString, getBytes, getJson, or getFile on a DataFile object:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">foo <span class="o">&lt;-</span> client<span class="o">$</span><span class="kp">dir</span><span class="p">(</span><span class="s">&quot;data://.my/foo&quot;</span><span class="p">)</span>
+sampleText <span class="o">&lt;-</span> foo<span class="o">$</span><span class="kp">file</span><span class="p">(</span><span class="s">&quot;sample.txt&quot;</span><span class="p">)</span><span class="o">$</span>getString<span class="p">()</span>  <span class="c1"># String object</span>
+binaryContent <span class="o">&lt;-</span> foo<span class="o">$</span><span class="kp">file</span><span class="p">(</span><span class="s">&quot;binary_file&quot;</span><span class="p">)</span><span class="o">$</span>getBytes<span class="p">()</span>  <span class="c1"># Binary data</span>
+tempFile <span class="o">&lt;-</span> foo<span class="o">$</span><span class="kp">file</span><span class="p">(</span><span class="s">&quot;myfile&quot;</span><span class="p">)</span><span class="o">$</span>getFile<span class="p">()</span>   <span class="c1"># Open file descriptor</span></code></pre></div>
+
+<h3 id="delete-files-and-directories">Delete files and directories</h3>
+
+<p>Delete files and directories by calling delete on their respective DataFile or DataDirectory object. DataDirectories take an optional force parameter that indicates whether the directory should be deleted if it contains files or other directories.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">foo <span class="o">&lt;-</span> client<span class="o">$</span><span class="kp">dir</span><span class="p">(</span><span class="s">&quot;data://.my/foo&quot;</span><span class="p">)</span>
+foo<span class="o">$</span><span class="kp">file</span><span class="p">(</span><span class="s">&quot;sample.txt&quot;</span><span class="p">)</span><span class="o">$</span>delete<span class="p">()</span>
+foo<span class="o">$</span>delete<span class="p">(</span><span class="kc">TRUE</span><span class="p">)</span> <span class="o">//</span> <span class="kc">TRUE</span> implies force deleting the directory and its contents</code></pre></div>
+
+<h3 id="list-directory-contents">List directory contents</h3>
+
+<p>Iterate over the contents of a directory using the iterated returned by calling list, files, or dirs on a DataDirectory object:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">foo <span class="o">&lt;-</span> client<span class="o">$</span><span class="kp">dir</span><span class="p">(</span><span class="s">&quot;data://.my/foo&quot;</span><span class="p">)</span>
+
+<span class="c1"># List files in &quot;foo&quot;</span>
+foo <span class="o">&lt;-</span> client<span class="o">$</span><span class="kp">dir</span><span class="p">(</span><span class="s">&quot;data://.my/foo&quot;</span><span class="p">)</span>
+foo_files <span class="o">&lt;-</span> foo<span class="o">$</span>files<span class="p">()</span>
+
+<span class="kr">while</span> <span class="p">(</span>foo_files<span class="o">$</span>hasNext<span class="p">())</span> <span class="p">{</span>
+  a <span class="o">&lt;-</span> <span class="kp">try</span><span class="p">(</span>foo_files<span class="o">$</span>getNext<span class="p">())</span>
+  <span class="kp">print</span><span class="p">(</span><span class="kp">paste</span><span class="p">(</span>a<span class="o">$</span>dataFileUrl<span class="p">,</span> a<span class="o">$</span>last_modified<span class="p">))</span>
+<span class="p">}</span>
+
+<span class="c1"># List top level directories</span>
+top_level_dir <span class="o">&lt;-</span> client<span class="o">$</span><span class="kp">dir</span><span class="p">(</span><span class="s">&quot;data://.my/&quot;</span><span class="p">)</span>
+dirs <span class="o">&lt;-</span> top_level_dir<span class="o">$</span>dirs<span class="p">()</span>
+
+<span class="kr">while</span> <span class="p">(</span>dirs<span class="o">$</span>hasNext<span class="p">())</span> <span class="p">{</span>
+  d <span class="o">&lt;-</span> <span class="kp">try</span><span class="p">(</span>dirs<span class="o">$</span>getNext<span class="p">())</span>
+  <span class="kp">print</span><span class="p">(</span><span class="kp">paste</span><span class="p">(</span>d<span class="o">$</span>dataDirectoryUrl<span class="p">,</span> d<span class="o">$</span>dataDirectoryPath<span class="p">))</span>
+<span class="p">}</span></code></pre></div>
+
+<h3 id="manage-directory-permissions">Manage directory permissions</h3>
+
+<p>Directory permissions may be set when creating a directory, or may be updated on already existing directories.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">foo <span class="o">&lt;-</span> client<span class="o">$</span><span class="kp">dir</span><span class="p">(</span><span class="s">&quot;data://.my/foo&quot;</span><span class="p">)</span>
+<span class="c1"># ReadAcl$PUBLIC is a wrapper for Acl(AclType$PUBLIC) to make things easier</span>
+foo<span class="o">$</span>create<span class="p">(</span>ReadAcl.PUBLIC<span class="p">)</span>
+acl <span class="o">&lt;-</span> foo<span class="o">$</span>get_permissions<span class="p">()</span>  <span class="c1"># Acl object</span>
+acl<span class="o">$</span>read_acl <span class="o">==</span> AclType<span class="o">$</span>PUBLIC  <span class="c1"># TRUE</span>
+
+foo<span class="o">$</span>updatePermissions<span class="p">(</span>ReadAcl<span class="o">$</span>PRIVATE<span class="p">)</span>
+foo<span class="o">$</span>get_permissions<span class="p">()</span><span class="o">$</span>read_acl <span class="o">==</span> AclType<span class="o">$</span>PRIVATE <span class="c1"># TRUE</span></code></pre></div>
+
+					<hr />
+
+					<footer class="page-footer">
+						<div class="inline-btn">
+	<a class="btn-social twitter" href="https://twitter.com/intent/tweet?text=The%20R%20Client&amp;url=http://developers.algorithmia.com/application-development/client-guides/r&amp;via=algorithmia" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Share on Twitter</a>
+	<a class="btn-social facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://developers.algorithmia.com/application-development/client-guides/r" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> Share on Facebook</a>
+	<a class="btn-social google-plus"  href="https://plus.google.com/share?url=http://developers.algorithmia.com/application-development/client-guides/r" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i> Share on Google+</a>
+</div><!-- /.share-this -->
+
+						<div class="page-meta">
+  <p>Updated
+
+    <time datetime="2016-09-12T00:00:00Z" itemprop="datePublished">September 12, 2016</time></p>
+  
+</div><!-- /.page-meta --><hr />
+						
+<!--<div class="author-image">
+	<img src="http://developers.algorithmia.com/images/" alt="Stephanie Kim">
+</div> ./author-image -->
+
+<div class="author-content">
+  <h4 class="author-name" >Written by
+
+    <a href="http://developers.algorithmia.com/steph_kim" itemprop="author">Stephanie Kim</a>
+
+  <p class="author-bio">Developer Evangelist at Algorithmia, Data Enthusiast.</p>
+
+  <a href="http://twitter.com/algorithmia" class="btn-social twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="mailto:developers@algorithmia.com" class="btn-social youtube"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+</div><!-- ./author-content -->
+					</footer><!-- /.footer -->
+
+					<aside>
+						
+					</aside>
+
+				</div><!-- /.content -->
+			</div><!-- /.inner-wrap -->
+			<div class="sidebar"><h3>Related Posts:</h3>
+
+    <!-- Pulls from data/tags.yml to allow for data defined name attr -->
+  
+  <h4>Clients</h4>
+  <ul>
+  
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/swift">The Swift Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/android">The Android Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/node">The Node Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/rust">The Rust Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/go">The Go Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/curl">Working with cURL</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/aws-lambda">AWS Lambda</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/scala">Algorithmia & Scala</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/ruby">The Ruby Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/python">The Python Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/java">The Java Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/cli">The CLI Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/javascript">The Javascript Library</a></h5>
+</li>
+    
+  </ul>
+
+</div>
+		</article><!-- ./wrap -->
+	</div><!-- /#main -->
+
+</div>
+      
+    </div> <!-- end wrapper -->
+
+    <footer role="contentinfo" id="site-footer">
+ <p class="copyright">
+    <img src="http://developers.algorithmia.com/images/favicon-white.png" alt="Algorithmia Developer Center" itemprop="image" width="16" height="16">
+    &#169; 2017 Algorithmia
+  </p>
+
+  <nav role="navigation" class="bottom-menu">
+    <ul class="menu-item">
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/about" target="_blank">About</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/terms" target="_blank">Terms</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/pricing" target="_blank">Pricing</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/privacy" target="_blank">Privacy</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/partners" target="_blank">Partners</a></li>
+    
+      
+        
+        
+      <li><a href="http://blog.algorithmia.com" target="_blank">Blog</a></li>
+    
+      
+        
+        
+      <li><a href="https://angel.co/algorithmia/jobs/" target="_blank">Jobs</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/contact" target="_blank">Contact</a></li>
+    
+    </ul>
+  </nav><!-- /.bottom-menu -->
+</footer>
+
+
+    <script src="http://developers.algorithmia.com/js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="http://developers.algorithmia.com/js/main.js"></script>
+    <script src="/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Client Guides • Algorithmia Developer Center</title>
+    <meta name="description" content="Guides to building an app using an algorithm from Algorithmia in: Python, R, Scala, Rust, Java, Ruby, JavaScript, Go, Swift, and Android.">
+    <meta name="keywords" content="app-guide-overview">
+    
+      
+    <!-- Twitter Cards -->
+<meta name="twitter:title" content="Client Guides">
+<meta name="twitter:description" content="Guides to building an app using an algorithm from Algorithmia in: Python, R, Scala, Rust, Java, Ruby, JavaScript, Go, Swift, and Android.">
+<meta name="twitter:site" content="@algorithmia">
+<meta name="twitter:creator" content="@algorithmia">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo120x120.png">
+
+
+<!-- Open Graph -->
+
+<meta property="og:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo.png">
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Client Guides">
+<meta property="og:description" content="Guides to building an app using an algorithm from Algorithmia in: Python, R, Scala, Rust, Java, Ruby, JavaScript, Go, Swift, and Android.">
+<meta property="og:url" content="http://developers.algorithmia.com/application-development/client-guides/">
+<meta property="og:site_name" content="Algorithmia Developer Center">
+
+    <link rel="canonical" href="http://developers.algorithmia.com/application-development/client-guides/">
+
+    <link href="http://developers.algorithmia.com/atom.xml" type="application/atom+xml" rel="alternate" title="Algorithmia Developer Center Atom Feed">
+    <link href="http://developers.algorithmia.com/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="stylesheet" href="http://developers.algorithmia.com/css/main.css">
+    <!-- HTML5 Shiv and Media Query Support for IE -->
+    <!--[if lt IE 9]>
+      <script src="http://developers.algorithmia.com/js/vendor/html5shiv.min.js"></script>
+      <script src="http://developers.algorithmia.com/js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-38617973-1', 'auto');
+     ga('send', 'pageview');
+
+    </script>
+  </head>
+
+  <body id="js-body">
+    <div id="wrapper">
+      <!--[if lt IE 9]><div class="upgrade notice-warning"><strong>Your browser is quite old!</strong> Why not <a href="http://whatbrowser.org/">upgrade to a newer one</a> to better enjoy this site?</div><![endif]-->
+
+      <header id="masthead">
+  <div class="inner-wrap">
+    <a href="http://developers.algorithmia.com/" class="site-title">
+      <img src="http://developers.algorithmia.com/images/logos/algorithmia-white-logo.png" class="nav-image" alt="Algorithmia Developer Center" itemprop="image">
+    </a>
+
+    <nav role="navigation" class="menu top-menu">
+      <ul class="menu-item">
+  
+    
+      
+      
+
+    
+      <li><a href="http://docs.algorithmia.com" target="_blank">
+        API Docs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/algorithm-development" >
+        Algorithm Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/application-development" >
+        Application Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/faqs/" >
+        FAQs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/search/">
+        <i class="fa fa-search"></i> 
+      </a></li>
+    
+  
+</ul>
+    </nav>
+  </div><!-- /.inner-wrap -->
+</header><!-- /.masthead -->
+      <nav role="navigation" id="js-menu" class="sliding-menu-content">
+  <h5>Algorithmia Developer Center</h5>
+  <ul class="menu-item">
+    <li>
+      
+        
+      
+
+      <a href="http://docs.algorithmia.com">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_API Docs.png" alt="teaser" class="teaser">
+        <div class="title">API Docs</div>
+        <p class="excerpt">Read up on the ins and outs of using the Algorithmia API.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/algorithm-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Sample_Apps.png" alt="teaser" class="teaser">
+        <div class="title">Algorithm Development</div>
+        <p class="excerpt">Find out how to host your models and build an algorithm on Algorithmia.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/application-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Clients.png" alt="teaser" class="teaser">
+        <div class="title">Application Development</div>
+        <p class="excerpt">Discover how to use algorithms in your application.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/faqs/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_FAQs.png" alt="teaser" class="teaser">
+        <div class="title">FAQs</div>
+        <p class="excerpt">Find quick answers to common questions.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/search/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Search.png" alt="teaser" class="teaser">
+        <div class="title">Search</div>
+        <p class="excerpt">Search the Developer Center for the information you need to get started</p>
+      </a>
+    </li>
+  </ul>
+</nav>
+<button type="button" id="js-menu-trigger" class="sliding-menu-button lines-button x2" role="button" aria-label="Toggle Navigation">
+  <span class="nav-lines"></span>
+</button>
+
+<div id="js-menu-screen" class="menu-screen"></div>
+
+      
+      <div id="page-wrapper">
+	<div id="main" role="main">
+		<article class="wrap" itemscope itemtype="http://schema.org/Article">
+
+  <nav class="breadcrumbs">
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="http://developers.algorithmia.com" itemprop="url">
+        <span itemprop="title">Home</span>
+      </a> › 
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="http://developers.algorithmia.com/application-development/" itemprop="url">
+        <span itemprop="title">Application development</span>
+      </a>
+    </span>
+  </nav><!-- /.breadcrumbs -->
+
+			<div class="page-title">
+			<!-- 	<h1>Client Guides</h1> -->
+			</div>
+
+			<div class="inner-wrap">
+				<div id="content" class="page-content" itemprop="articleBody">
+					<h3 id="guides-to-currently-supported-languages">Guides to Currently Supported Languages:</h3>
+<div id="page-wrapper">
+
+  <div class="tiles">
+    
+      <article class="tile" itemscope="" itemtype="http://schema.org/Article">
+  <a href="http://developers.algorithmia.com/application-development/client-guides/aws-lambda" title="AWS Lambda" class="post-teaser">
+    
+      <img src="http://developers.algorithmia.com/images//language_logos/lambda.png" alt="" itemprop="image" />
+    
+  </a>
+
+  <!--
+    <p class="entry-date date published">
+      <time datetime="2016-07-12" itemprop="datePublished">
+        July 12, 2016
+      </time>
+    </p>
+  -->
+
+  <a href="http://developers.algorithmia.com/application-development/client-guides/aws-lambda"><h2 class="post-title" itemprop="name">AWS Lambda</h2></a>
+  <p class="post-excerpt" itemprop="description">Run Algorithmia code in response to events with AWS Lambda.</p>
+</article><!-- /.tile -->
+
+      <article class="tile" itemscope="" itemtype="http://schema.org/Article">
+  <a href="http://developers.algorithmia.com/application-development/client-guides/scala" title="Algorithmia &amp; Scala" class="post-teaser">
+    
+      <img src="http://developers.algorithmia.com/images//language_logos/scala.png" alt="" itemprop="image" />
+    
+  </a>
+
+  <!--
+    <p class="entry-date date published">
+      <time datetime="2016-07-08" itemprop="datePublished">
+        July 08, 2016
+      </time>
+    </p>
+  -->
+
+  <a href="http://developers.algorithmia.com/application-development/client-guides/scala"><h2 class="post-title" itemprop="name">Algorithmia &amp; Scala</h2></a>
+  <p class="post-excerpt" itemprop="description">How to use the Java client for Scala projects.</p>
+</article><!-- /.tile -->
+
+      <article class="tile" itemscope="" itemtype="http://schema.org/Article">
+  <a href="http://developers.algorithmia.com/application-development/client-guides/android" title="The Android Client" class="post-teaser">
+    
+      <img src="http://developers.algorithmia.com/images//language_logos/android.png" alt="" itemprop="image" />
+    
+  </a>
+
+  <!--
+    <p class="entry-date date published">
+      <time datetime="2016-11-07" itemprop="datePublished">
+        November 07, 2016
+      </time>
+    </p>
+  -->
+
+  <a href="http://developers.algorithmia.com/application-development/client-guides/android"><h2 class="post-title" itemprop="name">The Android Client</h2></a>
+  <p class="post-excerpt" itemprop="description">Get going with the Android client on Algorithmia.</p>
+</article><!-- /.tile -->
+
+      <article class="tile" itemscope="" itemtype="http://schema.org/Article">
+  <a href="http://developers.algorithmia.com/application-development/client-guides/cli" title="The CLI Client" class="post-teaser">
+    
+      <img src="http://developers.algorithmia.com/images//language_logos/cli.png" alt="" itemprop="image" />
+    
+  </a>
+
+  <!--
+    <p class="entry-date date published">
+      <time datetime="2016-02-22" itemprop="datePublished">
+        February 22, 2016
+      </time>
+    </p>
+  -->
+
+  <a href="http://developers.algorithmia.com/application-development/client-guides/cli"><h2 class="post-title" itemprop="name">The CLI Client</h2></a>
+  <p class="post-excerpt" itemprop="description">Get familiar with the CLI client.</p>
+</article><!-- /.tile -->
+
+      <article class="tile" itemscope="" itemtype="http://schema.org/Article">
+  <a href="http://developers.algorithmia.com/application-development/client-guides/go" title="The Go Client" class="post-teaser">
+    
+      <img src="http://developers.algorithmia.com/images//language_logos/go.png" alt="" itemprop="image" />
+    
+  </a>
+
+  <!--
+    <p class="entry-date date published">
+      <time datetime="2016-07-12" itemprop="datePublished">
+        July 12, 2016
+      </time>
+    </p>
+  -->
+
+  <a href="http://developers.algorithmia.com/application-development/client-guides/go"><h2 class="post-title" itemprop="name">The Go Client</h2></a>
+  <p class="post-excerpt" itemprop="description">Integrate Algorithmia into your Go project.</p>
+</article><!-- /.tile -->
+
+      <article class="tile" itemscope="" itemtype="http://schema.org/Article">
+  <a href="http://developers.algorithmia.com/application-development/client-guides/java" title="The Java Client" class="post-teaser">
+    
+      <img src="http://developers.algorithmia.com/images//language_logos/java.png" alt="" itemprop="image" />
+    
+  </a>
+
+  <!--
+    <p class="entry-date date published">
+      <time datetime="2016-07-08" itemprop="datePublished">
+        July 08, 2016
+      </time>
+    </p>
+  -->
+
+  <a href="http://developers.algorithmia.com/application-development/client-guides/java"><h2 class="post-title" itemprop="name">The Java Client</h2></a>
+  <p class="post-excerpt" itemprop="description">Working in Java? Check out this Algorithmia Java client.</p>
+</article><!-- /.tile -->
+
+      <article class="tile" itemscope="" itemtype="http://schema.org/Article">
+  <a href="http://developers.algorithmia.com/application-development/client-guides/javascript" title="The Javascript Library" class="post-teaser">
+    
+      <img src="http://developers.algorithmia.com/images//language_logos/javascript.png" alt="" itemprop="image" />
+    
+  </a>
+
+  <!--
+    <p class="entry-date date published">
+      <time datetime="2016-01-11" itemprop="datePublished">
+        January 11, 2016
+      </time>
+    </p>
+  -->
+
+  <a href="http://developers.algorithmia.com/application-development/client-guides/javascript"><h2 class="post-title" itemprop="name">The Javascript Library</h2></a>
+  <p class="post-excerpt" itemprop="description">We offer a vanilla JavaScript client for calling algorithms in the marketplace.
+
+</p>
+</article><!-- /.tile -->
+
+      <article class="tile" itemscope="" itemtype="http://schema.org/Article">
+  <a href="http://developers.algorithmia.com/application-development/client-guides/node" title="The Node Client" class="post-teaser">
+    
+      <img src="http://developers.algorithmia.com/images//language_logos/node.png" alt="" itemprop="image" />
+    
+  </a>
+
+  <!--
+    <p class="entry-date date published">
+      <time datetime="2016-07-19" itemprop="datePublished">
+        July 19, 2016
+      </time>
+    </p>
+  -->
+
+  <a href="http://developers.algorithmia.com/application-development/client-guides/node"><h2 class="post-title" itemprop="name">The Node Client</h2></a>
+  <p class="post-excerpt" itemprop="description">Like building Node apps? Here's a Node Client that makes it easy.</p>
+</article><!-- /.tile -->
+
+      <article class="tile" itemscope="" itemtype="http://schema.org/Article">
+  <a href="http://developers.algorithmia.com/application-development/client-guides/python" title="The Python Client" class="post-teaser">
+    
+      <img src="http://developers.algorithmia.com/images//language_logos/python.png" alt="" itemprop="image" />
+    
+  </a>
+
+  <!--
+    <p class="entry-date date published">
+      <time datetime="2016-07-08" itemprop="datePublished">
+        July 08, 2016
+      </time>
+    </p>
+  -->
+
+  <a href="http://developers.algorithmia.com/application-development/client-guides/python"><h2 class="post-title" itemprop="name">The Python Client</h2></a>
+  <p class="post-excerpt" itemprop="description">Get going with the Python client on Algorithmia.</p>
+</article><!-- /.tile -->
+
+      <article class="tile" itemscope="" itemtype="http://schema.org/Article">
+  <a href="http://developers.algorithmia.com/application-development/client-guides/r" title="The R Client" class="post-teaser">
+    
+      <img src="http://developers.algorithmia.com/images//language_logos/r.png" alt="" itemprop="image" />
+    
+  </a>
+
+  <!--
+    <p class="entry-date date published">
+      <time datetime="2016-09-12" itemprop="datePublished">
+        September 12, 2016
+      </time>
+    </p>
+  -->
+
+  <a href="http://developers.algorithmia.com/application-development/client-guides/r"><h2 class="post-title" itemprop="name">The R Client</h2></a>
+  <p class="post-excerpt" itemprop="description">Get going with the R client on Algorithmia.</p>
+</article><!-- /.tile -->
+
+      <article class="tile" itemscope="" itemtype="http://schema.org/Article">
+  <a href="http://developers.algorithmia.com/application-development/client-guides/ruby" title="The Ruby Client" class="post-teaser">
+    
+      <img src="http://developers.algorithmia.com/images//language_logos/ruby.png" alt="" itemprop="image" />
+    
+  </a>
+
+  <!--
+    <p class="entry-date date published">
+      <time datetime="2016-07-08" itemprop="datePublished">
+        July 08, 2016
+      </time>
+    </p>
+  -->
+
+  <a href="http://developers.algorithmia.com/application-development/client-guides/ruby"><h2 class="post-title" itemprop="name">The Ruby Client</h2></a>
+  <p class="post-excerpt" itemprop="description">Rubyist? We've got a client just for you.</p>
+</article><!-- /.tile -->
+
+      <article class="tile" itemscope="" itemtype="http://schema.org/Article">
+  <a href="http://developers.algorithmia.com/application-development/client-guides/rust" title="The Rust Client" class="post-teaser">
+    
+      <img src="http://developers.algorithmia.com/images//language_logos/rust.png" alt="" itemprop="image" />
+    
+  </a>
+
+  <!--
+    <p class="entry-date date published">
+      <time datetime="2016-07-12" itemprop="datePublished">
+        July 12, 2016
+      </time>
+    </p>
+  -->
+
+  <a href="http://developers.algorithmia.com/application-development/client-guides/rust"><h2 class="post-title" itemprop="name">The Rust Client</h2></a>
+  <p class="post-excerpt" itemprop="description">Rust fan? We've got you covered.</p>
+</article><!-- /.tile -->
+
+      <article class="tile" itemscope="" itemtype="http://schema.org/Article">
+  <a href="http://developers.algorithmia.com/application-development/client-guides/swift" title="The Swift Client" class="post-teaser">
+    
+      <img src="http://developers.algorithmia.com/images//language_logos/swift.png" alt="" itemprop="image" />
+    
+  </a>
+
+  <!--
+    <p class="entry-date date published">
+      <time datetime="2016-12-08" itemprop="datePublished">
+        December 08, 2016
+      </time>
+    </p>
+  -->
+
+  <a href="http://developers.algorithmia.com/application-development/client-guides/swift"><h2 class="post-title" itemprop="name">The Swift Client</h2></a>
+  <p class="post-excerpt" itemprop="description">Get started building an iOS app.</p>
+</article><!-- /.tile -->
+
+      <article class="tile" itemscope="" itemtype="http://schema.org/Article">
+  <a href="http://developers.algorithmia.com/application-development/client-guides/curl" title="Working with cURL" class="post-teaser">
+    
+      <img src="http://developers.algorithmia.com/images//language_logos/cli.png" alt="" itemprop="image" />
+    
+  </a>
+
+  <!--
+    <p class="entry-date date published">
+      <time datetime="2016-07-12" itemprop="datePublished">
+        July 12, 2016
+      </time>
+    </p>
+  -->
+
+  <a href="http://developers.algorithmia.com/application-development/client-guides/curl"><h2 class="post-title" itemprop="name">Working with cURL</h2></a>
+  <p class="post-excerpt" itemprop="description">You can use cURL to call any algorithm on the marketplace and manage your data through Algorithmia.
+
+</p>
+</article><!-- /.tile -->
+
+  </div><!-- /.tiles -->
+
+</div>
+
+				</div><!-- /.content -->
+			</div><!-- /.inner-wrap -->
+			
+		</article><!-- ./wrap -->
+	</div><!-- /#main -->
+
+</div>
+      
+    </div> <!-- end wrapper -->
+
+    <footer role="contentinfo" id="site-footer">
+ <p class="copyright">
+    <img src="http://developers.algorithmia.com/images/favicon-white.png" alt="Algorithmia Developer Center" itemprop="image" width="16" height="16">
+    &#169; 2017 Algorithmia
+  </p>
+
+  <nav role="navigation" class="bottom-menu">
+    <ul class="menu-item">
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/about" target="_blank">About</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/terms" target="_blank">Terms</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/pricing" target="_blank">Pricing</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/privacy" target="_blank">Privacy</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/partners" target="_blank">Partners</a></li>
+    
+      
+        
+        
+      <li><a href="http://blog.algorithmia.com" target="_blank">Blog</a></li>
+    
+      
+        
+        
+      <li><a href="https://angel.co/algorithmia/jobs/" target="_blank">Jobs</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/contact" target="_blank">Contact</a></li>
+    
+    </ul>
+  </nav><!-- /.bottom-menu -->
+</footer>
+
+
+    <script src="http://developers.algorithmia.com/js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="http://developers.algorithmia.com/js/main.js"></script>
+    <script src="/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Customizing API Keys & Access • Algorithmia Developer Center</title>
+    <meta name="description" content="Did you know you can have multiple API keys with different access permissions?">
+    <meta name="keywords" content="alg-dev-getting-started, app-dev-getting-started">
+    
+      
+    <!-- Twitter Cards -->
+<meta name="twitter:title" content="Customizing API Keys & Access">
+<meta name="twitter:description" content="Did you know you can have multiple API keys with different access permissions?">
+<meta name="twitter:site" content="@algorithmia">
+<meta name="twitter:creator" content="@algorithmia">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo120x120.png">
+
+
+<!-- Open Graph -->
+
+<meta property="og:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo.png">
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Customizing API Keys & Access">
+<meta property="og:description" content="Did you know you can have multiple API keys with different access permissions?">
+<meta property="og:url" content="http://developers.algorithmia.com/basics/customizing-api-keys/">
+<meta property="og:site_name" content="Algorithmia Developer Center">
+
+    <link rel="canonical" href="http://developers.algorithmia.com/basics/customizing-api-keys/">
+
+    <link href="http://developers.algorithmia.com/atom.xml" type="application/atom+xml" rel="alternate" title="Algorithmia Developer Center Atom Feed">
+    <link href="http://developers.algorithmia.com/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="stylesheet" href="http://developers.algorithmia.com/css/main.css">
+    <!-- HTML5 Shiv and Media Query Support for IE -->
+    <!--[if lt IE 9]>
+      <script src="http://developers.algorithmia.com/js/vendor/html5shiv.min.js"></script>
+      <script src="http://developers.algorithmia.com/js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-38617973-1', 'auto');
+     ga('send', 'pageview');
+
+    </script>
+  </head>
+
+  <body id="js-body">
+    <div id="wrapper">
+      <!--[if lt IE 9]><div class="upgrade notice-warning"><strong>Your browser is quite old!</strong> Why not <a href="http://whatbrowser.org/">upgrade to a newer one</a> to better enjoy this site?</div><![endif]-->
+
+      <header id="masthead">
+  <div class="inner-wrap">
+    <a href="http://developers.algorithmia.com/" class="site-title">
+      <img src="http://developers.algorithmia.com/images/logos/algorithmia-white-logo.png" class="nav-image" alt="Algorithmia Developer Center" itemprop="image">
+    </a>
+
+    <nav role="navigation" class="menu top-menu">
+      <ul class="menu-item">
+  
+    
+      
+      
+
+    
+      <li><a href="http://docs.algorithmia.com" target="_blank">
+        API Docs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/algorithm-development" >
+        Algorithm Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/application-development" >
+        Application Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/faqs/" >
+        FAQs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/search/">
+        <i class="fa fa-search"></i> 
+      </a></li>
+    
+  
+</ul>
+    </nav>
+  </div><!-- /.inner-wrap -->
+</header><!-- /.masthead -->
+      <nav role="navigation" id="js-menu" class="sliding-menu-content">
+  <h5>Algorithmia Developer Center</h5>
+  <ul class="menu-item">
+    <li>
+      
+        
+      
+
+      <a href="http://docs.algorithmia.com">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_API Docs.png" alt="teaser" class="teaser">
+        <div class="title">API Docs</div>
+        <p class="excerpt">Read up on the ins and outs of using the Algorithmia API.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/algorithm-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Sample_Apps.png" alt="teaser" class="teaser">
+        <div class="title">Algorithm Development</div>
+        <p class="excerpt">Find out how to host your models and build an algorithm on Algorithmia.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/application-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Clients.png" alt="teaser" class="teaser">
+        <div class="title">Application Development</div>
+        <p class="excerpt">Discover how to use algorithms in your application.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/faqs/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_FAQs.png" alt="teaser" class="teaser">
+        <div class="title">FAQs</div>
+        <p class="excerpt">Find quick answers to common questions.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/search/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Search.png" alt="teaser" class="teaser">
+        <div class="title">Search</div>
+        <p class="excerpt">Search the Developer Center for the information you need to get started</p>
+      </a>
+    </li>
+  </ul>
+</nav>
+<button type="button" id="js-menu-trigger" class="sliding-menu-button lines-button x2" role="button" aria-label="Toggle Navigation">
+  <span class="nav-lines"></span>
+</button>
+
+<div id="js-menu-screen" class="menu-screen"></div>
+
+      
+      <div id="page-wrapper">
+
+	<div id="main" role="main">
+		<article class="wrap" itemscope itemtype="http://schema.org/Article">
+
+  <nav class="breadcrumbs">
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="http://developers.algorithmia.com" itemprop="url">
+        <span itemprop="title">Home</span>
+      </a> › 
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="http://developers.algorithmia.com/basics/" itemprop="url">
+        <span itemprop="title">Basics</span>
+      </a>
+    </span>
+  </nav><!-- /.breadcrumbs -->
+
+			<div class="page-title">
+				<h1>Customizing API Keys & Access</h1>
+				
+			</div>
+
+			<div class="inner-wrap">
+				<div id="content" class="page-content" itemprop="articleBody">
+					<p>To call algorithms and interact with the Data API, you’ll use an API key to authenticate. But did you know you can create additional API keys and customize their access permissions? This guide will show you how.</p>
+
+<nav class="toc">
+<ul id="markdown-toc">
+  <li><a href="#your-default-api-key" id="markdown-toc-your-default-api-key">Your default API key</a></li>
+  <li><a href="#adding-a-new-api-key" id="markdown-toc-adding-a-new-api-key">Adding a new API key</a></li>
+  <li><a href="#access-options" id="markdown-toc-access-options">Access options</a></li>
+</ul>
+
+</nav>
+
+<h2 id="your-default-api-key">Your default API key</h2>
+
+<p>To view your API keys, head on over to your profile on Algorithmia and click on the “Credentials” option in the horizontal menu. For more information about your profile, be sure to check out the <a href="https://developers.algorithmia.com/basics/your-profile">Your Profile guide</a> for more information.</p>
+
+<p><img src="/images/post_images/api_keys/api_keys_home.png" alt="API keys home" /></p>
+
+<p>When you sign up for Algorithmia, your account is created with a default API key. Conveniently, it is named <code>default-key</code>! This key will show up in the code snippets on an algorithm profile page when you are signed in, allowing you to easily make calls to the algorithm either through the web console or by copying the code directly to include in your program.</p>
+
+<p class="notice-info">If you delete your <code>default-key</code>, it will no longer show up in the code snippets on the algorithm profile pages. Simply create a new key and name it <code>default-key</code> to have it appear again!</p>
+
+<h2 id="adding-a-new-api-key">Adding a new API key</h2>
+
+<p>Let’s walk through the process of adding an additional API key to your account. Click the purple “New simple key” button below the list of active keys. You’ll be prompted with a dialog that allows you to name your new key and set the permissions on it:</p>
+
+<p><img src="/images/post_images/api_keys/api_key_dialog.png" alt="API keys dialog" /></p>
+
+<h2 id="access-options">Access options</h2>
+
+<p>Each API key can be customized to enable or restrict access depending on your needs. This is particularly helpful if you are running multiple applications or websites that use the Algorithmia API. Each app can use a different key so that if they are ever compromised (such as accidentally pushing a key to GitHub), you won’t have to reset the API key for each project.</p>
+
+<p>This allows you to put security first by only enabling the access you actually need. <img alt="closed_lock_with_key" src="/images/emoji/closed_lock_with_key.png" class="emoji" width="20" height="20px" /></p>
+
+<h3 id="named-algorithms-only">Named algorithms only</h3>
+
+<p>One way you can restrict access with an API key is to only white list the algorithms that you want that key to be able to call.</p>
+
+<p>You can do this by adding the shorthand name for the algorithms you want the API key to access like so:</p>
+
+<p><img src="/images/post_images/api_keys/algo_restrictions.png" alt="caller origin" /></p>
+
+<p>Note that we are using the alias version of the algorithm: <code>algo://</code> is the prefix you’ll need to use before the owner name and algorithm name. Let’s say that I have a project that has its own API key that I want to restrict to only call the algorithms I specify. I’ll name my key after the project, then add the algorithms it can call. If I want to use <a href="https://algorithmia.com/algorithms/lizmrush/GenerateParagraphFromTrigram">Generate Paragraph From Trigram</a>, I’ll format the alias like this: <code>algo://</code> + the algorithm owner + the algorithm name. Thus Generate Paragraph from Trigram would end ups as <code>algo://lizmrush/GenerateParagraphFromTrigram</code>.</p>
+
+<p><img src="/images/post_images/api_keys/algo_restrictions_no_star.png" alt="caller origin" /></p>
+
+<p>By default, any key can call any algorithm on the platform. You can see in the above screenshot that under the Algorithm Access section, there is an entry <code>algo://*</code>, which is highlighted. This is a wildcard that matches all of the algorithms. To make sure your key is restricted to calling only the algorithms you’ve specified above, be sure to remove this wildcard entry by clicking on the trashcan icon.</p>
+
+<h3 id="caller-origin--hostname">Caller origin &amp; hostname</h3>
+
+<p>Another way to customize your API keys and the permissions is to restrict the permissions on where API calls can originate. There are two options you can check in the dialog, native clients and web browser:</p>
+
+<p><img src="/images/post_images/api_keys/call_origin.png" alt="caller origin" /></p>
+
+<p>If you are only calling Algorithmia through a client, you can leave that box checked and your key will work as you make API calls. However, if you plan to use this key on a website where you will be making CORS requests, select the web browser permission. When you check that box, another field will appear allowing for more customization:</p>
+
+<p><img src="/images/post_images/api_keys/call_origin_web.png" alt="caller origin on web" /></p>
+
+<p>As you can see, when you allow cross-origin requests to use your authentication, you can restrict the access by referrer hostname. This is a security measure that allows you to say that the API key can only be used when the request is coming from your website.</p>
+
+<h3 id="data-api-access">Data API Access</h3>
+
+<p>The third method to customize your API key access is to change its permissions relating to the Data API. By default, when you create a new API key data access is set to none.</p>
+
+<p><img src="/images/post_images/api_keys/data_none.png" alt="data default" /></p>
+
+<p>You have two options to change the Data API access: you can either let your API key have permission to read only or to allow read and write access.</p>
+
+<p><img src="/images/post_images/api_keys/data_all.png" alt="data all" /></p>
+
+<p>By selecting read only, you’ve set up your API key permissions to let it access data in through the API but not write to your data. This is good if you have an application that needs to be able to read a trained model or data file that you’ve stored in order to run the algorithm but won’t be saving any data from the API call.</p>
+
+<p>When you select read and write, the API key has the ability to both read from your data as well as write to it. For many algorithms, the results can be written to your storage through the Data API and the API key making the call will need the permissions to write. If you are trying to run an algorithm that writes to your data storage but are getting an authentication error, make sure that the API key you are using to authenticate has all the necessary permissions you need.</p>
+
+					<hr />
+
+					<footer class="page-footer">
+						<div class="inline-btn">
+	<a class="btn-social twitter" href="https://twitter.com/intent/tweet?text=Customizing%20API%20Keys%20&amp;%20Access&amp;url=http://developers.algorithmia.com/basics/customizing-api-keys/&amp;via=algorithmia" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Share on Twitter</a>
+	<a class="btn-social facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://developers.algorithmia.com/basics/customizing-api-keys/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> Share on Facebook</a>
+	<a class="btn-social google-plus"  href="https://plus.google.com/share?url=http://developers.algorithmia.com/basics/customizing-api-keys/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i> Share on Google+</a>
+</div><!-- /.share-this -->
+
+						<div class="page-meta">
+  <p>Updated
+
+    <time datetime="2016-02-17T15:00:38Z" itemprop="datePublished">February 17, 2016</time></p>
+  
+</div><!-- /.page-meta --><hr />
+						
+<!--<div class="author-image">
+	<img src="http://developers.algorithmia.com/images//authors/lizrush.jpeg" alt="Algorithmia Developers">
+</div> ./author-image -->
+
+<div class="author-content">
+  <h4 class="author-name" >Written by
+
+    <a href="http://developers.algorithmia.com/liz_rush" itemprop="author">Algorithmia Developers</a>
+
+  <p class="author-bio"></p>
+
+  <a href="http://twitter.com/algorithmia" class="btn-social twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="mailto:developers@algorithmia.com" class="btn-social youtube"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+</div><!-- ./author-content -->
+					</footer><!-- /.footer -->
+
+					<aside>
+						
+					</aside>
+
+				</div><!-- /.content -->
+			</div><!-- /.inner-wrap -->
+			<div class="sidebar"><h3>Related Posts:</h3>
+
+    <!-- Pulls from data/tags.yml to allow for data defined name attr -->
+  
+  <h4>Getting Started</h4>
+  <ul>
+  
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/basics/organization_profiles/">Teams and Organizations</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/basics/your-profile/">Your Profile</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/basics/algorithm_profiles/">Understanding the Algorithm Profile</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/basics/algorithm_basics/">Algorithm Basics</a></h5>
+</li>
+    
+  </ul>
+
+    <!-- Pulls from data/tags.yml to allow for data defined name attr -->
+  
+  <h4>Getting Started</h4>
+  <ul>
+  
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/basics/organization_profiles/">Teams and Organizations</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/basics/your-profile/">Your Profile</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/basics/algorithm_profiles/">Understanding the Algorithm Profile</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/basics/algorithm_basics/">Algorithm Basics</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/basics/getting-started/">Getting Started with Algorithmia</a></h5>
+</li>
+    
+  </ul>
+
+</div>
+		</article><!-- ./wrap -->
+	</div><!-- /#main -->
+
+</div>
+      
+    </div> <!-- end wrapper -->
+
+    <footer role="contentinfo" id="site-footer">
+ <p class="copyright">
+    <img src="http://developers.algorithmia.com/images/favicon-white.png" alt="Algorithmia Developer Center" itemprop="image" width="16" height="16">
+    &#169; 2017 Algorithmia
+  </p>
+
+  <nav role="navigation" class="bottom-menu">
+    <ul class="menu-item">
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/about" target="_blank">About</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/terms" target="_blank">Terms</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/pricing" target="_blank">Pricing</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/privacy" target="_blank">Privacy</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/partners" target="_blank">Partners</a></li>
+    
+      
+        
+        
+      <li><a href="http://blog.algorithmia.com" target="_blank">Blog</a></li>
+    
+      
+        
+        
+      <li><a href="https://angel.co/algorithmia/jobs/" target="_blank">Jobs</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/contact" target="_blank">Contact</a></li>
+    
+    </ul>
+  </nav><!-- /.bottom-menu -->
+</footer>
+
+
+    <script src="http://developers.algorithmia.com/js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="http://developers.algorithmia.com/js/main.js"></script>
+    <script src="/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

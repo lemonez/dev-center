@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Swift Client • Algorithmia Developer Center</title>
+    <meta name="description" content="Get started building an iOS app.">
+    <meta name="keywords" content="clients">
+    
+    
+    <!-- Twitter Cards -->
+<meta name="twitter:title" content="The Swift Client">
+<meta name="twitter:description" content="Get started building an iOS app.">
+<meta name="twitter:site" content="@algorithmia">
+<meta name="twitter:creator" content="@algorithmia">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo120x120.png">
+
+
+<!-- Open Graph -->
+
+<meta property="og:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo.png">
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Swift Client">
+<meta property="og:description" content="Get started building an iOS app.">
+<meta property="og:url" content="http://developers.algorithmia.com/application-development/client-guides/swift">
+<meta property="og:site_name" content="Algorithmia Developer Center">
+
+    <link rel="canonical" href="http://developers.algorithmia.com/application-development/client-guides/swift">
+
+    <link href="http://developers.algorithmia.com/atom.xml" type="application/atom+xml" rel="alternate" title="Algorithmia Developer Center Atom Feed">
+    <link href="http://developers.algorithmia.com/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="stylesheet" href="http://developers.algorithmia.com/css/main.css">
+    <!-- HTML5 Shiv and Media Query Support for IE -->
+    <!--[if lt IE 9]>
+      <script src="http://developers.algorithmia.com/js/vendor/html5shiv.min.js"></script>
+      <script src="http://developers.algorithmia.com/js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-38617973-1', 'auto');
+     ga('send', 'pageview');
+
+    </script>
+  </head>
+
+  <body id="js-body">
+    <div id="wrapper">
+      <!--[if lt IE 9]><div class="upgrade notice-warning"><strong>Your browser is quite old!</strong> Why not <a href="http://whatbrowser.org/">upgrade to a newer one</a> to better enjoy this site?</div><![endif]-->
+
+      <header id="masthead">
+  <div class="inner-wrap">
+    <a href="http://developers.algorithmia.com/" class="site-title">
+      <img src="http://developers.algorithmia.com/images/logos/algorithmia-white-logo.png" class="nav-image" alt="Algorithmia Developer Center" itemprop="image">
+    </a>
+
+    <nav role="navigation" class="menu top-menu">
+      <ul class="menu-item">
+  
+    
+      
+      
+
+    
+      <li><a href="http://docs.algorithmia.com" target="_blank">
+        API Docs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/algorithm-development" >
+        Algorithm Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/application-development" >
+        Application Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/faqs/" >
+        FAQs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/search/">
+        <i class="fa fa-search"></i> 
+      </a></li>
+    
+  
+</ul>
+    </nav>
+  </div><!-- /.inner-wrap -->
+</header><!-- /.masthead -->
+      <nav role="navigation" id="js-menu" class="sliding-menu-content">
+  <h5>Algorithmia Developer Center</h5>
+  <ul class="menu-item">
+    <li>
+      
+        
+      
+
+      <a href="http://docs.algorithmia.com">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_API Docs.png" alt="teaser" class="teaser">
+        <div class="title">API Docs</div>
+        <p class="excerpt">Read up on the ins and outs of using the Algorithmia API.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/algorithm-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Sample_Apps.png" alt="teaser" class="teaser">
+        <div class="title">Algorithm Development</div>
+        <p class="excerpt">Find out how to host your models and build an algorithm on Algorithmia.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/application-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Clients.png" alt="teaser" class="teaser">
+        <div class="title">Application Development</div>
+        <p class="excerpt">Discover how to use algorithms in your application.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/faqs/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_FAQs.png" alt="teaser" class="teaser">
+        <div class="title">FAQs</div>
+        <p class="excerpt">Find quick answers to common questions.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/search/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Search.png" alt="teaser" class="teaser">
+        <div class="title">Search</div>
+        <p class="excerpt">Search the Developer Center for the information you need to get started</p>
+      </a>
+    </li>
+  </ul>
+</nav>
+<button type="button" id="js-menu-trigger" class="sliding-menu-button lines-button x2" role="button" aria-label="Toggle Navigation">
+  <span class="nav-lines"></span>
+</button>
+
+<div id="js-menu-screen" class="menu-screen"></div>
+
+      
+      <div id="page-wrapper">
+
+	<div id="main" role="main">
+		<article class="wrap" itemscope itemtype="http://schema.org/Article">
+
+  <nav class="breadcrumbs">
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="http://developers.algorithmia.com" itemprop="url">
+        <span itemprop="title">Home</span>
+      </a> › 
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="http://developers.algorithmia.com/clients/" itemprop="url">
+        <span itemprop="title">Clients</span>
+      </a>
+    </span>
+  </nav><!-- /.breadcrumbs -->
+
+			<div class="page-title">
+				<h1>The Swift Client</h1>
+				
+				      <p class="github-note">
+						Available on <a href='https://github.com/algorithmiaio/algorithmia-swift.git']}' target='_blank' rel='nofollow'>GitHub</a>.
+					  </p>
+				
+			</div>
+
+			<div class="inner-wrap">
+				<div id="content" class="page-content" itemprop="articleBody">
+					<p>This guide provides a walk-through of how to use the official Algorithmia Swift client to call algorithms and manage your data
+through the Algorithmia platform.</p>
+
+<p>Additional reference documentation can be found in the <a href="http://cocoadocs.org/docsets/algorithmia">Algorithmia Client CocoaDocs</a>.</p>
+
+<h2 id="installation">Installation</h2>
+
+<h3 id="cocoapods">CocoaPods</h3>
+
+<p>You can install via CocoaPods by adding it to your <code>Podfile</code>:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">use_frameworks!</span>
+
+<span class="n">source</span> <span class="s1">&#39;https://github.com/CocoaPods/Specs.git&#39;</span>
+<span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">&#39;10.0&#39;</span>
+
+<span class="n">pod</span> <span class="s1">&#39;algorithmia&#39;</span></code></pre></div>
+
+<p>And run <code>pod install</code>.</p>
+
+<h3 id="manual">Manual</h3>
+
+<p>You can clone the repo and drag &amp; copy files in Algorithmia</p>
+
+<h2 id="api-key">API Key</h2>
+<p>Instantiate a client using your API Key:</p>
+
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Algorithmia</span><span class="p">.</span><span class="n">client</span><span class="p">(</span><span class="nl">simpleKey</span><span class="p">:</span> <span class="n">apiKey</span><span class="p">)</span></code></pre></div>
+
+<p>Notes:
+- API key may be omitted only when making calls from algorithms running on the Algorithmia cluster</p>
+
+<h2 id="calling-algorithms">Calling Algorithms</h2>
+<p>The following examples of calling algorithms are organized by type of input/output which vary between algorithms.</p>
+
+<p>Note: a single algorithm may have different input and output types, or accept multiple types of input,
+so consult the algorithm’s description for usage examples specific to that algorithm.</p>
+
+<h3 id="text-inputoutput">Text input/output</h3>
+
+<p>Call an algorithm with text input by simply passing a string into its <code>pipe</code> method.
+If the algorithm output is text, then call <code>getText</code> method to get result as string.</p>
+
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">algo</span><span class="p">(</span><span class="nl">algoUri</span><span class="p">:</span> <span class="s">&quot;algo://demo/Hello/0.1.1&quot;</span><span class="p">)</span>
+<span class="n">foo</span><span class="p">.</span><span class="n">pipe</span><span class="p">(</span><span class="nl">text</span><span class="p">:</span> <span class="s">&quot;foo&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="n">resp</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="o">==</span> <span class="nb">nil</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="p">.</span><span class="n">getText</span><span class="p">()</span>
+        <span class="k">let</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">resp</span><span class="p">.</span><span class="n">getMetadata</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<h3 id="json-inputoutput">JSON input/output</h3>
+
+<p>Call an algorithm with JSON input by simply passing in a type that can be serialized to JSON:
+most notably python dicts and arrays.
+For algorithms that return JSON, call <code>getJson</code> method of the response to get the appropriate
+deserialized type.</p>
+
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">algo</span><span class="p">(</span><span class="nl">algoUri</span><span class="p">:</span> <span class="s">&quot;algo://WebPredict/ListAnagrams/0.1.0&quot;</span><span class="p">)</span>
+<span class="n">foo</span><span class="p">.</span><span class="n">pipe</span><span class="p">(</span><span class="nl">json</span><span class="p">:</span> <span class="n">jsonData</span><span class="p">)</span> <span class="p">{</span> <span class="n">resp</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="o">==</span> <span class="nb">nil</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="p">.</span><span class="n">getJSON</span><span class="p">()</span>
+        <span class="k">let</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">resp</span><span class="p">.</span><span class="n">getMetadata</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>If you already have serialzied JSON, you can call as follows:</p>
+
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">algo</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="k">let</span> <span class="n">jsonWords</span> <span class="o">=</span> <span class="s">&quot;[</span><span class="se">\&quot;</span><span class="s">transformer</span><span class="se">\&quot;</span><span class="s">, </span><span class="se">\&quot;</span><span class="s">terraforms</span><span class="se">\&quot;</span><span class="s">, </span><span class="se">\&quot;</span><span class="s">retransform</span><span class="se">\&quot;</span><span class="s">]&quot;</span>
+<span class="n">foo</span><span class="p">.</span><span class="n">pipe</span><span class="p">(</span><span class="nl">rawJson</span><span class="p">:</span> <span class="n">jsonWords</span><span class="p">)</span> <span class="p">{</span> <span class="n">resp</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+
+<span class="p">}</span></code></pre></div>
+
+<h3 id="binary-inputoutput">Binary input/output</h3>
+
+<p>Call an algorithm with Binary input by passing a Data Object into the <code>pipe</code> method.
+Similarly, if the algorithm response is binary data, then result of <code>getData</code> method
+will be a Data object from byte array.</p>
+
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">algo</span><span class="p">(</span><span class="nl">algoUri</span><span class="p">:</span> <span class="s">&quot;algo://WebPredict/ListAnagrams/0.1.0&quot;</span><span class="p">)</span>
+<span class="n">foo</span><span class="p">.</span><span class="n">pipe</span><span class="p">(</span><span class="nl">data</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span> <span class="n">resp</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="o">==</span> <span class="nb">nil</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="p">.</span><span class="n">getData</span><span class="p">()</span>
+        <span class="k">let</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">resp</span><span class="p">.</span><span class="n">getMetadata</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<h3 id="error-handling">Error handling</h3>
+
+<p>API errors and Algorithm exceptions will return <code>AlgoError</code> in callback to <code>pipe</code> method:</p>
+
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">algo</span><span class="p">(</span><span class="nl">algoUri</span><span class="p">:</span> <span class="s">&quot;algo://util/whoopsWrongAlgo&quot;</span><span class="p">)</span>
+<span class="n">foo</span><span class="p">.</span><span class="n">pipe</span><span class="p">(</span><span class="nl">text</span><span class="p">:</span> <span class="s">&quot;foo&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="n">resp</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="n">error</span> <span class="o">=</span> <span class="n">error</span> <span class="kt">as</span><span class="o">?</span> <span class="n">AlgoError</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="n">error</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="p">.</span><span class="nl">ProcessError</span><span class="p">:</span>
+            <span class="n">print</span><span class="p">(</span><span class="s">&quot;Algorithmia Error:&quot;</span><span class="p">,</span><span class="n">error</span><span class="p">)</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="p">.</span><span class="nl">DataError</span><span class="p">:</span>
+            <span class="n">print</span><span class="p">(</span><span class="s">&quot;Data Error:&quot;</span><span class="p">,</span><span class="n">error</span><span class="p">)</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// Algorithmia Error: algorithm algo://util/whoopsWrongAlgo not found</span></code></pre></div>
+
+<h2 id="working-with-data">Working with Data</h2>
+
+<p>The Algorithmia Java client also provides a way to manage both Algorithmia hosted data
+and data from Dropbox or S3 accounts that you’ve connected to you Algorithmia account.</p>
+
+<p>This client provides a <code>AlgoDataFile</code> type (generally created by <code>client.file(uri)</code>)
+and a <code>AlgoDataDirectory</code> type (generally created by <code>client.dir(uri)</code>) that provide
+methods for managing your data.</p>
+
+<h3 id="create-directories">Create directories</h3>
+
+<p>Create directories by instantiating a <code>AlgoDataDirectory</code> object and calling <code>create()</code>:</p>
+
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="n">robots</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">dir</span><span class="p">(</span><span class="s">&quot;data://.my/robots&quot;</span><span class="p">)</span>
+<span class="n">robots</span><span class="p">.</span><span class="n">create</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+<span class="p">...</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="n">dbxRobots</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">dir</span><span class="p">(</span><span class="s">&quot;dropbox://robots&quot;</span><span class="p">)</span>
+<span class="n">dbxRobots</span><span class="p">.</span><span class="n">create</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+<span class="p">...</span>
+<span class="p">}</span></code></pre></div>
+
+<h3 id="upload-files-to-a-directory">Upload files to a directory</h3>
+
+<p>Upload files by calling <code>put</code> on a <code>AlgoDataFile</code> object, or by calling <code>putFile</code> on a <code>AlgoDataDirectory</code> object.</p>
+
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="n">robots</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">dir</span><span class="p">(</span><span class="s">&quot;data://.my/robots&quot;</span><span class="p">)</span>
+
+<span class="c1">// Upload local file</span>
+<span class="n">robots</span><span class="p">.</span><span class="n">putFile</span><span class="p">(</span><span class="nl">file</span><span class="p">:</span><span class="n">fileURL</span><span class="p">)</span> <span class="p">{</span> <span class="n">file</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+<span class="p">...</span>
+<span class="p">}</span>
+
+<span class="c1">// Write a text file</span>
+<span class="n">robots</span><span class="p">.</span><span class="n">file</span><span class="p">(</span><span class="s">&quot;Optimus_Prime.txt&quot;</span><span class="p">).</span><span class="n">put</span><span class="p">(</span><span class="nl">string</span><span class="p">:</span><span class="s">&quot;Leader of the Autobots&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+<span class="p">...</span>
+<span class="p">}</span></code></pre></div>
+
+<h3 id="download-contents-of-file">Download contents of file</h3>
+
+<p>Download files by calling <code>getString</code>, <code>getData</code>, or <code>getFile</code> on a DataFile object:</p>
+
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="n">robots</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">dir</span><span class="p">(</span><span class="s">&quot;data://.my/robots&quot;</span><span class="p">)</span>
+
+<span class="c1">// Download file and get the file handle</span>
+<span class="n">robots</span><span class="p">.</span><span class="n">file</span><span class="p">(</span><span class="s">&quot;T-800.png&quot;</span><span class="p">).</span><span class="n">getFile</span> <span class="p">{</span> <span class="n">url</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+<span class="p">...</span>
+<span class="p">}</span>
+
+<span class="c1">// Get the file&#39;s contents as a string</span>
+<span class="n">robots</span><span class="p">.</span><span class="n">file</span><span class="p">(</span><span class="s">&quot;T-800.txt&quot;</span><span class="p">).</span><span class="n">getString</span> <span class="p">{</span> <span class="n">text</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+	<span class="p">...</span>
+<span class="p">}</span>
+<span class="c1">// Get the file&#39;s contents as a byte array</span>
+<span class="n">robots</span><span class="p">.</span><span class="n">file</span><span class="p">(</span><span class="s">&quot;T-800.dat&quot;</span><span class="p">).</span><span class="n">getData</span><span class="p">(</span><span class="nl">completion</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+	<span class="p">...</span>
+<span class="p">})</span></code></pre></div>
+
+<h3 id="delete-files-and-directories">Delete files and directories</h3>
+
+<p>Delete files and directories by calling <code>delete</code> on their respective <code>AlgoDataFile</code> or <code>AlgoDataDirectory</code> object.
+<code>AlgoDataDirectory</code> take an optional <code>force</code> parameter that indicates whether the directory should be deleted
+if it contains files or other directories.</p>
+
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="n">client</span><span class="p">.</span><span class="n">file</span><span class="p">(</span><span class="s">&quot;data://.my/robots/C-3PO.txt&quot;</span><span class="p">).</span><span class="n">delete</span><span class="p">()</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+<span class="p">...</span>
+<span class="p">}</span>
+<span class="n">client</span><span class="p">.</span><span class="n">dir</span><span class="p">(</span><span class="s">&quot;data://.my/robots&quot;</span><span class="p">).</span><span class="n">delete</span><span class="p">(</span><span class="nl">force</span><span class="p">:</span> <span class="nb">false</span><span class="p">)</span> <span class="p">{</span> <span class="n">result</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+<span class="p">...</span>
+<span class="p">}</span></code></pre></div>
+
+<h3 id="list-directory-contents">List directory contents</h3>
+
+<p>Iterate over the contents of a directory using the iterator returned by calling <code>files</code>, or <code>dirs</code> on a <code>DataDirectory</code> object:</p>
+
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// List top level directories</span>
+<span class="k">let</span> <span class="n">myRoot</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">dir</span><span class="p">(</span><span class="s">&quot;data://.my&quot;</span><span class="p">)</span>
+<span class="n">myRoot</span><span class="p">.</span><span class="n">forEach</span><span class="p">(</span><span class="nl">file</span><span class="p">:</span> <span class="p">{</span> <span class="n">file</span> <span class="k">in</span>
+        <span class="p">...</span>
+    <span class="p">},</span> <span class="nl">completion</span><span class="p">:</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+        <span class="p">...</span>
+<span class="p">})</span>
+
+<span class="c1">// List files in the &#39;robots&#39; directory</span>
+<span class="n">myRoot</span><span class="p">.</span><span class="n">forEach</span><span class="p">(</span><span class="nl">dir</span><span class="p">:</span> <span class="p">{</span> <span class="n">file</span> <span class="k">in</span>
+        <span class="p">...</span>
+    <span class="p">},</span> <span class="nl">completion</span><span class="p">:</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+        <span class="p">...</span>
+<span class="p">})</span></code></pre></div>
+
+<h3 id="manage-directory-permissions">Manage directory permissions</h3>
+
+<p>Directory permissions may be set when creating a directory, or may be updated on already existing directories.</p>
+
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="n">fooLimited</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">dir</span><span class="p">(</span><span class="s">&quot;data://.my/fooLimited&quot;</span><span class="p">)</span>
+
+<span class="c1">// Create the directory as private</span>
+<span class="n">fooLimited</span><span class="p">.</span><span class="n">create</span><span class="p">(</span><span class="nl">readACL</span><span class="p">:.</span><span class="n">PRIVATE</span><span class="p">)</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+	<span class="p">...</span>
+<span class="p">}</span>
+
+<span class="c1">// Update a directory to be public</span>
+<span class="n">fooLimited</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="nl">readACL</span><span class="p">:.</span><span class="n">PUBLIC</span><span class="p">)</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+	<span class="p">...</span>
+<span class="p">}</span></code></pre></div>
+
+					<hr />
+
+					<footer class="page-footer">
+						<div class="inline-btn">
+	<a class="btn-social twitter" href="https://twitter.com/intent/tweet?text=The%20Swift%20Client&amp;url=http://developers.algorithmia.com/application-development/client-guides/swift&amp;via=algorithmia" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Share on Twitter</a>
+	<a class="btn-social facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://developers.algorithmia.com/application-development/client-guides/swift" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> Share on Facebook</a>
+	<a class="btn-social google-plus"  href="https://plus.google.com/share?url=http://developers.algorithmia.com/application-development/client-guides/swift" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i> Share on Google+</a>
+</div><!-- /.share-this -->
+
+						<div class="page-meta">
+  <p>Updated
+
+    <time datetime="2016-12-08T00:00:00Z" itemprop="datePublished">December 08, 2016</time></p>
+  
+</div><!-- /.page-meta --><hr />
+						
+<!--<div class="author-image">
+	<img src="http://developers.algorithmia.com/images//authors/bio-photo.jpg" alt="Algorithmia">
+</div> ./author-image -->
+
+<div class="author-content">
+  <h4 class="author-name" >Written by
+
+    <a href="http://developers.algorithmia.com/" itemprop="author">Algorithmia</a>
+
+  <p class="author-bio"></p>
+
+  <a href="http://twitter.com/algorithmia" class="btn-social twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="mailto:mia@algorithmia.com" class="btn-social youtube"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+</div><!-- ./author-content -->
+					</footer><!-- /.footer -->
+
+					<aside>
+						
+					</aside>
+
+				</div><!-- /.content -->
+			</div><!-- /.inner-wrap -->
+			<div class="sidebar"><h3>Related Posts:</h3>
+
+    <!-- Pulls from data/tags.yml to allow for data defined name attr -->
+  
+  <h4>Clients</h4>
+  <ul>
+  
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/android">The Android Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/r">The R Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/node">The Node Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/rust">The Rust Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/go">The Go Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/curl">Working with cURL</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/aws-lambda">AWS Lambda</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/scala">Algorithmia & Scala</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/ruby">The Ruby Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/python">The Python Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/java">The Java Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/cli">The CLI Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/javascript">The Javascript Library</a></h5>
+</li>
+    
+  </ul>
+
+</div>
+		</article><!-- ./wrap -->
+	</div><!-- /#main -->
+
+</div>
+      
+    </div> <!-- end wrapper -->
+
+    <footer role="contentinfo" id="site-footer">
+ <p class="copyright">
+    <img src="http://developers.algorithmia.com/images/favicon-white.png" alt="Algorithmia Developer Center" itemprop="image" width="16" height="16">
+    &#169; 2017 Algorithmia
+  </p>
+
+  <nav role="navigation" class="bottom-menu">
+    <ul class="menu-item">
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/about" target="_blank">About</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/terms" target="_blank">Terms</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/pricing" target="_blank">Pricing</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/privacy" target="_blank">Privacy</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/partners" target="_blank">Partners</a></li>
+    
+      
+        
+        
+      <li><a href="http://blog.algorithmia.com" target="_blank">Blog</a></li>
+    
+      
+        
+        
+      <li><a href="https://angel.co/algorithmia/jobs/" target="_blank">Jobs</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/contact" target="_blank">Contact</a></li>
+    
+    </ul>
+  </nav><!-- /.bottom-menu -->
+</footer>
+
+
+    <script src="http://developers.algorithmia.com/js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="http://developers.algorithmia.com/js/main.js"></script>
+    <script src="/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

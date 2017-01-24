@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Basic Android Integration • Algorithmia Developer Center</title>
+    <meta name="description" content="A code walk-through of a simple Android app using Algorithmia.">
+    <meta name="keywords" content="sample-apps">
+    
+      
+    <!-- Twitter Cards -->
+<meta name="twitter:title" content="Basic Android Integration">
+<meta name="twitter:description" content="A code walk-through of a simple Android app using Algorithmia.">
+<meta name="twitter:site" content="@algorithmia">
+<meta name="twitter:creator" content="@algorithmia">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://developers.algorithmia.com/images//post_images/android/android_robot_skateboarding.png">
+
+
+<!-- Open Graph -->
+
+<meta property="og:image" content="http://developers.algorithmia.com/images//post_images/android/android_robot_skateboarding.png">
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Basic Android Integration">
+<meta property="og:description" content="A code walk-through of a simple Android app using Algorithmia.">
+<meta property="og:url" content="http://developers.algorithmia.com/samples/basic-android/">
+<meta property="og:site_name" content="Algorithmia Developer Center">
+
+    <link rel="canonical" href="http://developers.algorithmia.com/samples/basic-android/">
+
+    <link href="http://developers.algorithmia.com/atom.xml" type="application/atom+xml" rel="alternate" title="Algorithmia Developer Center Atom Feed">
+    <link href="http://developers.algorithmia.com/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="stylesheet" href="http://developers.algorithmia.com/css/main.css">
+    <!-- HTML5 Shiv and Media Query Support for IE -->
+    <!--[if lt IE 9]>
+      <script src="http://developers.algorithmia.com/js/vendor/html5shiv.min.js"></script>
+      <script src="http://developers.algorithmia.com/js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-38617973-1', 'auto');
+     ga('send', 'pageview');
+
+    </script>
+  </head>
+
+  <body id="js-body">
+    <div id="wrapper">
+      <!--[if lt IE 9]><div class="upgrade notice-warning"><strong>Your browser is quite old!</strong> Why not <a href="http://whatbrowser.org/">upgrade to a newer one</a> to better enjoy this site?</div><![endif]-->
+
+      <header id="masthead">
+  <div class="inner-wrap">
+    <a href="http://developers.algorithmia.com/" class="site-title">
+      <img src="http://developers.algorithmia.com/images/logos/algorithmia-white-logo.png" class="nav-image" alt="Algorithmia Developer Center" itemprop="image">
+    </a>
+
+    <nav role="navigation" class="menu top-menu">
+      <ul class="menu-item">
+  
+    
+      
+      
+
+    
+      <li><a href="http://docs.algorithmia.com" target="_blank">
+        API Docs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/algorithm-development" >
+        Algorithm Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/application-development" >
+        Application Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/faqs/" >
+        FAQs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/search/">
+        <i class="fa fa-search"></i> 
+      </a></li>
+    
+  
+</ul>
+    </nav>
+  </div><!-- /.inner-wrap -->
+</header><!-- /.masthead -->
+      <nav role="navigation" id="js-menu" class="sliding-menu-content">
+  <h5>Algorithmia Developer Center</h5>
+  <ul class="menu-item">
+    <li>
+      
+        
+      
+
+      <a href="http://docs.algorithmia.com">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_API Docs.png" alt="teaser" class="teaser">
+        <div class="title">API Docs</div>
+        <p class="excerpt">Read up on the ins and outs of using the Algorithmia API.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/algorithm-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Sample_Apps.png" alt="teaser" class="teaser">
+        <div class="title">Algorithm Development</div>
+        <p class="excerpt">Find out how to host your models and build an algorithm on Algorithmia.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/application-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Clients.png" alt="teaser" class="teaser">
+        <div class="title">Application Development</div>
+        <p class="excerpt">Discover how to use algorithms in your application.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/faqs/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_FAQs.png" alt="teaser" class="teaser">
+        <div class="title">FAQs</div>
+        <p class="excerpt">Find quick answers to common questions.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/search/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Search.png" alt="teaser" class="teaser">
+        <div class="title">Search</div>
+        <p class="excerpt">Search the Developer Center for the information you need to get started</p>
+      </a>
+    </li>
+  </ul>
+</nav>
+<button type="button" id="js-menu-trigger" class="sliding-menu-button lines-button x2" role="button" aria-label="Toggle Navigation">
+  <span class="nav-lines"></span>
+</button>
+
+<div id="js-menu-screen" class="menu-screen"></div>
+
+      
+      <div id="page-wrapper">
+
+	<div id="main" role="main">
+		<article class="wrap" itemscope itemtype="http://schema.org/Article">
+
+			<div class="page-feature">
+				<div class="page-image">
+					<img src="http://developers.algorithmia.com/images//post_images/android/android_robot_skateboarding.png" class="page-feature-image" alt="Basic Android Integration" itemprop="image">
+					
+				</div><!-- /.page-image -->
+			</div><!-- /.page-feature -->
+			
+  <nav class="breadcrumbs">
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="http://developers.algorithmia.com" itemprop="url">
+        <span itemprop="title">Home</span>
+      </a> › 
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="http://developers.algorithmia.com/samples/" itemprop="url">
+        <span itemprop="title">Samples</span>
+      </a>
+    </span>
+  </nav><!-- /.breadcrumbs -->
+
+			<div class="page-title">
+				<h1>Basic Android Integration</h1>
+				
+			</div>
+
+			<div class="inner-wrap">
+				<div id="content" class="page-content" itemprop="articleBody">
+					<nav class="toc">
+<ul id="markdown-toc">
+  <li><a href="#getting-started" id="markdown-toc-getting-started">Getting Started</a></li>
+  <li><a href="#settings-permissions--api-key" id="markdown-toc-settings-permissions--api-key">Settings, Permissions, &amp; API Key</a></li>
+  <li><a href="#adding-views-to-the-app" id="markdown-toc-adding-views-to-the-app">Adding views to the app</a></li>
+  <li><a href="#lets-code" id="markdown-toc-lets-code">Let’s code!</a></li>
+  <li><a href="#next-steps" id="markdown-toc-next-steps">Next Steps</a></li>
+</ul>
+
+</nav>
+
+<p>In this post, we’ll walk through how to build a very simple Android app that uses the Algorithmia API.</p>
+
+<p>The full sample code can be found in the <a href="https://github.com/algorithmiaio/sample-apps/tree/master/android/basic_integration">Sample Apps repository on GitHub</a>.</p>
+
+<p>You can either clone the repo directly and follow along with the README instructions to see the fully complete app, or you can follow the tutorial below to build your first Android app with Algorithmia!</p>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>First things first, let’s create a new app in Android Studio.</p>
+
+<p>Select New Project and follow along with the New Project wizard. You can feel free to give your new app any name you like. Then, select your target devices and when prompted with the Add Activity screen, select “Empty Activity”:</p>
+
+<p><img src="/images/post_images/android/create_new_blank.png" alt="Add Blank Activity in Android Studio" /></p>
+
+<p>Since our app is just a simple example app, we’ll use put our code in <code>MainActivity.java</code>. But first, we need to do a little bit more set up.</p>
+
+<h2 id="settings-permissions--api-key">Settings, Permissions, &amp; API Key</h2>
+
+<p>Follow the following 3 steps below to make sure you have the dependencies, permissions, and API key set as needed.</p>
+
+<p><strong>Step One: Dependencies</strong></p>
+
+<p>Add the Algorithmia client to your app in the dependencies section of <code>app/build.gradle</code>, like so:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml">dependencies {
+    ...
+    compile &quot;com.algorithmia:algorithmia-android:1.0.0&quot;
+    ...
+}</code></pre></div>
+
+<p><strong>Step Two: Internet Permissions</strong></p>
+
+<p>To ensure that we can access the Internet from our app, we’ll specify this permission in <code>AndroidManifest.xml</code>:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.INTERNET&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+
+<p><strong>Step Three: API Key</strong></p>
+
+<p>In <code>strings.xml</code>, replace the demo API key with your API key, which can be found under the credentials section of your profile on the Algorithmia website.</p>
+
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="o">&lt;</span><span class="n">resources</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">string</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;app_name&quot;</span><span class="o">&gt;</span><span class="n">Android</span> <span class="n">Sample</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">string</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;algorithmia_api_key&quot;</span><span class="o">&gt;</span><span class="n">YOUR_API_KEY</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">resources</span><span class="o">&gt;</span></code></pre></div>
+
+<p class="notice-warning">Make sure you’ve replaced <code>YOUR_API_KEY</code> with the API key under your account so that the Algorithmia client can authenticate!</p>
+
+<h2 id="adding-views-to-the-app">Adding views to the app</h2>
+
+<p>We’ll need some views that we can connect to our code. Under <code>res/layout/activity_main.xml</code> add the following TextViews, EditText fields, and Button. You can also do this through the visual editor, but since we just have a few simple things to add to the layout we’ll add them to the xml:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><a name="True-1"></a><span class="nt">&lt;TextView</span>
+<a name="True-2"></a>    <span class="na">android:layout_width=</span><span class="s">&quot;wrap_content&quot;</span>
+<a name="True-3"></a>    <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
+<a name="True-4"></a>    <span class="na">android:text=</span><span class="s">&quot;Algorithm&quot;</span> <span class="nt">/&gt;</span>
+<a name="True-5"></a>
+<a name="True-6"></a><span class="nt">&lt;EditText</span>
+<a name="True-7"></a>    <span class="na">android:id=</span><span class="s">&quot;@+id/algo_url&quot;</span>
+<a name="True-8"></a>    <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+<a name="True-9"></a>    <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
+<a name="True-10"></a>    <span class="na">android:text=</span><span class="s">&quot;demo/hello&quot;</span><span class="nt">/&gt;</span>
+<a name="True-11"></a>
+<a name="True-12"></a><span class="nt">&lt;TextView</span>
+<a name="True-13"></a>    <span class="na">android:layout_width=</span><span class="s">&quot;wrap_content&quot;</span>
+<a name="True-14"></a>    <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
+<a name="True-15"></a>    <span class="na">android:text=</span><span class="s">&quot;Algorithm Input&quot;</span> <span class="nt">/&gt;</span>
+<a name="True-16"></a>
+<a name="True-17"></a><span class="nt">&lt;EditText</span>
+<a name="True-18"></a>    <span class="na">android:id=</span><span class="s">&quot;@+id/algo_input&quot;</span>
+<a name="True-19"></a>    <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+<a name="True-20"></a>    <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
+<a name="True-21"></a>    <span class="na">android:text=</span><span class="s">&quot;foo&quot;</span><span class="nt">/&gt;</span>
+<a name="True-22"></a>
+<a name="True-23"></a><span class="nt">&lt;Button</span>
+<a name="True-24"></a>    <span class="na">android:id=</span><span class="s">&quot;@+id/algo_run&quot;</span>
+<a name="True-25"></a>    <span class="na">android:layout_width=</span><span class="s">&quot;wrap_content&quot;</span>
+<a name="True-26"></a>    <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
+<a name="True-27"></a>    <span class="na">android:layout_marginBottom=</span><span class="s">&quot;20dp&quot;</span>
+<a name="True-28"></a>    <span class="na">android:onClick=</span><span class="s">&quot;onClickRun&quot;</span>
+<a name="True-29"></a>    <span class="na">android:text=</span><span class="s">&quot;Run&quot;</span><span class="nt">/&gt;</span>
+<a name="True-30"></a>
+<a name="True-31"></a><span class="nt">&lt;TextView</span>
+<a name="True-32"></a>    <span class="na">android:layout_width=</span><span class="s">&quot;wrap_content&quot;</span>
+<a name="True-33"></a>    <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
+<a name="True-34"></a>    <span class="na">android:text=</span><span class="s">&quot;Algorithm Output&quot;</span> <span class="nt">/&gt;</span>
+<a name="True-35"></a>
+<a name="True-36"></a><span class="nt">&lt;TextView</span>
+<a name="True-37"></a>    <span class="na">android:id=</span><span class="s">&quot;@+id/algo_output&quot;</span>
+<a name="True-38"></a>    <span class="na">android:layout_width=</span><span class="s">&quot;wrap_content&quot;</span>
+<a name="True-39"></a>    <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+
+<h2 id="lets-code">Let’s code!</h2>
+
+<p>To make our sample app run, we’ll need to do four things: first, we’ll need to add a function that gets called when the button is tapped, we’ll need to add in an async task, make the Algorithmia API call, and finally update the UI with the results.</p>
+
+<p>Let’s start by getting references to the views. Add the references at the start of the public class, then inside of the <code>onCreate</code> method make sure you set them to the views with their ids:</p>
+
+<div class="highlight"><pre><code class="language-java" data-lang="java"><a name="True-1"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+<a name="True-2"></a>  <span class="kd">private</span> <span class="n">EditText</span> <span class="n">algoUrl</span><span class="o">;</span>
+<a name="True-3"></a>  <span class="kd">private</span> <span class="n">EditText</span> <span class="n">algoInput</span><span class="o">;</span>
+<a name="True-4"></a>  <span class="kd">private</span> <span class="n">TextView</span> <span class="n">algoOutput</span><span class="o">;</span>
+<a name="True-5"></a>
+<a name="True-6"></a>    <span class="nd">@Override</span>
+<a name="True-7"></a>    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<a name="True-8"></a>      <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+<a name="True-9"></a>      <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
+<a name="True-10"></a>
+<a name="True-11"></a>      <span class="c1">// Find views</span>
+<a name="True-12"></a>      <span class="n">algoUrl</span> <span class="o">=</span> <span class="o">(</span><span class="n">EditText</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">algo_url</span><span class="o">);</span>
+<a name="True-13"></a>      <span class="n">algoInput</span> <span class="o">=</span> <span class="o">(</span><span class="n">EditText</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">algo_input</span><span class="o">);</span>
+<a name="True-14"></a>      <span class="n">algoOutput</span> <span class="o">=</span> <span class="o">(</span><span class="n">TextView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">algo_output</span><span class="o">);</span>
+<a name="True-15"></a>    <span class="o">}</span>
+<a name="True-16"></a><span class="o">}</span></code></pre></div>
+
+<p>If you noticed when we added the views to the app, we already set the button to handle the onClick event with this line: <code>android:onClick="onClickRun"</code>. Android Studio will complain that this method doesn’t exist, so let’s create it now. We’ll also have grab the values of the EditText views so we can work with them.</p>
+
+<div class="highlight"><pre><code class="language-java" data-lang="java"><a name="True-1"></a><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClickRun</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+<a name="True-2"></a>  <span class="kd">final</span> <span class="n">String</span> <span class="n">algo</span> <span class="o">=</span> <span class="n">algoUrl</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">();</span>
+<a name="True-3"></a>  <span class="kd">final</span> <span class="n">String</span> <span class="n">input</span> <span class="o">=</span> <span class="n">algoInput</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">();</span>
+<a name="True-4"></a><span class="o">}</span></code></pre></div>
+
+<p>Next we’ll want to make sure that our API call happens inside of an <a href="http://developer.android.com/training/basics/network-ops/connecting.html">AsyncTask</a>. Set up the AsyncTask:</p>
+
+<div class="highlight"><pre><code class="language-java" data-lang="java"><a name="True-1"></a><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClickRun</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+<a name="True-2"></a>  <span class="kd">final</span> <span class="n">String</span> <span class="n">algo</span> <span class="o">=</span> <span class="n">algoUrl</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">();</span>
+<a name="True-3"></a>  <span class="kd">final</span> <span class="n">String</span> <span class="n">input</span> <span class="o">=</span> <span class="n">algoInput</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">();</span>
+<a name="True-4"></a>  <span class="k">new</span> <span class="n">AsyncTask</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">,</span><span class="n">Void</span><span class="o">,</span><span class="n">AlgoResponse</span><span class="o">&gt;()</span> <span class="o">{</span>
+<a name="True-5"></a>    <span class="nd">@Override</span>
+<a name="True-6"></a>    <span class="kd">protected</span> <span class="n">AlgoResponse</span> <span class="nf">doInBackground</span><span class="o">(</span><span class="n">Void</span><span class="o">...</span> <span class="n">params</span><span class="o">)</span> <span class="o">{</span>
+<a name="True-7"></a>      <span class="k">try</span> <span class="o">{</span>
+<a name="True-8"></a>        <span class="c1">// make API call</span>
+<a name="True-9"></a>      <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">APIException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+<a name="True-10"></a>       <span class="c1">// handle exception</span>
+<a name="True-11"></a>      <span class="o">}</span>
+<a name="True-12"></a>    <span class="o">}</span>
+<a name="True-13"></a>    <span class="nd">@Override</span>
+<a name="True-14"></a>    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPostExecute</span><span class="o">(</span><span class="n">AlgoResponse</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+<a name="True-15"></a>        <span class="k">if</span><span class="o">(</span><span class="n">response</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+<a name="True-16"></a>        <span class="o">}</span> <span class="k">else</span> <span class="nf">if</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">isSuccess</span><span class="o">())</span> <span class="o">{</span>
+<a name="True-17"></a>            <span class="c1">// handle successful response</span>
+<a name="True-18"></a>        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+<a name="True-19"></a>           <span class="c1">// handle failure message</span>
+<a name="True-20"></a>        <span class="o">}</span>
+<a name="True-21"></a>    <span class="o">}</span>
+<a name="True-22"></a>  <span class="o">}.</span><span class="na">execute</span><span class="o">();</span>
+<a name="True-23"></a><span class="o">}</span></code></pre></div>
+
+<p>Let’s start by making the filling out the <code>try</code>
+ and <code>catch</code>. We want to first make the API call. Be sure to pass in the API key from the strings resource that we set before:</p>
+
+<div class="highlight"><pre><code class="language-java" data-lang="java"><a name="True-1"></a><span class="kd">protected</span> <span class="n">AlgoResponse</span> <span class="nf">doInBackground</span><span class="o">(</span><span class="n">Void</span><span class="o">...</span> <span class="n">params</span><span class="o">)</span> <span class="o">{</span>
+<a name="True-2"></a>  <span class="k">try</span> <span class="o">{</span>
+<a name="True-3"></a>    <span class="k">return</span> <span class="n">Algorithmia</span><span class="o">.</span><span class="na">client</span><span class="o">(</span><span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">algorithmia_api_key</span><span class="o">)).</span><span class="na">algo</span><span class="o">(</span><span class="n">algo</span><span class="o">).</span><span class="na">pipe</span><span class="o">(</span><span class="n">input</span><span class="o">);</span>
+<a name="True-4"></a>  <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">APIException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+<a name="True-5"></a>    <span class="k">return</span> <span class="k">new</span> <span class="nf">AlgoFailure</span><span class="o">(</span><span class="k">new</span> <span class="nf">AlgorithmException</span><span class="o">(</span><span class="n">e</span><span class="o">));</span>
+<a name="True-6"></a>  <span class="o">}</span>
+<a name="True-7"></a><span class="o">}</span></code></pre></div>
+
+<p>Notice that we are catching the API exception and creating a new Algorithmia Exception from it. We do this so that we can update the UI with the exception message in the <code>onPostExecute</code> method. Let’s do that now!</p>
+
+<div class="highlight"><pre><code class="language-java" data-lang="java"><a name="True-1"></a><span class="nd">@Override</span>
+<a name="True-2"></a>  <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPostExecute</span><span class="o">(</span><span class="n">AlgoResponse</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+<a name="True-3"></a>    <span class="k">if</span><span class="o">(</span><span class="n">response</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+<a name="True-4"></a>      <span class="n">algoOutput</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&quot;Algorithm Error: network connection failed&quot;</span><span class="o">);</span>
+<a name="True-5"></a>    <span class="o">}</span> <span class="k">else</span> <span class="nf">if</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">isSuccess</span><span class="o">())</span> <span class="o">{</span>
+<a name="True-6"></a>      <span class="n">AlgoSuccess</span> <span class="n">success</span> <span class="o">=</span> <span class="o">(</span><span class="n">AlgoSuccess</span><span class="o">)</span> <span class="n">response</span><span class="o">;</span>
+<a name="True-7"></a>      <span class="n">algoOutput</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">success</span><span class="o">.</span><span class="na">asJsonString</span><span class="o">());</span>
+<a name="True-8"></a>    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+<a name="True-9"></a>      <span class="n">AlgoFailure</span> <span class="n">failure</span> <span class="o">=</span> <span class="o">(</span><span class="n">AlgoFailure</span><span class="o">)</span> <span class="n">response</span><span class="o">;</span>
+<a name="True-10"></a>      <span class="n">algoOutput</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&quot;Algorithm Error: &quot;</span> <span class="o">+</span> <span class="n">failure</span><span class="o">.</span><span class="na">error</span><span class="o">);</span>
+<a name="True-11"></a>    <span class="o">}</span>
+<a name="True-12"></a>  <span class="o">}</span></code></pre></div>
+
+<p>What the above code does is set the <code>algoOutput</code> text view to display the results of the call. If the response is null, we’ve set the output to show a generic “network connection failed” message. Following this, we’ve got a check on line 5 to see if the condition is successful, and if so we’ll set the text to the success response. Of course, we’ll also need to handle the failures, which you’ll see in the final <code>else</code> of the method on lines 8-10.</p>
+
+<p>You can find the full code for <code>MainActivity.java</code>
+on <a href="https://github.com/algorithmiaio/sample-apps/blob/master/android/basic_integration/app/src/main/java/com/algorithmia/androidsample/MainActivity.java">GitHub</a>. Double check that your code matches the code in the repo!</p>
+
+<p>When you run the app in the emulator, you’ll see this:</p>
+
+<p><img src="/images/post_images/android/emulator.png" alt="Android App" /></p>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>Now that you’ve got your first Algorithmia Android app running, try replacing the <code>demo/Hello</code> algorithm with another that you find on the marketplace. Try something like <a href="https://algorithmia.com/algorithms/anowell/pinky">anowell/pinky</a> or <a href="https://algorithmia.com/algorithms/diego/RetrieveTweetsWithKeyword">diego/RetrieveTweetsWithKeyword</a>. Then make sure the input you provide to your new algorithm matches the expected input, and hit run!</p>
+
+<p>Integrating Algorithmia into Android is an easy and convenient way to leverage algorithms, so now that you’ve got the basic API integration down, you can follow this pattern to start hacking away at your own apps!</p>
+
+<h3 id="further-reading">Further Reading:</h3>
+
+<ul>
+  <li><a href="http://developers.algorithmia.com/clients/java/">The Algorithmia Client</a></li>
+  <li><a href="http://www.javadoc.io/doc/com.algorithmia/algorithmia-client/1.0.3">Algorithmia Java Docs</a> <i class="fa fa-external-link"></i></li>
+  <li><a href="https://github.com/algorithmiaio/algorithmia-java"><a href="https://github.com/algorithmiaio/algorithmia-java">Algorithmia Java Client Source Code</a> <i class="fa fa-external-link"></i></a></li>
+</ul>
+
+					<hr />
+
+					<footer class="page-footer">
+						<div class="inline-btn">
+	<a class="btn-social twitter" href="https://twitter.com/intent/tweet?text=Basic%20Android%20Integration&amp;url=http://developers.algorithmia.com/samples/basic-android/&amp;via=algorithmia" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Share on Twitter</a>
+	<a class="btn-social facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://developers.algorithmia.com/samples/basic-android/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> Share on Facebook</a>
+	<a class="btn-social google-plus"  href="https://plus.google.com/share?url=http://developers.algorithmia.com/samples/basic-android/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i> Share on Google+</a>
+</div><!-- /.share-this -->
+
+						<div class="page-meta">
+  <p>Updated
+
+    <time datetime="2016-01-28T01:30:38Z" itemprop="datePublished">January 28, 2016</time></p>
+  
+</div><!-- /.page-meta --><hr />
+						
+<!--<div class="author-image">
+	<img src="http://developers.algorithmia.com/images//authors/lizrush.jpeg" alt="Algorithmia Developers">
+</div> ./author-image -->
+
+<div class="author-content">
+  <h4 class="author-name" >Written by
+
+    <a href="http://developers.algorithmia.com/liz_rush" itemprop="author">Algorithmia Developers</a>
+
+  <p class="author-bio"></p>
+
+  <a href="http://twitter.com/algorithmia" class="btn-social twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="mailto:developers@algorithmia.com" class="btn-social youtube"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+</div><!-- ./author-content -->
+					</footer><!-- /.footer -->
+
+					<aside>
+						
+					</aside>
+
+				</div><!-- /.content -->
+			</div><!-- /.inner-wrap -->
+			
+		</article><!-- ./wrap -->
+	</div><!-- /#main -->
+
+</div>
+      
+    </div> <!-- end wrapper -->
+
+    <footer role="contentinfo" id="site-footer">
+ <p class="copyright">
+    <img src="http://developers.algorithmia.com/images/favicon-white.png" alt="Algorithmia Developer Center" itemprop="image" width="16" height="16">
+    &#169; 2017 Algorithmia
+  </p>
+
+  <nav role="navigation" class="bottom-menu">
+    <ul class="menu-item">
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/about" target="_blank">About</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/terms" target="_blank">Terms</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/pricing" target="_blank">Pricing</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/privacy" target="_blank">Privacy</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/partners" target="_blank">Partners</a></li>
+    
+      
+        
+        
+      <li><a href="http://blog.algorithmia.com" target="_blank">Blog</a></li>
+    
+      
+        
+        
+      <li><a href="https://angel.co/algorithmia/jobs/" target="_blank">Jobs</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/contact" target="_blank">Contact</a></li>
+    
+    </ul>
+  </nav><!-- /.bottom-menu -->
+</footer>
+
+
+    <script src="http://developers.algorithmia.com/js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="http://developers.algorithmia.com/js/main.js"></script>
+    <script src="/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>R Algorithm Development • Algorithmia Developer Center</title>
+    <meta name="description" content="Build your algorithm in R">
+    <meta name="keywords" content="algo-guide-lang">
+    
+      
+    <!-- Twitter Cards -->
+<meta name="twitter:title" content="R Algorithm Development">
+<meta name="twitter:description" content="Build your algorithm in R">
+<meta name="twitter:site" content="@algorithmia">
+<meta name="twitter:creator" content="@algorithmia">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo120x120.png">
+
+
+<!-- Open Graph -->
+
+<meta property="og:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo.png">
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R Algorithm Development">
+<meta property="og:description" content="Build your algorithm in R">
+<meta property="og:url" content="http://developers.algorithmia.com/algorithm-development/client-guides/r">
+<meta property="og:site_name" content="Algorithmia Developer Center">
+
+    <link rel="canonical" href="http://developers.algorithmia.com/algorithm-development/client-guides/r">
+
+    <link href="http://developers.algorithmia.com/atom.xml" type="application/atom+xml" rel="alternate" title="Algorithmia Developer Center Atom Feed">
+    <link href="http://developers.algorithmia.com/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="stylesheet" href="http://developers.algorithmia.com/css/main.css">
+    <!-- HTML5 Shiv and Media Query Support for IE -->
+    <!--[if lt IE 9]>
+      <script src="http://developers.algorithmia.com/js/vendor/html5shiv.min.js"></script>
+      <script src="http://developers.algorithmia.com/js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-38617973-1', 'auto');
+     ga('send', 'pageview');
+
+    </script>
+  </head>
+
+  <body id="js-body">
+    <div id="wrapper">
+      <!--[if lt IE 9]><div class="upgrade notice-warning"><strong>Your browser is quite old!</strong> Why not <a href="http://whatbrowser.org/">upgrade to a newer one</a> to better enjoy this site?</div><![endif]-->
+
+      <header id="masthead">
+  <div class="inner-wrap">
+    <a href="http://developers.algorithmia.com/" class="site-title">
+      <img src="http://developers.algorithmia.com/images/logos/algorithmia-white-logo.png" class="nav-image" alt="Algorithmia Developer Center" itemprop="image">
+    </a>
+
+    <nav role="navigation" class="menu top-menu">
+      <ul class="menu-item">
+  
+    
+      
+      
+
+    
+      <li><a href="http://docs.algorithmia.com" target="_blank">
+        API Docs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/algorithm-development" >
+        Algorithm Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/application-development" >
+        Application Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/faqs/" >
+        FAQs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/search/">
+        <i class="fa fa-search"></i> 
+      </a></li>
+    
+  
+</ul>
+    </nav>
+  </div><!-- /.inner-wrap -->
+</header><!-- /.masthead -->
+      <nav role="navigation" id="js-menu" class="sliding-menu-content">
+  <h5>Algorithmia Developer Center</h5>
+  <ul class="menu-item">
+    <li>
+      
+        
+      
+
+      <a href="http://docs.algorithmia.com">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_API Docs.png" alt="teaser" class="teaser">
+        <div class="title">API Docs</div>
+        <p class="excerpt">Read up on the ins and outs of using the Algorithmia API.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/algorithm-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Sample_Apps.png" alt="teaser" class="teaser">
+        <div class="title">Algorithm Development</div>
+        <p class="excerpt">Find out how to host your models and build an algorithm on Algorithmia.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/application-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Clients.png" alt="teaser" class="teaser">
+        <div class="title">Application Development</div>
+        <p class="excerpt">Discover how to use algorithms in your application.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/faqs/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_FAQs.png" alt="teaser" class="teaser">
+        <div class="title">FAQs</div>
+        <p class="excerpt">Find quick answers to common questions.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/search/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Search.png" alt="teaser" class="teaser">
+        <div class="title">Search</div>
+        <p class="excerpt">Search the Developer Center for the information you need to get started</p>
+      </a>
+    </li>
+  </ul>
+</nav>
+<button type="button" id="js-menu-trigger" class="sliding-menu-button lines-button x2" role="button" aria-label="Toggle Navigation">
+  <span class="nav-lines"></span>
+</button>
+
+<div id="js-menu-screen" class="menu-screen"></div>
+
+      
+      <div id="page-wrapper">
+
+	<div id="main" role="main">
+		<article class="wrap" itemscope itemtype="http://schema.org/Article">
+
+			<div class="page-title">
+				<h1>R Algorithm Development</h1>
+				
+			</div>
+
+			<div class="inner-wrap">
+				<div id="content" class="page-content" itemprop="articleBody">
+					<p>Algorithmia supports algorithm development in the R language.</p>
+
+<h2 id="available-apis">Available APIs</h2>
+
+<p>Algorithmia makes a number of libraries available to make algorithm development easier.
+The full <a href="https://www.r-project.org/about.html">R language and standard library version 3.3.1</a>
+is available for you to use in your algorithms. Furthermore, algorithms can call other algorithms and manage data on the Algorithmia platform
+via the <a href="http://developers.algorithmia.com/application-development/client-guides/r/">Algorithmia R language Client</a>.</p>
+
+<h2 id="create-your-algorithm">Create your Algorithm</h2>
+
+<ul>
+  <li>To add an algorithm, simply click <strong>“Add Algorithm”</strong> from the user profile icon.</li>
+  <li>Name your algorithm, select the language, choose permissions and make the code either open or closed source.</li>
+</ul>
+
+<p><strong>Note</strong>: There is also a checkbox for “Standard Execution Environment” or “Advanced GPU”. For machine learning models you will want to check “Standard Execution Environment”.</p>
+
+<p><img src="/images/post_images/algo_dev_lang/r-create-new-algo.png" alt="Create your algorithm" class="screenshot" /></p>
+
+<h2 id="managing-dependencies">Managing Dependencies</h2>
+
+<p>Algorithmia supports adding 3rd party dependencies via the <a href="https://cran.r-project.org">CRAN (Comprehensive R Archive Network)</a> dependency file.</p>
+
+<p>Add dependencies by adding the library name to the file:</p>
+
+<ul>
+  <li>
+    <p>Click on the <strong>“Dependencies”</strong> button at the top right of the UI and list your packages under the comment section.</p>
+  </li>
+  <li>
+    <p>Click <strong>“Save Dependencies”</strong> on the bottom right corner.</p>
+  </li>
+</ul>
+
+<p><img src="/images/post_images/algo_dev_lang/r-dependencies.png" alt="Set your dependencies" class="screenshot" /></p>
+
+<p class="notice-info">Please read the details regarding loading dependencies in the comments of the dependency file. There are three different ways to include your dependencies so read through each one to decide which one is right for your project.</p>
+
+<p>The Algorithmia dependency is already installed for your convenience and relies on R version 3.3.1. For more information about Algorithmia’s R package visit:
+<a href="https://cran.r-project.org/web/packages/algorithmia/index.html">Algorithmia’s CRAN package</a> documentation.</p>
+
+<h2 id="write-your-algorithm">Write your Algorithm</h2>
+
+<p><img src="/images/post_images/algo_dev_lang/write_algorithm_r.png" alt="Load your libraries" class="screenshot" /></p>
+
+<p><strong>Note:</strong> Remember to load your package to your algorithm file after adding it to the dependency file.</p>
+
+<p>For example, to make use of the package “lubridate”, you would include: <code>library(lubridate)</code> in the algorithm file.</p>
+
+<h2 id="io-for-your-algorithms">I/O for your Algorithms:</h2>
+
+<p>Sometimes your algorithm will require something simple such as a string for input. Scalar values are handled easily, but be sure to include a check for the correct data type that your algorithm requires and return a helpful error message if it is incorrect.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>algorithmia<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>assert<span class="p">)</span>
+
+algorithm <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>input<span class="p">)</span> <span class="p">{</span>
+    <span class="c1"># Assert if the input is a character</span>
+    <span class="kr">if</span> <span class="p">(</span>assert_that<span class="p">(</span><span class="kp">is.character</span><span class="p">(</span>input<span class="p">)))</span> <span class="p">{</span>
+      <span class="kr">return</span> input
+    <span class="p">}</span>
+    <span class="kr">return</span> input</code></pre></div>
+
+<p>String input:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># Example input for algorithm function</span>
+input <span class="o">&lt;-</span> <span class="s">&quot;3&quot;</span>
+<span class="c1"># Call algorithm with input</span>
+algorithm<span class="p">(</span>input<span class="p">)</span></code></pre></div>
+
+<p>Which will return:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># Assert statement result</span>
+True
+<span class="c1"># Algorithm returns input string</span>
+<span class="s">&quot;3&quot;</span></code></pre></div>
+
+<p>Inputs that are sequences such as: matrices, arrays, data frames, lists and binary data files can be handled as you would any R language sequence. For example:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>algorithmia<span class="p">)</span>
+
+algorithm <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>input<span class="p">)</span> <span class="p">{</span>
+  assert_that<span class="p">(</span><span class="kp">is.list</span><span class="p">(</span>input<span class="p">))</span>
+  <span class="kp">print</span><span class="p">(</span>input<span class="p">[[</span><span class="m">1</span><span class="p">]])</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Here is an example of a list input:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># Example input for algorithm function</span>
+input <span class="o">&lt;-</span> <span class="kt">list</span><span class="p">(</span><span class="s">&quot;vector&quot;</span><span class="p">,</span> <span class="s">&quot;matrix&quot;</span><span class="p">,</span> <span class="s">&quot;array&quot;</span><span class="p">)</span>
+<span class="c1"># Call algorithm with input</span>
+algorithm<span class="p">(</span>input<span class="p">)</span></code></pre></div>
+
+<p>Which will return:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># Assert statement result</span>
+True
+<span class="c1"># First item in list</span>
+<span class="s">&quot;vector&quot;</span></code></pre></div>
+
+<p>When you are creating an algorithm be mindful of the data types you require from the user and the output you return to them. Our advice is to create algorithms that allow a few options for input such as a file or a sequence.</p>
+
+<h2 id="compile-and-test-your-algorithm">Compile and Test your Algorithm</h2>
+
+<p>After creating your algorithm click <strong>“Compile”</strong> which is a blue button located at the top right of your algorithm source code. Compiling your algorithm will also save your work, but note that the first time you compile your algorithm it might take some time while subsequent compiles will be quicker.</p>
+
+<p><img src="/images/post_images/algo_dev_lang/compile_test_algorithm_r.png" alt="Set your dependencies" class="screenshot" /></p>
+
+<p>After you compile your algorithm the bottom black console will show your algorithm version and will say it is now online.</p>
+
+<p>To test your algorithm you’ll need to pass in an example input of the data you require and call your algorithm:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">algorithm<span class="p">(</span><span class="s">&quot;Hello World&quot;</span><span class="p">)</span></code></pre></div>
+
+<p>The algorithm will run and will show you either the result of what you are returning in your algorithm or it will provide an error message if the input is not what your algorithm expects.</p>
+
+<p><strong>Note:</strong> For testing in the console, it is not required to call the algorithm, you may simply type in your input:</p>
+
+<p><code>"Hello World"</code></p>
+
+<h2 id="calling-other-algorithms-and-managing-data">Calling Other Algorithms and Managing Data</h2>
+
+<p>To call other algorithms or manage data from your algorithm, use the <a href="http://developers.algorithmia.com/application-development/client-guides/r/">Algorithmia R Language Client</a> which is automatically available to any algorithm you create on the Algorithmia platform. All the information you need about I/O will be there in the R client. For more detailed information on how to work with data see the <a href="http://docs.algorithmia.com/">Data API docs</a> and learn about Algorithmia’s <a href="http://developers.algorithmia.com/algorithm-development/data-sources/hosted-data-guide/">Hosted Data Source</a>.</p>
+
+<p>When designing your algorithm, don’t forget that there are special data directories, <code>.session</code> and <code>.algo</code>, that are available only to algorithms to help you manage data over the course of the algorithm execution. For more information about accessing files and directories visit the <a href="http://docs.algorithmia.com/#directories">Data API documentation</a>.</p>
+
+<h3 id="creating-an-algorithm-that-relies-on-input-from-another-algorithm">Creating an Algorithm that relies on input from another algorithm</h3>
+
+<p>The following example algorithm below calls another algorithm on the Algorithmia platform and writes the data that is returned from it to a csv in Data Collections. <a href="https://algorithmia.com/data/hosted">Data Collections</a> is Algorithmia’s hosted data source where you can securely read or write your data files to our platform using the <a href="http://docs.algorithmia.com/#data-api-specification">Data API</a>.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>algorithmia<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>devtools<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>data.table<span class="p">)</span>
+
+<span class="c1"># Get JSON data from https://algorithmia.com/algorithms/tags/ScrapeHN</span>
+client <span class="o">&lt;-</span> getAlgorithmiaClient<span class="p">()</span>
+algo <span class="o">&lt;-</span> client<span class="o">$</span>algo<span class="p">(</span><span class="s">&quot;tags/ScrapeHN/0.1.2&quot;</span><span class="p">)</span>
+results <span class="o">&lt;-</span> algo<span class="o">$</span><span class="kp">pipe</span><span class="p">(</span><span class="kt">list</span><span class="p">())</span><span class="o">$</span>result
+
+<span class="c1"># Create dataframe to write to csv.</span>
+df <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>rbindlist<span class="p">(</span>results<span class="p">))</span>
+<span class="c1"># Write csv file to a temporary file</span>
+tempLocation <span class="o">&lt;-</span> <span class="kp">tempfile</span><span class="p">()</span>
+write.csv<span class="p">(</span>df<span class="p">,</span> tempLocation<span class="p">,</span> row.names<span class="o">=</span><span class="bp">F</span><span class="p">)</span>
+
+<span class="c1"># Create algorithm that creates a csv from the JSON data above</span>
+<span class="c1"># writes to a csv file in data collections.</span>
+algorithm <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1"># Write file to data collections on Algorithmia</span>
+  client<span class="o">$</span><span class="kp">file</span><span class="p">(</span><span class="s">&quot;data://your_username/foo/data.csv&quot;</span><span class="p">)</span><span class="o">$</span>putFile<span class="p">(</span>tempLocation<span class="p">)</span>
+<span class="p">}</span></code></pre></div>
+
+<p>This example algorithm doesn’t require any user input however the system requires input so the user can pass an empty string:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># User input</span>
+input <span class="o">&lt;-</span> <span class="s">&quot;&quot;</span>
+<span class="c1"># User calls algorithm</span>
+algorithm<span class="p">(</span>input<span class="p">)</span></code></pre></div>
+
+<p class="notice-info">Calling another algorithm from within your algorithm is considered the same session so you don’t need to pass in your API key within your algorithm code. The user who calls your algorithm will be charged for both calls.</p>
+
+<p>For more information regarding hosted data solutions visit the Developer Center’s <a href="http://developers.algorithmia.com/algorithm-development/data-sources/hosted-data-guide/"> Hosted Data Guide</a></p>
+
+<h2 id="error-handling">Error Handling</h2>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r">show_error <span class="o">&lt;-</span><span class="kr">function</span><span class="p">(</span>input<span class="p">){</span>
+  <span class="kp">tryCatch</span><span class="p">({</span>
+    <span class="p">(</span>assert_that<span class="p">(</span><span class="kp">is.character</span><span class="p">(</span>input<span class="p">)))</span>
+  <span class="p">},</span>
+  error <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>e<span class="p">)</span> <span class="p">{</span>
+    <span class="kp">stop</span><span class="p">()</span>
+  <span class="p">})</span>
+<span class="p">}</span></code></pre></div>
+
+<p>When you try calling the algorithm without a valid input it throws an error:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># Call algorithm</span>
+show_error<span class="p">(</span><span class="m">1</span><span class="p">)</span>
+<span class="c1"># Error message</span>
+Error <span class="kr">in</span> value<span class="p">[[</span><span class="m">3L</span><span class="p">]](</span>cond<span class="p">)</span> <span class="o">:</span> Error</code></pre></div>
+
+<h2 id="additional-resources">Additional Resources</h2>
+
+<ul>
+  <li><a href="https://cran.r-project.org/web/packages/algorithmia/vignettes/introduction-to-algorithmia.html">Algorithmia CRAN package documentation</a></li>
+  <li><a href="http://developers.algorithmia.com/application-development/client-guides/r/">Algorithmia R client documentation</a></li>
+</ul>
+
+					<hr />
+
+					<footer class="page-footer">
+						<div class="inline-btn">
+	<a class="btn-social twitter" href="https://twitter.com/intent/tweet?text=R%20Algorithm%20Development&amp;url=http://developers.algorithmia.com/algorithm-development/client-guides/r&amp;via=algorithmia" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Share on Twitter</a>
+	<a class="btn-social facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://developers.algorithmia.com/algorithm-development/client-guides/r" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> Share on Facebook</a>
+	<a class="btn-social google-plus"  href="https://plus.google.com/share?url=http://developers.algorithmia.com/algorithm-development/client-guides/r" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i> Share on Google+</a>
+</div><!-- /.share-this -->
+
+						<div class="page-meta">
+  <p>Updated
+
+    <time datetime="2016-05-17T09:50:46Z" itemprop="datePublished">May 17, 2016</time></p>
+  
+</div><!-- /.page-meta --><hr />
+						
+<!--<div class="author-image">
+	<img src="http://developers.algorithmia.com/images/" alt="Stephanie Kim">
+</div> ./author-image -->
+
+<div class="author-content">
+  <h4 class="author-name" >Written by
+
+    <a href="http://developers.algorithmia.com/steph_kim" itemprop="author">Stephanie Kim</a>
+
+  <p class="author-bio">Developer Evangelist at Algorithmia, Data Enthusiast.</p>
+
+  <a href="http://twitter.com/algorithmia" class="btn-social twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="mailto:developers@algorithmia.com" class="btn-social youtube"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+</div><!-- ./author-content -->
+					</footer><!-- /.footer -->
+
+					<aside>
+						
+					</aside>
+
+				</div><!-- /.content -->
+			</div><!-- /.inner-wrap -->
+			<div class="sidebar"><h3>Related Posts:</h3>
+
+    <!-- Pulls from data/tags.yml to allow for data defined name attr -->
+  
+  <h4></h4>
+  <ul>
+  
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/scala">Scala Algorithm Development</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/rust">Rust Algorithm Development</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/ruby">Ruby Algorithm Development</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/python">Python Algorithm Development</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/javascript">JavaScript Algorithm Development</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/algorithm-development/client-guides/java">Java Algorithm Development</a></h5>
+</li>
+    
+  </ul>
+
+</div>
+		</article><!-- ./wrap -->
+	</div><!-- /#main -->
+
+</div>
+      
+    </div> <!-- end wrapper -->
+
+    <footer role="contentinfo" id="site-footer">
+ <p class="copyright">
+    <img src="http://developers.algorithmia.com/images/favicon-white.png" alt="Algorithmia Developer Center" itemprop="image" width="16" height="16">
+    &#169; 2017 Algorithmia
+  </p>
+
+  <nav role="navigation" class="bottom-menu">
+    <ul class="menu-item">
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/about" target="_blank">About</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/terms" target="_blank">Terms</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/pricing" target="_blank">Pricing</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/privacy" target="_blank">Privacy</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/partners" target="_blank">Partners</a></li>
+    
+      
+        
+        
+      <li><a href="http://blog.algorithmia.com" target="_blank">Blog</a></li>
+    
+      
+        
+        
+      <li><a href="https://angel.co/algorithmia/jobs/" target="_blank">Jobs</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/contact" target="_blank">Contact</a></li>
+    
+    </ul>
+  </nav><!-- /.bottom-menu -->
+</footer>
+
+
+    <script src="http://developers.algorithmia.com/js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="http://developers.algorithmia.com/js/main.js"></script>
+    <script src="/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The CLI Client • Algorithmia Developer Center</title>
+    <meta name="description" content="Get familiar with the CLI client.">
+    <meta name="keywords" content="clients">
+    
+    
+    <!-- Twitter Cards -->
+<meta name="twitter:title" content="The CLI Client">
+<meta name="twitter:description" content="Get familiar with the CLI client.">
+<meta name="twitter:site" content="@algorithmia">
+<meta name="twitter:creator" content="@algorithmia">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo120x120.png">
+
+
+<!-- Open Graph -->
+
+<meta property="og:image" content="http://developers.algorithmia.com/images/logos/AlgorithmiaLogo.png">
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The CLI Client">
+<meta property="og:description" content="Get familiar with the CLI client.">
+<meta property="og:url" content="http://developers.algorithmia.com/application-development/client-guides/cli">
+<meta property="og:site_name" content="Algorithmia Developer Center">
+
+    <link rel="canonical" href="http://developers.algorithmia.com/application-development/client-guides/cli">
+
+    <link href="http://developers.algorithmia.com/atom.xml" type="application/atom+xml" rel="alternate" title="Algorithmia Developer Center Atom Feed">
+    <link href="http://developers.algorithmia.com/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="stylesheet" href="http://developers.algorithmia.com/css/main.css">
+    <!-- HTML5 Shiv and Media Query Support for IE -->
+    <!--[if lt IE 9]>
+      <script src="http://developers.algorithmia.com/js/vendor/html5shiv.min.js"></script>
+      <script src="http://developers.algorithmia.com/js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-38617973-1', 'auto');
+     ga('send', 'pageview');
+
+    </script>
+  </head>
+
+  <body id="js-body">
+    <div id="wrapper">
+      <!--[if lt IE 9]><div class="upgrade notice-warning"><strong>Your browser is quite old!</strong> Why not <a href="http://whatbrowser.org/">upgrade to a newer one</a> to better enjoy this site?</div><![endif]-->
+
+      <header id="masthead">
+  <div class="inner-wrap">
+    <a href="http://developers.algorithmia.com/" class="site-title">
+      <img src="http://developers.algorithmia.com/images/logos/algorithmia-white-logo.png" class="nav-image" alt="Algorithmia Developer Center" itemprop="image">
+    </a>
+
+    <nav role="navigation" class="menu top-menu">
+      <ul class="menu-item">
+  
+    
+      
+      
+
+    
+      <li><a href="http://docs.algorithmia.com" target="_blank">
+        API Docs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/algorithm-development" >
+        Algorithm Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/application-development" >
+        Application Development
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/faqs/" >
+        FAQs
+      </a></li>
+    
+  
+    
+      
+    
+
+    
+      <li><a href="http://developers.algorithmia.com/search/">
+        <i class="fa fa-search"></i> 
+      </a></li>
+    
+  
+</ul>
+    </nav>
+  </div><!-- /.inner-wrap -->
+</header><!-- /.masthead -->
+      <nav role="navigation" id="js-menu" class="sliding-menu-content">
+  <h5>Algorithmia Developer Center</h5>
+  <ul class="menu-item">
+    <li>
+      
+        
+      
+
+      <a href="http://docs.algorithmia.com">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_API Docs.png" alt="teaser" class="teaser">
+        <div class="title">API Docs</div>
+        <p class="excerpt">Read up on the ins and outs of using the Algorithmia API.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/algorithm-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Sample_Apps.png" alt="teaser" class="teaser">
+        <div class="title">Algorithm Development</div>
+        <p class="excerpt">Find out how to host your models and build an algorithm on Algorithmia.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/application-development">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Clients.png" alt="teaser" class="teaser">
+        <div class="title">Application Development</div>
+        <p class="excerpt">Discover how to use algorithms in your application.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/faqs/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_FAQs.png" alt="teaser" class="teaser">
+        <div class="title">FAQs</div>
+        <p class="excerpt">Find quick answers to common questions.</p>
+      </a>
+    </li><li>
+      
+        
+      
+
+      <a href="http://developers.algorithmia.com/search/">
+        <img src="http://developers.algorithmia.com/images/icons/Algorithmia_Search.png" alt="teaser" class="teaser">
+        <div class="title">Search</div>
+        <p class="excerpt">Search the Developer Center for the information you need to get started</p>
+      </a>
+    </li>
+  </ul>
+</nav>
+<button type="button" id="js-menu-trigger" class="sliding-menu-button lines-button x2" role="button" aria-label="Toggle Navigation">
+  <span class="nav-lines"></span>
+</button>
+
+<div id="js-menu-screen" class="menu-screen"></div>
+
+      
+      <div id="page-wrapper">
+
+	<div id="main" role="main">
+		<article class="wrap" itemscope itemtype="http://schema.org/Article">
+
+  <nav class="breadcrumbs">
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="http://developers.algorithmia.com" itemprop="url">
+        <span itemprop="title">Home</span>
+      </a> › 
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="http://developers.algorithmia.com/clients/" itemprop="url">
+        <span itemprop="title">Clients</span>
+      </a>
+    </span>
+  </nav><!-- /.breadcrumbs -->
+
+			<div class="page-title">
+				<h1>The CLI Client</h1>
+				
+			</div>
+
+			<div class="inner-wrap">
+				<div id="content" class="page-content" itemprop="articleBody">
+					<p>The Algorithmia CLI is a cross-platform tool for interfacing with algorithms and the Algorithmia Data API.</p>
+
+<p><a href="https://travis-ci.org/algorithmiaio/algorithmia-cli"><img src="https://travis-ci.org/algorithmiaio/algorithmia-cli.svg" alt="Build Status" /></a></p>
+
+<p>Algorithmia CLI is a cross-platform tool for interfacing with algorithms and the Algorithmia Data API.</p>
+
+<p>This guide will cover:</p>
+
+<ul>
+  <li><a href="#installing-the-algorithmia-cli">Installation</a></li>
+  <li><a href="#configure-authentication">Authentication</a></li>
+  <li><a href="#usage">Usage</a></li>
+  <li><a href="#options">Command Options</a></li>
+  <li><a href="#the-algorithmia-data-api">The Data API</a></li>
+  <li><a href="#using-multiple-profiles">Using Multiple Profiles</a></li>
+</ul>
+
+<p>Check out the tool in use in this short demo video (click to watch on YouTube):
+<a href="https://www.youtube.com/watch?v=mAJagjRl_qk"><img src="https://j.gifs.com/v1egak.gif" alt="Example CLI Usage" /></a></p>
+
+<h2 id="installing-the-algorithmia-cli">Installing the Algorithmia CLI</h2>
+
+<p>The latest releases &amp; changelog can be found <a href="https://github.com/algorithmiaio/algorithmia-cli/releases/latest">here</a>.</p>
+
+<p><strong>Linux and OSX</strong></p>
+
+<p>Install is by running:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">curl -sSf https://raw.githubusercontent.com/algorithmiaio/algorithmia-cli/master/install.sh <span class="p">|</span> sh</code></pre></div>
+
+<p><strong>Windows</strong></p>
+
+<p>Download and extract the <a href="https://github.com/algorithmiaio/algorithmia-cli/releases/download/v1.0.0-beta.3/algorithmia-v1.0.0-beta.3-x86_64-pc-windows-msvc.zip">latest Windows x86_64 zip file</a>. We recommend putting it within your <code>PATH</code>.</p>
+
+<p>If needed, you can also find both MSVC and GNU builds for x86 and x86_64 on the <a href="https://github.com/algorithmiaio/algorithmia-cli/releases/latest">release page</a>.</p>
+
+<h2 id="configure-authentication">Configure Authentication</h2>
+
+<p>In order to make calls with the CLI, you’ll need to configure the authentication with an API key. If you don’t already have an API key, get started by signing up for an account at <a href="https://algorithmia.com">Algorithmia.com</a>. Once you’ve completed the sign up process, copy the API key from your account dashboard.</p>
+
+<p>Begin the configuration process by running the command <code>algo auth</code>.
+You will see an interactive prompt to guide you through setting up a default profile:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ algo auth
+Configuring authentication for &#39;default&#39; profile
+Enter API Key (prefixed with &#39;sim&#39;):
+Profile is ready to use. Test with &#39;algo ls&#39;</code></pre></div>
+
+<p>See <a href="#using-multiple-profiles">Using multiple profiles</a> for instructions on how to set authenticate and use more than one profile with the Algorithmia CLI tool.</p>
+
+<h2 id="usage">Usage</h2>
+
+<p>To call an algorithm from the CLI, use the command syntax: <code>algo run</code>, followed by the algorithm’s username and algorithm name, the data options, and finally the input. Here is a basic example calling the <a href="https://algorithmia.com/algorithms/kenny/Factor">Factor algorithm</a>:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ algo run kenny/factor -d 19635
+[3,5,7,11,17]</code></pre></div>
+
+<p>Add the option <code>--response-body</code> to see the full JSON response:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ algo run kenny/factor -d 19635 --response-body
+{ &quot;result&quot;: [3,5,7,11,17],
+  &quot;metadata&quot;: { &quot;content_type&quot;:&quot;json&quot;, &quot;duration&quot;:0.001427314} }</code></pre></div>
+
+<p>Run <code>algo run --help</code> to see more command options or view the following <a href="#options">Options</a> section.</p>
+
+<h3 id="options">Options</h3>
+
+<h4 id="input-data-options">Input Data Options</h4>
+<p>There are several options for specifying the type and source of input data. The Algorithmia CLI supports JSON, text, and binary data, as well as an option to auto-detect the data type.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Option Flag</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">-d, –data <data></data></td>
+      <td style="text-align: left">If the data parses as JSON, assume JSON, else if the data is valid UTF-8, assume text, else assume binary</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">-D, –data-file <file></file></td>
+      <td style="text-align: left">Same as –data, but the input data is read from a file</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>You may also explictly specify the input type as text (<code>-t</code>/<code>-T</code>), json (<code>-j</code>/<code>-J</code>), or binary (<code>-b</code>/<code>-B</code>) instead of using the auto-detection (<code>-d</code>/<code>-D</code>).</p>
+
+<h4 id="output-options">Output Options</h4>
+
+<p>The algorithm result is printed to STDOUT by defauft. Additional notices may be printed to STDERR. If you’d like to output the result to a file, use the output option flag followed by a filename:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ algo run kenny/factor -d 17 --output results.txt</code></pre></div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Option Flag</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">–debug</td>
+      <td style="text-align: left">Print algorithm’s STDOUT (author-only)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">–response-body</td>
+      <td style="text-align: left">Print HTTP response body (replaces result)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">–response</td>
+      <td style="text-align: left">Print full HTTP response including headers (replaces result)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">-s, –silence</td>
+      <td style="text-align: left">Suppress any output not explicitly requested (except result)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">-o, –output <file></file></td>
+      <td style="text-align: left">Print result to a file</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="other-options">Other Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Option Flag</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">–timeout <seconds></seconds></td>
+      <td style="text-align: left">Sets algorithm timeout</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="examples">Examples:</h4>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ algo kenny/factor/0.1.0 -t &#39;79&#39;                   Run algorithm with specified version &amp; data input as text
+$ algo anowell/Dijkstra -J routes.json              Run algorithm with file input
+$ algo anowell/Dijkstra -J - &lt; routes.json          Same as above but using STDIN
+$ algo opencv/SmartThumbnail -B in.png -o out.png   Runs algorithm with binary data input
+$ algo run kenny/factor -d 17 --timeout 2           Runs algorithm with a timeout of 2 seconds</code></pre></div>
+
+<h2 id="the-algorithmia-data-api">The Algorithmia Data API</h2>
+
+<p>Use the Algorithmia CLI to interact with the Algorithmia Data API. You can use the CLI to create and manage your data directories.</p>
+
+<p><strong>Data commands include:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Command</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">ls</td>
+      <td style="text-align: left">List contents of a data directory</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">mkdir</td>
+      <td style="text-align: left">Create a data directory</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">rmdir</td>
+      <td style="text-align: left">Delete a data directory</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">rm</td>
+      <td style="text-align: left">Remove a file from a data directory</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">cp</td>
+      <td style="text-align: left">Copy file(s) to or from a data directory</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">cat</td>
+      <td style="text-align: left">Concatenate &amp; print file(s) in a directory</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="examples-of-the-algorithmia-data-api-usage">Examples of the Algorithmia Data API usage:</h3>
+
+<p>Create a data directory:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ algo mkdir .my/cuteAnimals
+Created directory data://.my/cuteAnimals</code></pre></div>
+
+<p>Copy a file from your local directory to the new data directory:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ algo cp chubby_kittens.jpg data://.my/cuteAnimals
+Uploaded data://.my/cuteAnimals/chubby_kittens.jpg</code></pre></div>
+
+<h2 id="using-multiple-profiles">Using multiple profiles</h2>
+
+<h3 id="add-additional-profiles">Add additional profiles</h3>
+
+<p>With the Algorithmia CLI, you can configure multiple custom profiles to use. To add a new profile, you will run through the same interactive prompt–simply add a profile name to the command to add a new profile.</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ algo auth --profile second_user
+Configuring authentication for &#39;second_user&#39; profile
+Enter API Key (prefixed with &#39;sim&#39;):
+Profile is ready to use. Test with &#39;algo ls --profile second_user&#39;</code></pre></div>
+
+<p>Now you may use <code>algo ls --profile second_user</code> to list files in your <code>second_user</code> account. For more information, see the auth command help with <code>algo auth --help</code>.</p>
+
+<h3 id="using-profiles-in-commands">Using profiles in commands</h3>
+
+<p>When running commands, the Algorithmia CLI will use the default profile unless otherwise specified with the <code>--profile &lt;profile&gt;</code> option. See the following example:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ algo run kenny/factor -d 17 --profile second_user
+[17]</code></pre></div>
+
+					<hr />
+
+					<footer class="page-footer">
+						<div class="inline-btn">
+	<a class="btn-social twitter" href="https://twitter.com/intent/tweet?text=The%20CLI%20Client&amp;url=http://developers.algorithmia.com/application-development/client-guides/cli&amp;via=algorithmia" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Share on Twitter</a>
+	<a class="btn-social facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://developers.algorithmia.com/application-development/client-guides/cli" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> Share on Facebook</a>
+	<a class="btn-social google-plus"  href="https://plus.google.com/share?url=http://developers.algorithmia.com/application-development/client-guides/cli" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i> Share on Google+</a>
+</div><!-- /.share-this -->
+
+						<div class="page-meta">
+  <p>Updated
+
+    <time datetime="2016-02-22T00:00:00Z" itemprop="datePublished">February 22, 2016</time></p>
+  
+</div><!-- /.page-meta --><hr />
+						
+<!--<div class="author-image">
+	<img src="http://developers.algorithmia.com/images//authors/bio-photo.jpg" alt="Algorithmia">
+</div> ./author-image -->
+
+<div class="author-content">
+  <h4 class="author-name" >Written by
+
+    <a href="http://developers.algorithmia.com/" itemprop="author">Algorithmia</a>
+
+  <p class="author-bio"></p>
+
+  <a href="http://twitter.com/algorithmia" class="btn-social twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="mailto:mia@algorithmia.com" class="btn-social youtube"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+</div><!-- ./author-content -->
+					</footer><!-- /.footer -->
+
+					<aside>
+						
+					</aside>
+
+				</div><!-- /.content -->
+			</div><!-- /.inner-wrap -->
+			<div class="sidebar"><h3>Related Posts:</h3>
+
+    <!-- Pulls from data/tags.yml to allow for data defined name attr -->
+  
+  <h4>Clients</h4>
+  <ul>
+  
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/swift">The Swift Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/android">The Android Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/r">The R Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/node">The Node Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/rust">The Rust Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/go">The Go Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/curl">Working with cURL</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/aws-lambda">AWS Lambda</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/scala">Algorithmia & Scala</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/ruby">The Ruby Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/python">The Python Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/java">The Java Client</a></h5>
+</li>
+    
+      <li class="list-index">
+  <h5><a href="http://developers.algorithmia.com/application-development/client-guides/javascript">The Javascript Library</a></h5>
+</li>
+    
+  </ul>
+
+</div>
+		</article><!-- ./wrap -->
+	</div><!-- /#main -->
+
+</div>
+      
+    </div> <!-- end wrapper -->
+
+    <footer role="contentinfo" id="site-footer">
+ <p class="copyright">
+    <img src="http://developers.algorithmia.com/images/favicon-white.png" alt="Algorithmia Developer Center" itemprop="image" width="16" height="16">
+    &#169; 2017 Algorithmia
+  </p>
+
+  <nav role="navigation" class="bottom-menu">
+    <ul class="menu-item">
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/about" target="_blank">About</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/terms" target="_blank">Terms</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/pricing" target="_blank">Pricing</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/privacy" target="_blank">Privacy</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/partners" target="_blank">Partners</a></li>
+    
+      
+        
+        
+      <li><a href="http://blog.algorithmia.com" target="_blank">Blog</a></li>
+    
+      
+        
+        
+      <li><a href="https://angel.co/algorithmia/jobs/" target="_blank">Jobs</a></li>
+    
+      
+        
+        
+      <li><a href="https://algorithmia.com/contact" target="_blank">Contact</a></li>
+    
+    </ul>
+  </nav><!-- /.bottom-menu -->
+</footer>
+
+
+    <script src="http://developers.algorithmia.com/js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="http://developers.algorithmia.com/js/main.js"></script>
+    <script src="/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>
