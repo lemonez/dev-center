@@ -15,7 +15,7 @@ Welcome to Algorithmia!
 This guide is designed as an introduction to hosting your <a href="https://https://www.microsoft.com/en-us/cognitive-toolkit">CNTK</a> model and publishing it as an algorithm, even if you've never used Algorithmia before!
 
 
-# #Prerequisites
+## Prerequisites
 
 Before you get started, you'll need to pick a [python wheel][whl] first! We support two wheel versions, [2.7][wh_27] and [3.5][wh_35]. Make sure you select the wheel that matches your algorithm version.
 
