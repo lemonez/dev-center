@@ -3,6 +3,7 @@ module Jekyll
 
     def initialize(tag_name, markup, options)
       super
+      @ops_menu = @tag_name == 'navmenu_ops'
     end
 
     def render(context)
@@ -10,9 +11,9 @@ module Jekyll
       current_url = context['page']['url']
       @baseurl = context['site']['baseurl']
 
-      if @tag_name == 'navmenu_ops'
+      if @ops_menu
 
-        '<h1>OPS NAVMENU</h1>'
+        '<h1>TBD: OPS NAVMENU</h1>'
 
       else
 
