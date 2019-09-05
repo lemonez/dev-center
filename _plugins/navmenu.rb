@@ -10,35 +10,43 @@ module Jekyll
       current_url = context['page']['url']
       @baseurl = context['site']['baseurl']
 
-      # For each nav item in toc.yaml
-      @@items ||= context['site']['data']['toc'].map do |item|
-        # Get a map of pages grouped by category
-        pages ||= context['site']['pages'].select{|p| p.data['categories'].count > 0 }.group_by{ |p| p.data['categories'].first }
+      if @tag_name == 'navmenu_ops'
 
-        # Lookup extra metadata by page URL
-        page = context['site']['pages'].find{ |p| p.url == item['url'] }
-        if page
-            item['nav_overview'] = page.data['nav_overview']
+        '<h1>OPS NAVMENU</h1>'
+
+      else
+
+        # For each nav item in toc.yaml
+        @@items ||= context['site']['data']['toc'].map do |item|
+          # Get a map of pages grouped by category
+          pages ||= context['site']['pages'].select{|p| p.data['categories'].count > 0 }.group_by{ |p| p.data['categories'].first }
+
+          # Lookup extra metadata by page URL
+          page = context['site']['pages'].find{ |p| p.url == item['url'] }
+          if page
+              item['nav_overview'] = page.data['nav_overview']
+          end
+
+          item['children'] = []
+          item_cat = item['nav_category']
+          if item['nav_overview']
+            item['children'].push({ 'url' => item['url'], 'title' => item['nav_overview'], 'children' => [] })
+          end
+          unless item_cat.nil?
+            item['children'].concat pages[item_cat].map{|p| doc_to_item(pages, p) }
+          end
+          item
         end
 
-        item['children'] = []
-        item_cat = item['nav_category']
-        if item['nav_overview']
-          item['children'].push({ 'url' => item['url'], 'title' => item['nav_overview'], 'children' => [] })
-        end
-        unless item_cat.nil?
-          item['children'].concat pages[item_cat].map{|p| doc_to_item(pages, p) }
-        end
-        item
+        render_list(current_url, @@items)
+
       end
-
-      render_list(current_url, @@items)
 
     end
 
     def render_list(page_url, items)
       html = []
-      html << '<ul class="nav sidebar">'
+      html << '<ul class="nav sidebar" id="'+ @tag_name +'">'
       items.each do |item|
         prefix = item['url'].chomp('/') + '/'
 
@@ -118,4 +126,6 @@ module Jekyll
 end
 
 Liquid::Template.register_tag('navmenu', Jekyll::NavMenuTag)
+
+Liquid::Template.register_tag('navmenu_ops', Jekyll::NavMenuTag)
 
