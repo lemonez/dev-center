@@ -3,7 +3,7 @@ module Jekyll
 
     def initialize(tag_name, markup, options)
       super
-      @ops_menu = @tag_name == 'navmenu_ops'
+      @is_admin_nav = @tag_name == 'navmenu_admin'
     end
 
     def render(context)
@@ -11,36 +11,55 @@ module Jekyll
       current_url = context['page']['url']
       @baseurl = context['site']['baseurl']
 
-      if @ops_menu
+      # For each nav item in toc.yaml / toc_admin.yml
+      @@items_admin ||= context['site']['data']['toc_admin'].map do |item|
+        # Get a map of pages grouped by category
+        pages ||= context['site']['pages'].select{|p| p.data['categories'].count > 0 }.group_by{ |p| p.data['categories'].first }
 
-        '<h1>TBD: OPS NAVMENU</h1>'
-
-      else
-
-        # For each nav item in toc.yaml
-        @@items ||= context['site']['data']['toc'].map do |item|
-          # Get a map of pages grouped by category
-          pages ||= context['site']['pages'].select{|p| p.data['categories'].count > 0 }.group_by{ |p| p.data['categories'].first }
-
-          # Lookup extra metadata by page URL
-          page = context['site']['pages'].find{ |p| p.url == item['url'] }
-          if page
-              item['nav_overview'] = page.data['nav_overview']
-          end
-
-          item['children'] = []
-          item_cat = item['nav_category']
-          if item['nav_overview']
-            item['children'].push({ 'url' => item['url'], 'title' => item['nav_overview'], 'children' => [] })
-          end
-          unless item_cat.nil?
-            item['children'].concat pages[item_cat].map{|p| doc_to_item(pages, p) }
-          end
-          item
+        # Lookup extra metadata by page URL
+        page = context['site']['pages'].find{ |p| p.url == item['url'] }
+        if page
+          item['nav_overview'] = page.data['nav_overview']
         end
 
-        render_list(current_url, @@items)
+        item['children'] = []
+        item_cat = item['nav_category']
+        if item['nav_overview']
+          item['children'].push({ 'url' => item['url'], 'title' => item['nav_overview'], 'children' => [] })
+        end
+        unless item_cat.nil?
+          item['children'].concat pages[item_cat].map{|p| doc_to_item(pages, p) }
+        end
+        item
+      end
 
+      # For each nav item in toc.yaml / toc_admin.yml
+      @@items ||= context['site']['data']['toc'].map do |item|
+        # Get a map of pages grouped by category
+        pages ||= context['site']['pages'].select{|p| p.data['categories'].count > 0 }.group_by{ |p| p.data['categories'].first }
+
+        # Lookup extra metadata by page URL
+        page = context['site']['pages'].find{ |p| p.url == item['url'] }
+        if page
+          item['nav_overview'] = page.data['nav_overview']
+        end
+
+        item['children'] = []
+        item_cat = item['nav_category']
+        if item['nav_overview']
+          item['children'].push({ 'url' => item['url'], 'title' => item['nav_overview'], 'children' => [] })
+        end
+        unless item_cat.nil?
+          item['children'].concat pages[item_cat].map{|p| doc_to_item(pages, p) }
+        end
+        item
+      end
+
+
+      if @is_admin_nav
+        render_list(current_url, @@items_admin)
+      else
+        render_list(current_url, @@items)
       end
 
     end
@@ -128,5 +147,5 @@ end
 
 Liquid::Template.register_tag('navmenu', Jekyll::NavMenuTag)
 
-Liquid::Template.register_tag('navmenu_ops', Jekyll::NavMenuTag)
+Liquid::Template.register_tag('navmenu_admin', Jekyll::NavMenuTag)
 
