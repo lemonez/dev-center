@@ -2,7 +2,6 @@ _site
 sites
 _tmp
 .DS_Store
-vendor
 *.sublime-project
 *.sublime-workspace
 codekit-config.json
