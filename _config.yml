@@ -39,6 +39,7 @@ gems:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-last-modified-at
+  - jekyll-assets
 
 # Site owner
 owner:
@@ -64,3 +65,10 @@ lunr_search:
 
 exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json", "shippable.yml", "_tmp", "vendor"]
 
+assets:
+  sources:
+    - css
+    - fonts
+    - images
+    - js
+    - synapse
