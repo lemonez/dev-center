@@ -16,8 +16,8 @@ COPY . .
 RUN bundle install
 
 RUN mkdir /sites && \
-  bundle exec jekyll build -d sites/public/developers -c _config.yml,_config-web.yml && \
-  bundle exec jekyll build -d sites/enterprise/developers -c _config.yml,_config-enterprise.yml,_config-web.yml
+  bundle exec jekyll build -d sites/public/developers -c _config.yml && \
+  bundle exec jekyll build -d sites/enterprise/developers -c _config.yml,_config-enterprise.yml
 
 #
 # Final stage: use the build artifacts from builder stage
