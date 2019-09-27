@@ -13,3 +13,4 @@ _asset_bundler_cache
 .idea/
 CLIPBOARD.txt
 package-lock.json
+.jekyll-cache
