@@ -13,6 +13,7 @@ services:
 stages:
   - build
   - push
+  - seed
 
 #
 # Build
@@ -36,7 +37,7 @@ build:
       $CI_PROJECT_DIR
     - docker push $BUILDER_TAG
     - mkdir image
-    - docker save $IMAGE_TAG > image/golduck.tar
+    - docker save $IMAGE_TAG > image/docs.tar
   artifacts:
     paths:
       - image
@@ -54,8 +55,67 @@ push:
     - mkdir ~/.docker
     - echo "$DOCKER_AUTH_CONFIG" > ~/.docker/config.json
   script:
-    - docker load -i image/golduck.tar
+    - docker load -i image/docs.tar
     - docker push $IMAGE_TAG
+  only:
+    - /^(master|develop)$/
+  except:
+    - tags
+
+#
+# Seed
+#
+
+.seed-template: &seed-template-test-env
+  stage: seed
+  image: "algorithmiahq/dev-center:seed-base"
+  script:
+    - mkdir -p $CI_COMMIT_SHA
+    - docker load -i image/docs.tar
+    - CONTAINER=$(docker run -d $IMAGE_TAG)
+    - docker cp $CONTAINER:/opt/src/app/sites/public/images/. ./$CI_COMMIT_SHA/developers/images
+    - docker cp $CONTAINER:/opt/src/app/sites/public/css/. ./$CI_COMMIT_SHA/developers/css
+    - docker cp $CONTAINER:/opt/src/app/sites/public/fonts/. ./$CI_COMMIT_SHA/developers/fonts
+    - docker cp $CONTAINER:/opt/src/app/sites/public/synapse/. ./$CI_COMMIT_SHA/developers/synapse
+    - docker cp $CONTAINER:/opt/src/app/sites/public/js/. ./$CI_COMMIT_SHA/developers/js
+    - aws s3 sync $CI_COMMIT_SHA s3://$AWS_WEB_ASSETS_BUCKET_TEST/ --cache-control max-age=31536000,public --acl=public-read
+  environment:
+    name: test
+    url: https://test.algorithmia.com
+
+# Seed static assets to test automatically on each protected branch update
+seed-assets-test:
+  <<: *seed-template-test-env
+  only:
+    - /^(master|develop)$/
+  except:
+    - tags
+
+# Allow other branches to be deployed to test on manual click
+seed-assets-test-manual:
+  <<: *seed-template-test-env
+  when: manual
+  except:
+    - /^(master|develop)$/
+
+# Seed static assets to production only on manual click in GitLab
+seed-assets-prod:
+  stage: seed
+  image: "algorithmiahq/dev-center:seed-base"
+  script:
+    - mkdir -p $CI_COMMIT_SHA
+    - docker load -i image/docs.tar
+    - CONTAINER=$(docker run -d $IMAGE_TAG)
+    - docker cp $CONTAINER:/opt/src/app/sites/public/images/. ./$CI_COMMIT_SHA/developers/images
+    - docker cp $CONTAINER:/opt/src/app/sites/public/css/. ./$CI_COMMIT_SHA/developers/css
+    - docker cp $CONTAINER:/opt/src/app/sites/public/fonts/. ./$CI_COMMIT_SHA/developers/fonts
+    - docker cp $CONTAINER:/opt/src/app/sites/public/synapse/. ./$CI_COMMIT_SHA/developers/synapse
+    - docker cp $CONTAINER:/opt/src/app/sites/public/js/. ./$CI_COMMIT_SHA/developers/js
+    - aws s3 sync $CI_COMMIT_SHA s3://$AWS_WEB_ASSETS_BUCKET_PROD/ --cache-control max-age=31536000,public --acl=public-read
+  environment:
+    name: production
+    url: https://algorithmia.com
+  when: manual
   only:
     - /^(master|develop)$/
   except:

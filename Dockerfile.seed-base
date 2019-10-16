@@ -1,0 +1,10 @@
+#
+# This Dockerfile is used to generate the base image for our seed static assets
+# CI steps. Instead of installing the awscli each time the build runs, we do
+# it ahead of time in this image to speed things up.
+#
+# The image is available via the tag: algorithmiahq/dev-center:seed-base
+#
+FROM docker:latest
+
+RUN apk add py-pip && pip install awscli
