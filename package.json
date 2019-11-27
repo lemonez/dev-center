@@ -36,6 +36,7 @@
     }
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.7.4",
     "@types/chai": "^4.2.5",
     "@types/jest": "^24.0.23",
     "@types/mocha": "^5.2.7",
@@ -51,6 +52,7 @@
     "@wdio/sync": "^5.14.4",
     "babel-core": "^6.26.3",
     "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.2.0",

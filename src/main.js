@@ -11,8 +11,11 @@ import { getCurrentUser } from './api/user'
 import { setupPage } from './utilities/setupPage'
 import store from './store/index'
 import { readCookie } from './utilities/cookie'
+import { redirectApiDocsHash  } from './utilities/redirectApiDocsHash'
 import { Cookie } from './enums/Cookie'
 import { mapActions, mapGetters } from 'vuex'
+
+redirectApiDocsHash()
 
 Vue.component('codeSample', CodeSample)
 Vue.component('imagePopout', ImagePopout)
