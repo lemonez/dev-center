@@ -164,7 +164,7 @@ app.use(/^\/developers/, (req, res, next) => {
     setHeaders: (res, filepath) => {
       res.set(
         'cache-control',
-        noCache ? 'no-cache' : 'public, max-age=31536000'
+        (filepath.endsWith('.html') || !isProduction) ? 'no-cache' : 'public, max-age=31536000'
       )
     }
   }
