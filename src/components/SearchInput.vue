@@ -21,7 +21,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import SearchIcon from '../../synapse/components/vue/icons/SearchIcon'
+import SearchIcon from '../../synapse/lib/components/vue/icons/SearchIcon'
 
 export default {
   components: { SearchIcon },

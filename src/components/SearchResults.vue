@@ -67,10 +67,10 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import FilterSelector from './FilterSelector'
-import CodeIcon from '../../synapse/components/vue/icons/CodeIcon'
-import DocIcon from '../../synapse/components/vue/icons/DocIcon'
+import CodeIcon from '../../synapse/lib/components/vue/icons/CodeIcon'
+import DocIcon from '../../synapse/lib/components/vue/icons/DocIcon'
 import HelpIcon from './icons/HelpIcon'
-import RightArrowIcon from '../../synapse/components/vue/icons/RightArrowIcon'
+import RightArrowIcon from '../../synapse/lib/components/vue/icons/RightArrowIcon'
 
 export default {
   name: 'SearchResults',

@@ -19,7 +19,7 @@
 <script>
 // This component handles the caption and popout for an individual image.
 // ImagesSection handles the gray bg and formatting multiple images in a row.
-import Modal from '../../synapse/components/vue/Modal.vue'
+import Modal from '../../synapse/lib/components/vue/Modal.vue'
 
 export default {
   name: 'ImpagePopout',
