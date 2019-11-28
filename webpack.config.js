@@ -16,6 +16,7 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
+      chunks: 'initial',
       cacheGroups: {
         vendor: {
           test: /node_modules/,
@@ -38,7 +39,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
