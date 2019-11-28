@@ -16,12 +16,14 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
+      // SplitChunks plugin by default only targets 'async' chunks. (Chunks
+      // fetched client side, not those referenced in HTML). Here we tell
+      // Webpack to pull vendor code out of entry chunks too.
       chunks: 'initial',
       cacheGroups: {
         vendor: {
           test: /node_modules/,
           name: 'vendor',
-          priority: 10
         }
       }
     }
