@@ -18,6 +18,7 @@ module.exports = {
   testMatch: ["**/jest/*.spec.+(ts|tsx|js)"],
   transform: {
     ".*\\.(vue)$": "vue-jest",
-    '^.+\\.(ts|tsx|js|jsx)$': 'ts-jest'
+    '^.+\\.ts$': 'ts-jest',
+    "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
   }
 }
